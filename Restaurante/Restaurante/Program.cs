@@ -1,16 +1,16 @@
 using Application.Interfaces.ICategory;
+using Application.Interfaces.IDeliveryType;
 using Application.Interfaces.IDish;
+using Application.Interfaces.IStatus;
 using Application.Mapper;
 using Application.Models.Response;
-using Application.Services;
+using Application.Services.DishService;
 using Application.Validators;
 using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using static System.Net.Mime.MediaTypeNames;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +42,7 @@ builder.Services.AddSwaggerGen(c =>
 
 
 // Inyeccion de servicios
-//-- DISH--
+
 
 builder.Services.AddScoped<ICreateService, CreateDishService>();
 builder.Services.AddScoped<IUpdateService, UpdateDishService>();
@@ -57,6 +57,9 @@ builder.Services.AddScoped<IGetAllDishValidation, GetAllDishValidator>();
 builder.Services.AddScoped<IGetDishByIdService, GetDishByIdService>();
 builder.Services.AddScoped<IGetDishByIdValidation, GetDishByIdValidator>();
 builder.Services.AddScoped<IDishMapper, DishMapper>();
+builder.Services.AddScoped<IDeliveryTypeQuery, DeliveryTypeQuery>();
+builder.Services.AddScoped<IStatusQuery, StatusQuery>();
+
 
 //Manejo de errores de validación de modelos
 builder.Services.Configure<ApiBehaviorOptions>(options =>

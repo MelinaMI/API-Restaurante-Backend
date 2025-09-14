@@ -2,7 +2,7 @@
 using Application.Models.Response;
 using static Application.Validators.Exceptions;
 
-namespace Application.Services
+namespace Application.Services.DishService
 {
     public class GetDishByIdService : IGetDishByIdService
     {

@@ -4,7 +4,7 @@ using Application.Models.Response;
 using Application.Validators;
 using System;
 
-namespace Application.Services
+namespace Application.Services.DishService
 {
     public class GetAllDishService : IGetAllDishService
     {

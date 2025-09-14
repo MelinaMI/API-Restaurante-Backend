@@ -12,9 +12,20 @@ namespace Infrastructure.Queries
         {
             _context = context;
         }
+
+        public async Task<IReadOnlyList<Category>> GetAllCategoriesAsync()
+        {
+            return await _context.Categories.AsNoTracking().ToListAsync();
+        }
+
         public async Task<Category> GetByCategoryIdAsync(int categoryId)
         {
             return await _context.Categories.AsNoTracking().FirstOrDefaultAsync(c => c.Id == categoryId);
+        }
+
+        public Task<Category> GetCategoryByNameAsync(string name)
+        {
+            throw new NotImplementedException();
         }
     }
 }

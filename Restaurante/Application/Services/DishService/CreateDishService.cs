@@ -5,7 +5,7 @@ using Application.Models.Request;
 using Application.Models.Response;
 using Domain.Entities;
 
-namespace Application.Services
+namespace Application.Services.DishService
 {
     public class CreateDishService : ICreateService
     {

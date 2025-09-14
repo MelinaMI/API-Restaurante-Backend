@@ -4,7 +4,7 @@ using Application.Mapper;
 using Application.Models.Request;
 using Application.Models.Response;
 
-namespace Application.Services
+namespace Application.Services.DishService
 {
     public class UpdateDishService : IUpdateService
     {

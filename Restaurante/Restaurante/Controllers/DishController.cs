@@ -119,6 +119,29 @@ namespace Restaurant.Controllers
                 return NotFound(new ApiError { Message = ex.Message });
             }
         }
+        // Buscar plato por Id
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<DishResponse>> GetByIdAsync(Guid id)
+        {
+            try
+            {
+                await _getDishByIdValidator.ValidateByIdAsync(id);
+                var result = await _getDishByIdService.GetDishByIdAsync(id);
+                return Ok(result);
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new ApiError { Message = ex.Message });
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new ApiError { Message = ex.Message });
+            }
+        }
+
     }
 }
 
