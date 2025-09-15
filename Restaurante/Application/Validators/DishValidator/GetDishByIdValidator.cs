@@ -1,7 +1,7 @@
 ﻿using Application.Interfaces.IDish;
 using static Application.Validators.Exceptions;
 
-namespace Application.Validators
+namespace Application.Validators.DishValidator
 {
     public class GetDishByIdValidator : IGetDishByIdValidation
     {
@@ -17,7 +17,7 @@ namespace Application.Validators
             if (id == Guid.Empty)
                 throw new BadRequestException("Formato de ID inválido");
 
-            var dish = await _dishQuery.GetByIdAsync(id);
+            var dish = await _dishQuery.GetDishByIdAsync(id);
             if (dish == null)
                 throw new NotFoundException("Plato no encontrado");
         }

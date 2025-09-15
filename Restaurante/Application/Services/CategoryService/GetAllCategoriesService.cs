@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,11 @@ namespace Application.Services.CategoryService
         {
             _categoryQuery = categoryQuery;
         }
-        public async Task<IReadOnlyList<string>> GetAllCategoriesAsync()
+        public async Task<IReadOnlyList<Category>> GetAllCategoriesAsync()
         {
             
             var categ = await _categoryQuery.GetAllCategoriesAsync();
-            return categ.Select(c => c.Name).ToList();
+            return (IReadOnlyList<Category>)categ.Select(c => c.Name).ToList();
         }
     }
 }

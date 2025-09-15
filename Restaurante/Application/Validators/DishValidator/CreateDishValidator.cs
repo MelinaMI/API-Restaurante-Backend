@@ -3,7 +3,7 @@ using Application.Interfaces.IDish;
 using Application.Models.Request;
 using System.Text;
 
-namespace Application.Validators
+namespace Application.Validators.DishValidator
 {
     public class CreateDishValidator : ICreateValidation
     {

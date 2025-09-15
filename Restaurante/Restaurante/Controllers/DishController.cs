@@ -19,9 +19,10 @@ namespace Restaurant.Controllers
         private readonly IGetAllDishValidation _getAllValidator;
         private readonly IGetDishByIdService _getDishByIdService;
         private readonly IGetDishByIdValidation _getDishByIdValidator;
+        private readonly IDeleteDish _deleteDishService;
+        //private readonly 
 
-
-        public DishController(ICreateService createService, IUpdateService updateService, ICreateValidation createValidator, IUpdateValidation updateValidator, IGetAllDishService getAllService, IGetAllDishValidation getAllValidator,IGetDishByIdService getDishByIdService, IGetDishByIdValidation getDishByIdValidator )
+        public DishController(ICreateService createService, IUpdateService updateService, ICreateValidation createValidator, IUpdateValidation updateValidator, IGetAllDishService getAllService, IGetAllDishValidation getAllValidator, IGetDishByIdService getDishByIdService, IGetDishByIdValidation getDishByIdValidator, IDeleteDish deleteDish)
         {
             _createService = createService;
             _updateService = updateService;
@@ -31,6 +32,7 @@ namespace Restaurant.Controllers
             _getAllValidator = getAllValidator;
             _getDishByIdService = getDishByIdService;
             _getDishByIdValidator = getDishByIdValidator;
+            _deleteDishService = deleteDish;
         }
 
         //Create
@@ -141,7 +143,37 @@ namespace Restaurant.Controllers
                 return NotFound(new ApiError { Message = ex.Message });
             }
         }
-
+        // Delete (soft delete)
+        [HttpDelete("{id}")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(object), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(object), StatusCodes.Status409Conflict)]
+        [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> DeleteDish(Guid id)
+        {
+            try
+            {
+                await _deleteDishService.DeleteDishAsync(id);
+                return Ok(new { message = "Plato eliminado correctamente (soft delete)." });
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (ConflictException ex)
+            {
+                return Conflict(new { message = ex.Message });
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
+            }
+        }
     }
 }
 

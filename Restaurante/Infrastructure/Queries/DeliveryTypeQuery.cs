@@ -1,18 +1,20 @@
 ﻿using Application.Interfaces.IDeliveryType;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Infrastructure.Persistence;
 
 namespace Infrastructure.Queries
 {
     public class DeliveryTypeQuery : IDeliveryTypeQuery
     {
-        public Task<IReadOnlyList<DeliveryType>> GetAllDeliveryTypesAsync()
+        private readonly AppDbContext _context;
+        public DeliveryTypeQuery(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<IReadOnlyList<DeliveryType>> GetAllDeliveryTypesAsync()
+        {
+            return await _context.DeliveryTypes.AsNoTracking().ToListAsync();
         }
 
         public Task<DeliveryType> GetDeliveryTypeByIdAsync(int DeliveryId)

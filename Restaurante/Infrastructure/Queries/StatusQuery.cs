@@ -1,4 +1,7 @@
 ﻿using Application.Interfaces.IStatus;
+using Domain.Entities;
+using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +12,14 @@ namespace Infrastructure.Queries
 {
     public class StatusQuery : IStatusQuery
     {
-        public Task<IReadOnlyList<string>> GetAllStatusesAsync()
+        private readonly AppDbContext _context;
+        public StatusQuery(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<IReadOnlyList<Status>> GetAllStatusesAsync()
+        {
+            return await _context.Statuses.AsNoTracking().ToListAsync();
         }
 
         public Task<string> GetStatusByIdAsync(int id)

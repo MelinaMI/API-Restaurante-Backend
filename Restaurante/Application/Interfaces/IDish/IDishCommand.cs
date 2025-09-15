@@ -6,6 +6,7 @@ namespace Application.Interfaces.IDish
     {
         Task InsertDishAsync(Dish dish);
         Task UpdateDishAsync(Dish dish);
+        Task DeleteDishAsync(Dish dish);
 
     }
 }

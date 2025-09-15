@@ -3,7 +3,7 @@ using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
 using System.Text;
 
-namespace Application.Validators
+namespace Application.Validators.DishValidator
 {
     public class GetAllDishValidator : IGetAllDishValidation
     {

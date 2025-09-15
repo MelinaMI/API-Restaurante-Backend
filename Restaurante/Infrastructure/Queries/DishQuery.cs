@@ -17,11 +17,15 @@ namespace Infrastructure.Queries
         {
             return await _context.Dishes.Include(c => c.CategoryNavigation).AsNoTracking().ToListAsync();
         }
-        public async Task<Dish> GetByIdAsync(Guid id)
+        public async Task<Dish?> GetDishByIdAsync(Guid id)
         {
-            return await _context.Dishes.Include(c => c.CategoryNavigation).AsNoTracking().FirstOrDefaultAsync(d => d.DishId == id);
+            return await _context.Dishes
+                .Include(c => c.CategoryNavigation)
+                .Include(oi=> oi.OrderItems)
+                    .ThenInclude(o => o.OrderNavigation)
+                .FirstOrDefaultAsync(d => d.DishId == id);
         }
-        public async Task<Dish?> GetByNameAsync(string name)
+        public async Task<Dish> GetByNameAsync(string name)
         {
             var normalizedName = name.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant();
 

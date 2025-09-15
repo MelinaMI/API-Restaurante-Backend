@@ -17,7 +17,7 @@ namespace Application.Services.DishService
 
         public async Task<DishResponse> GetDishByIdAsync(Guid id)
         {
-            var dish = await _dishQuery.GetByIdAsync(id);
+            var dish = await _dishQuery.GetDishByIdAsync(id);
             if (dish == null)
                 throw new NotFoundException("El plato no fue encontrado");
             return new DishResponse

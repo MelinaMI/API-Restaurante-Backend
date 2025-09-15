@@ -27,7 +27,7 @@ namespace Application.Services.DishService
 
         public async Task<DishResponse> UpdateDishAsync(Guid id, DishUpdateRequest request)
         {
-            var dish = await _dishQuery.GetByIdAsync(id);
+            var dish = await _dishQuery.GetDishByIdAsync(id);
 
             // Mapeo de actualización
             dish.Name = request.Name;
