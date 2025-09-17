@@ -38,7 +38,7 @@ namespace Application.Services.DishService
             await _dishCommand.InsertDishAsync(dish);
 
             var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category);
-            return _dishMapper.ToDishResponse(dish, category);
+            return _dishMapper.ToDishResponseList(dish, category);
         }
     }
 }

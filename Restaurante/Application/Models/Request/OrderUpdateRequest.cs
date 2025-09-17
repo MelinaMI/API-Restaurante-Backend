@@ -1,6 +1,4 @@
-﻿using Application.Models.Response;
-
-namespace Application.Models.Request
+﻿namespace Application.Models.Request
 {
     public class OrderUpdateRequest
     {

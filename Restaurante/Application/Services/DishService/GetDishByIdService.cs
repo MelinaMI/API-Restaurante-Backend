@@ -20,22 +20,7 @@ namespace Application.Services.DishService
             var dish = await _dishQuery.GetDishByIdAsync(id);
             if (dish == null)
                 throw new NotFoundException("El plato no fue encontrado");
-            return new DishResponse
-            {
-                Id = dish.DishId,
-                Name = dish.Name,
-                Description = dish.Description,
-                Price = dish.Price,
-                Category = new GenericResponse
-                {
-                    Id = dish.CategoryNavigation.Id,
-                    Name = dish.CategoryNavigation.Name,
-                },
-                Image = dish.ImageUrl,
-                IsActive = dish.Available,
-                CreateAt = dish.CreateDate,
-                UpdateAt = dish.UpdateDate
-            };
+            return _mapper.ToDishResponse(dish);
         }
     }
 }

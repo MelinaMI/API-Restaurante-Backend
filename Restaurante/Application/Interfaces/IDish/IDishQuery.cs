@@ -7,5 +7,6 @@ namespace Application.Interfaces.IDish
         Task<IReadOnlyList<Dish>> GetAllAsync();
         Task<Dish> GetByNameAsync(string name);
         Task<Dish> GetDishByIdAsync(Guid id);
+        Task<decimal> GetDishPriceAsync(Guid id);
     }
 }

@@ -11,5 +11,6 @@ namespace Application.Interfaces.IOrder
     {
         Task<long> InsertOrderAsync(Order order);
         Task<long> UpdateOrderAsync(Order order);
+        Task<long> InsertOrderWithItemsAsync(Order order);
     }
 }

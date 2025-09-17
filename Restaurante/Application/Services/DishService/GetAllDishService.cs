@@ -2,6 +2,7 @@
 using Application.Interfaces.IDish;
 using Application.Models.Response;
 using Application.Validators;
+using Domain.Entities;
 using System;
 
 namespace Application.Services.DishService
@@ -9,12 +10,16 @@ namespace Application.Services.DishService
     public class GetAllDishService : IGetAllDishService
     {
         private readonly IDishQuery _dishQuery;
+        private readonly IDishMapper _dishMapper;
+        private readonly IGetAllDishValidation _dishValidator;
 
-        public GetAllDishService(IDishQuery dishQuery, IGetDishByIdValidation dishValidator)
+        public GetAllDishService(IDishQuery dishQuery, IGetDishByIdValidation dishValidator, IDishMapper dishMapper,IGetAllDishValidation getAllDishValidation)
         {
             _dishQuery = dishQuery;
+            _dishMapper = dishMapper;
+            _dishValidator = getAllDishValidation;
         }
-
+        // Valida los parámetros de entrada
         public async Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, OrderPrice? sortByPrice, bool onlyActive)
         {
             // Validación de parámetros
@@ -35,6 +40,8 @@ namespace Application.Services.DishService
             if (onlyActive)
                 dishes = dishes.Where(d => d.Available).ToList();
 
+            _dishValidator.ValidateAllAsync(name, category, sortByPrice);
+
             if (sortByPrice.HasValue)
             {
                 dishes = sortByPrice.Value switch
@@ -44,11 +51,12 @@ namespace Application.Services.DishService
                     _ => dishes
                 };
             }
-            if (sortByPrice.HasValue && sortByPrice != OrderPrice.asc && sortByPrice != OrderPrice.desc)
-            {
-                throw new Exceptions.BadRequestException("Parámetros de ordenamiento inválidos");
-            }
+            return dishes.Select(dish => _dishMapper.ToDishResponse(dish)).ToList();
+        }
 
+        // Valida los resultados filtrados
+        public void ValidateResults(IReadOnlyList<Dish> dishes, string? name, int? category)
+        {
             if (!dishes.Any())
             {
                 if (!string.IsNullOrWhiteSpace(name) && category != null)
@@ -62,23 +70,7 @@ namespace Application.Services.DishService
 
                 throw new Exceptions.NotFoundException("No se encontraron platos con los filtros aplicados");
             }
-
-            return dishes.Select(dish => new DishResponse
-            {
-                Id = dish.DishId,
-                Name = dish.Name,
-                Description = dish.Description,
-                Price = dish.Price,
-                Category = new GenericResponse
-                {
-                    Id = dish.CategoryNavigation.Id,
-                    Name = dish.CategoryNavigation.Name,
-                },
-                IsActive = dish.Available,
-                CreateAt = dish.CreateDate,
-                UpdateAt = dish.UpdateDate,
-
-            }).ToList();
         }
+
     }
 }

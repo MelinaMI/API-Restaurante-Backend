@@ -91,7 +91,7 @@ namespace Infrastructure.Persistence
             {
                 entity.ToTable("OrderItem");
                 entity.HasKey(oi => oi.OrderItemId); //PK
-                entity.Property(oi => oi.OrderItemId).ValueGeneratedOnAdd(); //autogenerada
+                entity.Property(oi => oi.OrderItemId).ValueGeneratedOnAdd(); //autogenerada 
                 entity.Property(oi => oi.Quantity).IsRequired().HasColumnType("int");
                 entity.Property(oi => oi.Notes).HasColumnType("varchar(MAX)");
                 entity.Property(oi => oi.CreateDate).HasColumnType("datetime");

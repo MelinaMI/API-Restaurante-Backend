@@ -40,5 +40,13 @@ namespace Infrastructure.Queries
                 d.Name.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant() == normalizedName
             );
         }
+
+        public async Task<decimal> GetDishPriceAsync(Guid id)
+        {
+            var dish = await _context.Dishes.FirstOrDefaultAsync(d => d.DishId == id);
+            if (dish == null || !dish.Available)
+                throw new Exception("Plato no disponible");
+            return dish.Price;
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace Application.Interfaces.IDish
 {
     public interface IDishMapper
     {
-        DishResponse ToDishResponse(Dish dish, Category category);
+        DishResponse ToDishResponseList(Dish dish, Category category);
+        DishResponse ToDishResponse(Dish dish);
     }
 }

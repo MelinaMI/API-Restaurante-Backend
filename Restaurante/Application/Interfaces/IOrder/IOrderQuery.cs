@@ -10,7 +10,7 @@ namespace Application.Interfaces.IOrder
     public interface IOrderQuery
     {
         Task<Order?> GetOrderByIdAsync(long orderId);
-        Task<IEnumerable<Order>> GetOrdersAsync();
-        Task<IEnumerable<Order>> GetOrdersByStatusAsync(int statusId);
+        Task<IReadOnlyList<Order>> GetAllOrders();
+        Task<IReadOnlyList<Order>> GetOrdersByStatusAsync(int statusId);
     }
 }

@@ -2,6 +2,7 @@
 using Application.Interfaces.IDish;
 using Application.Models.Request;
 using System.Text;
+using static Application.Validators.Exceptions;
 
 namespace Application.Validators.DishValidator
 {
@@ -19,21 +20,21 @@ namespace Application.Validators.DishValidator
             var nameNormalized = request.Name?.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant();
 
             if (string.IsNullOrWhiteSpace(nameNormalized))
-                throw new Exceptions.BadRequestException("El nombre del plato es obligatorio");
+                throw new BadRequestException("El nombre del plato es obligatorio");
 
             if (request.Price <= 0)
-                throw new Exceptions.BadRequestException("El precio debe ser mayor a cero");
+                throw new BadRequestException("El precio debe ser mayor a cero");
 
             if (request.Category <= 0)
-                throw new Exceptions.BadRequestException("La categoría es obligatoria");
+                throw new BadRequestException("La categoría es obligatoria");
 
             var category = await _categoryQuery.GetByCategoryIdAsync(request.Category);
             if (category == null)
-                throw new Exceptions.NotFoundException("La categoría no existe");
+                throw new NotFoundException("La categoría no existe");
 
             var existingDish = await _dishQuery.GetByNameAsync(nameNormalized);
             if (existingDish != null)
-                throw new Exceptions.ConflictException("Ya existe un plato con ese nombre");
+                throw new ConflictException("Ya existe un plato con ese nombre");
         }
     }
 }

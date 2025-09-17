@@ -9,6 +9,7 @@ using Application.Models.Response;
 using Application.Services.CategoryService;
 using Application.Services.DeliveryTypeService;
 using Application.Services.DishService;
+using Application.Services.OrderItemService;
 using Application.Services.OrderService;
 using Application.Services.StatusService;
 using Application.Validators;
@@ -81,10 +82,17 @@ builder.Services.AddScoped<ICreateOrderService, CreateOrderService>();
 builder.Services.AddScoped<ICreateOrderValidation, CreateOrderValidator>();
 builder.Services.AddScoped<IOrderCommand, OrderCommand>();
 builder.Services.AddScoped<IOrderQuery, OrderQuery>();
+builder.Services.AddScoped<IGetOrderById, GetOrderByIdService>();
+//builder.Services.AddScoped<IGetOrderByIdValidation, GetOrderByIdValidator>();
+builder.Services.AddScoped<IGetAllOrders, GetAllOrdersService>();
+builder.Services.AddScoped<IOrderMapper, OrderMapper>();
+
 
 //ORDERITEM
 builder.Services.AddScoped<IOrderItemCommand, OrderItemCommand>();
 builder.Services.AddScoped<IOrderItemQuery, OrderItemQuery>();
+builder.Services.AddScoped<ICreateOrderItem, CreateOrderItemService>();
+
 //builder.Services.AddScoped<IOrderMapper, OrderMapper>();
 //builder.Services.AddScoped<IOrderItemMapper, OrderItemMapper>();
 

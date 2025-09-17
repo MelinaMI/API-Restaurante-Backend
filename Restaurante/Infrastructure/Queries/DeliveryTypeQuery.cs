@@ -1,7 +1,9 @@
 ﻿using Application.Interfaces.IDeliveryType;
+using Application.Models.Response;
+using Application.Validators;
 using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Queries
 {
@@ -17,9 +19,17 @@ namespace Infrastructure.Queries
             return await _context.DeliveryTypes.AsNoTracking().ToListAsync();
         }
 
-        public Task<DeliveryType> GetDeliveryTypeByIdAsync(int DeliveryId)
+        public async Task<DeliveryType> GetDeliveryTypeByIdAsync(int DeliveryId)
         {
-            throw new NotImplementedException();
+            {
+                var deliveryType = await _context.DeliveryTypes
+                    .FirstOrDefaultAsync(dt => dt.Id == DeliveryId);
+
+                if (deliveryType == null)
+                    throw new Exceptions.BadRequestException($"Tipo de entrega no encontrado: {DeliveryId}");
+
+                return deliveryType;
+            }
         }
 
         public Task<DeliveryType> GetDeliveryTypeByNameAsync(string name)

@@ -19,9 +19,15 @@ namespace Infrastructure.Command
         }
         public async Task<long> InsertOrderAsync(Order order)
         {
-            _context.Set<Order>().Add(order);
+            await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
             return order.OrderId;
+        }
+        public async Task<long> InsertOrderWithItemsAsync(Order order)
+        {
+            await _context.Orders.AddAsync(order);
+            await _context.SaveChangesAsync();
+            return order.OrderId; // EF ya generó todos los OrderItemId automáticamente
         }
 
         public Task<long> UpdateOrderAsync(Order order)
