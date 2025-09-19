@@ -309,7 +309,7 @@ namespace Test.CustomTest
 
             var error = await response.Content.ReadFromJsonAsync<ApiError>();
             error.Should().NotBeNull();
-            error!.Message.Should().Be("Parámetros de ordenamiento inválidos");
+            error!.Message.Should().Be("Orden de precio inválido");
         }
 
         [Fact(DisplayName = "GET-6: 200 | Filtrar platos por categoría")]

@@ -23,7 +23,7 @@ namespace Application.Services.DishService
 
             await _deleteValidation.DeleteDishValidationAsync(dish);
 
-            await _dishCommand.DeleteDishAsync(dish); // Aquí se aplica isActive = false
+            await _dishCommand.DeleteDishAsync(dish); // Acá se aplica isActive = false
         }
 
 

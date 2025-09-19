@@ -1,7 +1,6 @@
 ﻿using Application.Enum;
 using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
-using System.Text;
 using static Application.Validators.Exceptions;
 
 namespace Application.Validators.DishValidator
@@ -17,10 +16,14 @@ namespace Application.Validators.DishValidator
 
         public async Task ValidateAllAsync(string? name, int? category, OrderPrice? sortByPrice)
         {
-            name = name?.Trim().Normalize(NormalizationForm.FormC);
             // Validación de nombre
-            if (!string.IsNullOrWhiteSpace(name) && name.Length > 100)
-                throw new BadRequestException("El nombre no puede superar los 100 caracteres");
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                var normalized = name.Trim().ToLowerInvariant();
+
+                if (normalized.Length > 100)
+                    throw new BadRequestException("El nombre no puede superar los 100 caracteres");
+            }
 
             // Validación de categoría
             if (category.HasValue)
@@ -32,8 +35,11 @@ namespace Application.Validators.DishValidator
                 if (exists == null)
                     throw new NotFoundException("La categoría no existe");
             }
-            if (sortByPrice.HasValue && sortByPrice != OrderPrice.asc && sortByPrice != OrderPrice.desc)
-                throw new BadRequestException("Parámetros de ordenamiento inválidos");
+            // Validación de orden de precio
+            if (sortByPrice.HasValue && sortByPrice is not (OrderPrice.asc or OrderPrice.desc))
+            {
+                throw new BadRequestException("Orden de precio inválido");
+            }
         }
     }
 }

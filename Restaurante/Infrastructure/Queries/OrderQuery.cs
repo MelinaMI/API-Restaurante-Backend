@@ -17,7 +17,7 @@ namespace Infrastructure.Queries
         {
             _context = context;
         }
-        public async Task<Order> GetOrderByIdAsync(long orderId)
+        public async Task<Order?> GetOrderByIdAsync(long orderId)
         {
             return await _context.Orders
            .Include(o => o.OrderItems)
@@ -30,20 +30,27 @@ namespace Infrastructure.Queries
         }
 
 
-        public async Task<IReadOnlyList<Order>> GetAllOrders()
+        public IQueryable<Order> GetAllOrders()
         {
-            return await _context.Orders
-        .Include(o => o.OrderItems)
-            .ThenInclude(oi => oi.DishNavigation)
-        .Include(o => o.OrderItems)
-            .ThenInclude(oi => oi.StatusNavigation)
-        .Include(o => o.DeliveryTypeNavigation)
-        .Include(o => o.OverallStatusNavigation).ToListAsync();
+            return _context.Orders
+            .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.DishNavigation)
+            .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.StatusNavigation)
+            .Include(o => o.DeliveryTypeNavigation)
+            .Include(o => o.OverallStatusNavigation);
         }
 
         public Task<IReadOnlyList<Order>> GetOrdersByStatusAsync(int statusId)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<Order> OrderUpdateAsync(Order order)
+        {
+            _context.Orders.Update(order);
+            await _context.SaveChangesAsync();
+            return order;
         }
     }
 }

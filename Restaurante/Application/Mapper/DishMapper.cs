@@ -47,5 +47,18 @@ namespace Application.Mapper
 
             };
         }
+
+        public Dish ToDishUpdate(Dish dish, DishUpdateRequest request)
+        {
+            dish.Name = request.Name;
+            dish.Description = request.Description;
+            dish.Price = request.Price;
+            dish.Category = request.Category;
+            dish.ImageUrl = request.Image;
+            dish.Available = request.IsActive;
+            dish.UpdateDate = DateTime.UtcNow;
+
+            return dish;
+        }
     }
 }

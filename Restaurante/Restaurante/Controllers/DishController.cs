@@ -44,7 +44,6 @@ namespace Restaurant.Controllers
         {
             try
             {
-                await _createValidator.ValidateCreateAsync(request);
                 var result = await _createService.CreateDishAsync(request);
                 return StatusCode(StatusCodes.Status201Created, result);
             }
@@ -77,7 +76,6 @@ namespace Restaurant.Controllers
         {
             try
             {
-                await _updateValidator.ValidateUpdateAsync(id, request);
                 var result = await _updateService.UpdateDishAsync(id, request);
                 return Ok(result);
             }
@@ -104,11 +102,10 @@ namespace Restaurant.Controllers
         [ProducesResponseType(typeof(IEnumerable<DishResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
 
-        public async Task<ActionResult<DishResponse>> GetAllAsync([FromQuery] string? name, [FromQuery] int? category, [FromQuery] OrderPrice? sortByPrice, [FromQuery] bool onlyActive = true)
+        public async Task<ActionResult<DishResponse>> GetAllAsync([FromQuery] string? name, [FromQuery] int? category, [FromQuery] string? sortByPrice, [FromQuery] bool onlyActive = true)
         {
             try
             {
-                await _getAllValidator.ValidateAllAsync(name, category, sortByPrice);
                 var result = await _getAllService.GetAllDishesAsync(name, category, sortByPrice, onlyActive);
                 return Ok(result);
             }
@@ -130,7 +127,6 @@ namespace Restaurant.Controllers
         {
             try
             {
-                await _getDishByIdValidator.ValidateByIdAsync(id);
                 var result = await _getDishByIdService.GetDishByIdAsync(id);
                 return Ok(result);
             }

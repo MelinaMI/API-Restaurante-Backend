@@ -13,9 +13,11 @@ namespace Infrastructure.Queries
         {
             _context = context;
         }
-        public async Task<IReadOnlyList<Dish>> GetAllAsync()
+        public IQueryable<Dish> GetAll()
         {
-            return await _context.Dishes.Include(c => c.CategoryNavigation).AsNoTracking().ToListAsync();
+            return _context.Dishes
+                .Include(c => c.CategoryNavigation)
+                .AsNoTracking();
         }
         public async Task<Dish?> GetDishByIdAsync(Guid id)
         {
@@ -25,20 +27,14 @@ namespace Infrastructure.Queries
                     .ThenInclude(o => o.OrderNavigation)
                 .FirstOrDefaultAsync(d => d.DishId == id);
         }
-        public async Task<Dish> GetByNameAsync(string name)
+        public async Task<Dish?> GetByNameAsync(string name)
         {
-            var normalizedName = name.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant();
+            var normalizedName = name.Trim().ToLowerInvariant();
 
-            // Traer platos al cliente (memoria) para poder usar Normalize
-            var dishes = await _context.Dishes
+            return await _context.Dishes
                 .Include(d => d.CategoryNavigation)
                 .AsNoTracking()
-                .ToListAsync();
-
-            return dishes.FirstOrDefault(d =>
-                !string.IsNullOrWhiteSpace(d.Name) &&
-                d.Name.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant() == normalizedName
-            );
+                .FirstOrDefaultAsync(d => d.Name.ToLower() == normalizedName);
         }
 
         public async Task<decimal> GetDishPriceAsync(Guid id)

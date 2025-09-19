@@ -348,10 +348,10 @@ C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\ob
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\Restaura.9D27851C.Up2Date
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\Restaurante.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\refint\Restaurante.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\Restaurante.pdb
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\Restaurante.genruntimeconfig.cache
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\ref\Restaurante.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

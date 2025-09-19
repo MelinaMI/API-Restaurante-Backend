@@ -1,12 +1,8 @@
-﻿using Application.Interfaces.IOrder;
-using Application.Mapper;
+﻿using Application.Enum;
+using Application.Interfaces.IOrder;
 using Application.Models.Response;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using static Application.Validators.Exceptions;
 
 namespace Application.Services.OrderService
 {
@@ -14,33 +10,40 @@ namespace Application.Services.OrderService
     {
         private readonly IOrderQuery _orderQuery;
         private readonly IOrderMapper _orderMapper;
-        public GetAllOrdersService(IOrderQuery orderQuery, IOrderMapper orderMapper) 
+        private IGetAllOrdersValidation _orderValidator;
+
+
+        public GetAllOrdersService(IOrderQuery orderQuery, IOrderMapper orderMapper, IGetAllOrdersValidation ordersValidation) 
         { 
             _orderQuery = orderQuery;
             _orderMapper = orderMapper;
+            _orderValidator = ordersValidation;
         }
         public async Task<IReadOnlyList<OrderDetailsResponse>> GetAllOrdersAsync(DateTime? from, DateTime? to, int? status)
         {
-            var orders = await _orderQuery.GetAllOrders();
+            await _orderValidator.ValidateGetAllOrder(from, to, status);
+
+            var query = _orderQuery.GetAllOrders(); // IQueryable<Order>
 
             // Filtros
 
             // Validación de rango de fechas
             if (from.HasValue && to.HasValue && from > to)
-                throw new ArgumentException("La fecha de inicio no puede ser posterior a la fecha de fin.");
+                throw new BadRequestException("La fecha de inicio no puede ser posterior a la fecha de fin.");
 
             if (from.HasValue)
-                orders = orders.Where(o => o.CreateDate >= from.Value).ToList();
+                query = query.Where(o => o.CreateDate >= from.Value);
 
             if (to.HasValue)
-                orders = orders.Where(o => o.CreateDate <= to.Value).ToList();
+                query = query.Where(o => o.CreateDate <= to.Value);
 
             if (status.HasValue)
-                orders = orders.Where(o => o.OverallStatus== status.Value).ToList();
+                query = query.Where(o => o.OverallStatus == status.Value);
 
-            var response = orders.Select(_orderMapper.ToDetailsResponse).ToList();
+            var orders = await query.ToListAsync(); // acá ejecuta el SQL
 
-            return response;
+            return orders.Select(_orderMapper.ToDetailsResponse).ToList();
         }
+
     }
 }

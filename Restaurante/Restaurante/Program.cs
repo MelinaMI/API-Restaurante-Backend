@@ -54,20 +54,23 @@ builder.Services.AddSwaggerGen(c =>
 // Inyeccion de servicios
 
 //DISH
-builder.Services.AddScoped<ICreateService, CreateDishService>();
-builder.Services.AddScoped<IUpdateService, UpdateDishService>();
+
 builder.Services.AddScoped<ICreateValidation, CreateDishValidator>();
 builder.Services.AddScoped<IUpdateValidation, UpdateDishValidator>();
+builder.Services.AddScoped<IGetAllDishValidation, GetAllDishValidator>();
+builder.Services.AddScoped<IGetDishByIdValidation, GetDishByIdValidator>();
+builder.Services.AddScoped<IDeleteDishValidation, DeleteDishValidator>();
+builder.Services.AddScoped<ICreateService, CreateDishService>();
+builder.Services.AddScoped<IUpdateService, UpdateDishService>();
 builder.Services.AddScoped<IGetAllDishService, GetAllDishService>();
+builder.Services.AddScoped<IGetDishByIdService, GetDishByIdService>();
+builder.Services.AddScoped<IDeleteDish, DeleteDishService>();
 builder.Services.AddScoped<IDishCommand, DishCommand>();
 builder.Services.AddScoped<IDishQuery, DishQuery>();
-builder.Services.AddScoped<Exceptions>();
-builder.Services.AddScoped<IGetAllDishValidation, GetAllDishValidator>();
-builder.Services.AddScoped<IGetDishByIdService, GetDishByIdService>();
-builder.Services.AddScoped<IGetDishByIdValidation, GetDishByIdValidator>();
 builder.Services.AddScoped<IDishMapper, DishMapper>();
-builder.Services.AddScoped<IDeleteDish, DeleteDishService>();
-builder.Services.AddScoped<IDeleteDishValidation, DeleteDishValidator>();
+//EXCEPTIONS
+builder.Services.AddScoped<Exceptions>();
+
 //CATEGORY
 builder.Services.AddScoped<ICategoryQuery, CategoryQuery>();
 builder.Services.AddScoped<IGetAllCategories, GetAllCategoriesService>();
@@ -86,7 +89,11 @@ builder.Services.AddScoped<IGetOrderById, GetOrderByIdService>();
 //builder.Services.AddScoped<IGetOrderByIdValidation, GetOrderByIdValidator>();
 builder.Services.AddScoped<IGetAllOrders, GetAllOrdersService>();
 builder.Services.AddScoped<IOrderMapper, OrderMapper>();
-
+builder.Services.AddScoped<IGetAllOrdersValidation, GetAllOrdersValidator>();
+//builder.Services.AddScoped<IUpdateOrderStatus, UpdateOrderStatusService>();
+//builder.Services.AddScoped<IUpdateOrderStatusValidation, UpdateOrderStatusValidator>();
+builder.Services.AddScoped<IUpdateOrderService, UpdateOrderService>();
+builder.Services.AddScoped<IUpdateOrderValidation, UpdateOrderValidator>();
 
 //ORDERITEM
 builder.Services.AddScoped<IOrderItemCommand, OrderItemCommand>();
@@ -95,19 +102,6 @@ builder.Services.AddScoped<ICreateOrderItem, CreateOrderItemService>();
 
 //builder.Services.AddScoped<IOrderMapper, OrderMapper>();
 //builder.Services.AddScoped<IOrderItemMapper, OrderItemMapper>();
-
-
-//Manejo de errores de validación de modelos
-builder.Services.Configure<ApiBehaviorOptions>(options =>
-{
-    options.InvalidModelStateResponseFactory = context =>
-    {
-        return new BadRequestObjectResult(new ApiError
-        {
-            Message = "Parámetros de ordenamiento inválidos"
-        });
-    };
-});
 
 //END CUSTOM 
 var app = builder.Build();

@@ -12,16 +12,20 @@ namespace Application.Services.DishService
         private readonly IDishCommand _dishCommand;
         private readonly ICategoryQuery _categoryQuery;
         private readonly IDishMapper _dishMapper;
+        private readonly ICreateValidation _createValidator;
 
-        public CreateDishService(IDishCommand dishCommand, ICategoryQuery categoryQuery, IDishMapper dishMapper)
+        public CreateDishService(IDishCommand dishCommand, ICategoryQuery categoryQuery, IDishMapper dishMapper, ICreateValidation createValidator)
         {
             _dishCommand = dishCommand;
             _categoryQuery = categoryQuery;
             _dishMapper = dishMapper;
+            _createValidator = createValidator;
         }
 
         public async Task<DishResponse> CreateDishAsync(DishRequest request)
         {
+            await _createValidator.ValidateCreateAsync(request);
+
             var dish = new Dish
             {
                 DishId = Guid.NewGuid(),

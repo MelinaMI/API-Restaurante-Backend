@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces.IOrderItem;
 using Domain.Entities;
 using Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,17 +17,29 @@ namespace Infrastructure.Queries
         {
             _context = context;
         }
-        public Task<IEnumerable<OrderItem>> GetItemsByOrderIdAsync(long orderId)
+        
+        public async Task<OrderItem?> GetOrderItemByIdAsync(long itemId)
         {
-            throw new NotImplementedException();
+            var item = await _context.OrderItems.Include(oi => oi.StatusNavigation).Include(oi => oi.DishNavigation).FirstOrDefaultAsync(oi => oi.OrderItemId == itemId);
+            return item;
         }
 
-        public Task<IEnumerable<OrderItem>> GetItemsByStatusAsync(int statusId)
+        public async Task UpdateOrderItemAsync(OrderItem item)
         {
-            throw new NotImplementedException();
+            _context.OrderItems.Update(item);
+            await _context.SaveChangesAsync();
         }
 
-        public Task<OrderItem?> GetOrderItemByIdAsync(long itemId)
+        public async Task<IReadOnlyList<OrderItem>> GetItemsByOrderIdAsync(long orderId)
+        {
+            return await _context.OrderItems
+             .Include(oi => oi.DishNavigation)
+             .Include(oi => oi.StatusNavigation)
+             .Where(oi => oi.OrderItemId == orderId)
+             .ToListAsync();
+        }
+
+        public Task<IReadOnlyList<OrderItem>> GetItemsByStatusAsync(int statusId)
         {
             throw new NotImplementedException();
         }

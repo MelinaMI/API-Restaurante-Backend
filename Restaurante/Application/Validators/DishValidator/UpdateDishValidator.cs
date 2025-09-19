@@ -17,13 +17,7 @@ namespace Application.Validators.DishValidator
         }
         public async Task ValidateUpdateAsync(Guid id, DishUpdateRequest request)
         {
-            var nameNormalized = request.Name?.Trim().Normalize(NormalizationForm.FormC).ToLowerInvariant();
-
-
-            // Validar existencia del plato
-            var dish = await _dishQuery.GetDishByIdAsync(id);
-            if (dish == null)
-                throw new NotFoundException("El plato no existe");
+            var nameNormalized = request.Name?.Trim().ToLowerInvariant();
 
             if (string.IsNullOrWhiteSpace(nameNormalized))
                 throw new BadRequestException("El nombre del plato es obligatorio");

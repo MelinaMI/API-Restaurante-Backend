@@ -7,100 +7,56 @@
       "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\igetallorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\igetallorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\orderservice\\getallordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice\\getallordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\queries\\orderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\queries\\orderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\restaurante\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\iorderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\iorderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\orderservice\\getorderbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice\\getorderbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\command\\ordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\command\\ordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\test\\customtest\\ordertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|solutionrelative:test\\customtest\\ordertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\restaurante\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\queries\\orderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\queries\\orderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\dishservice\\getalldishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\dishservice\\getalldishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\ordervalidator\\getorderbyidvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\ordervalidator\\getorderbyidvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\idish\\idishmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\idish\\idishmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\orderservice\\updateorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice\\updateorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\iordermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\iordermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\orderservice\\getallordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice\\getallordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\dishvalidator\\getalldishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\dishvalidator\\getalldishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\iorderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\iorderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\mapper\\ordermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\mapper\\ordermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\iupdateorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\iupdateorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\iupdateordervalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\iupdateordervalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\ordervalidator\\updateordervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\ordervalidator\\updateordervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\orderservice\\createorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\orderservice\\createorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\test\\customtest\\ordertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|solutionrelative:test\\customtest\\ordertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\command\\dishcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\command\\dishcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\categoryservice\\getallcategoriesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\categoryservice\\getallcategoriesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\dishservice\\updatedishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\dishservice\\updatedishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\dishservice\\getdishbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\dishservice\\getdishbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\dishservice\\deletedishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\dishservice\\deletedishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\services\\dishservice\\createdishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\services\\dishservice\\createdishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\dishvalidator\\updatedishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\dishvalidator\\updatedishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\dishvalidator\\getdishbyidvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\dishvalidator\\getdishbyidvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\dishvalidator\\deletedishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\dishvalidator\\deletedishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\command\\ordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\command\\ordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -126,93 +82,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Program.cs",
-              "RelativeDocumentMoniker": "Restaurante\\Program.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Program.cs",
-              "RelativeToolTip": "Restaurante\\Program.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAYwHAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T05:18:28.164Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OrderMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Mapper\\OrderMapper.cs",
-              "RelativeDocumentMoniker": "Application\\Mapper\\OrderMapper.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Mapper\\OrderMapper.cs",
-              "RelativeToolTip": "Application\\Mapper\\OrderMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:41:06.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IOrderQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAAAAAAAAAAAA==",
+              "Title": "GetOrderByIdValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\GetOrderByIdValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\OrderValidator\\GetOrderByIdValidator.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\GetOrderByIdValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\OrderValidator\\GetOrderByIdValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:26:33.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Queries\\OrderQuery.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
-              "RelativeToolTip": "Infrastructure\\Queries\\OrderQuery.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:22:10.244Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IGetAllOrders.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IGetAllOrders.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IGetAllOrders.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IGetAllOrders.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IGetAllOrders.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:12:02.096Z",
+              "WhenOpened": "2025-09-19T04:14:11.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "GetOrderByIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\GetOrderByIdService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrderService\\GetOrderByIdService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\GetOrderByIdService.cs",
+              "RelativeToolTip": "Application\\Services\\OrderService\\GetOrderByIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T04:05:08.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "GetAllOrdersService.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\GetAllOrdersService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\OrderService\\GetAllOrdersService.cs",
               "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\GetAllOrdersService.cs",
               "RelativeToolTip": "Application\\Services\\OrderService\\GetAllOrdersService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:10:17.616Z",
+              "WhenOpened": "2025-09-19T04:05:05.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GetAllDishService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\GetAllDishService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\DishService\\GetAllDishService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\GetAllDishService.cs",
-              "RelativeToolTip": "Application\\Services\\DishService\\GetAllDishService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwDUAAABDAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "IOrderQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:57:00.999Z",
+              "WhenOpened": "2025-09-19T04:04:57.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUpdateOrderValidation.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IUpdateOrderValidation.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IUpdateOrderValidation.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IUpdateOrderValidation.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IUpdateOrderValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T04:04:53.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderTest.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
+              "RelativeDocumentMoniker": "Test\\CustomTest\\OrderTest.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
+              "RelativeToolTip": "Test\\CustomTest\\OrderTest.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:50:20.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\UpdateOrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\OrderService\\UpdateOrderService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\UpdateOrderService.cs",
+              "RelativeToolTip": "Application\\Services\\OrderService\\UpdateOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T22:45:17.658Z",
               "EditorCaption": ""
             },
             {
@@ -223,230 +179,87 @@
               "RelativeDocumentMoniker": "Restaurante\\Controllers\\OrderController.cs",
               "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\OrderController.cs",
               "RelativeToolTip": "Restaurante\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowCsAAABPAAAAAAAAAA==",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAwwGsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:58:25.078Z",
+              "WhenOpened": "2025-09-19T01:12:52.679Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Command\\OrderCommand.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
-              "RelativeToolTip": "Infrastructure\\Command\\OrderCommand.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Program.cs",
+              "RelativeDocumentMoniker": "Restaurante\\Program.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Program.cs",
+              "RelativeToolTip": "Restaurante\\Program.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAjwHcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:58:05.41Z",
+              "WhenOpened": "2025-09-19T04:01:37.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetOrderByIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\GetOrderByIdService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\OrderService\\GetOrderByIdService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\GetOrderByIdService.cs",
-              "RelativeToolTip": "Application\\Services\\OrderService\\GetOrderByIdService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "OrderQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Queries\\OrderQuery.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
+              "RelativeToolTip": "Infrastructure\\Queries\\OrderQuery.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:41:33.196Z",
+              "WhenOpened": "2025-09-19T04:14:38.135Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "IOrderMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderMapper.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IOrderMapper.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderMapper.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IOrderMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Title": "UpdateOrderValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\UpdateOrderValidator.cs",
+              "RelativeDocumentMoniker": "Application\\Validators\\OrderValidator\\UpdateOrderValidator.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\UpdateOrderValidator.cs",
+              "RelativeToolTip": "Application\\Validators\\OrderValidator\\UpdateOrderValidator.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T04:51:57.61Z",
+              "WhenOpened": "2025-09-18T22:45:38.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IDishMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IDish\\IDishMapper.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IDish\\IDishMapper.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IDish\\IDishMapper.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IDish\\IDishMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "IUpdateOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IUpdateOrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IUpdateOrderService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IUpdateOrderService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IUpdateOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T05:07:52.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DishController.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\DishController.cs",
-              "RelativeDocumentMoniker": "Restaurante\\Controllers\\DishController.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\DishController.cs",
-              "RelativeToolTip": "Restaurante\\Controllers\\DishController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:58:28.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "GetDishByIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\GetDishByIdService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\DishService\\GetDishByIdService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\GetDishByIdService.cs",
-              "RelativeToolTip": "Application\\Services\\DishService\\GetDishByIdService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:57:05.125Z",
+              "WhenOpened": "2025-09-19T03:49:17.022Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "GetAllDishValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
-              "RelativeDocumentMoniker": "Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
-              "RelativeToolTip": "Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:38:50.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UpdateDishService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\UpdateDishService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\DishService\\UpdateDishService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\UpdateDishService.cs",
-              "RelativeToolTip": "Application\\Services\\DishService\\UpdateDishService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:57:07.486Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GetAllCategoriesService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\CategoryService\\GetAllCategoriesService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\CategoryService\\GetAllCategoriesService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\CategoryService\\GetAllCategoriesService.cs",
-              "RelativeToolTip": "Application\\Services\\CategoryService\\GetAllCategoriesService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:57:20.746Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "CreateOrderService.cs",
               "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\CreateOrderService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\OrderService\\CreateOrderService.cs",
               "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\OrderService\\CreateOrderService.cs",
               "RelativeToolTip": "Application\\Services\\OrderService\\CreateOrderService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:44:09.79Z",
+              "WhenOpened": "2025-09-19T03:46:25.883Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DishCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\DishCommand.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Command\\DishCommand.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\DishCommand.cs",
-              "RelativeToolTip": "Infrastructure\\Command\\DishCommand.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "OrderCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Command\\OrderCommand.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
+              "RelativeToolTip": "Infrastructure\\Command\\OrderCommand.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:58:19.614Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "DeleteDishService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\DeleteDishService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\DishService\\DeleteDishService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\DeleteDishService.cs",
-              "RelativeToolTip": "Application\\Services\\DishService\\DeleteDishService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:56:58.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "OrderTest.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
-              "RelativeDocumentMoniker": "Test\\CustomTest\\OrderTest.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
-              "RelativeToolTip": "Test\\CustomTest\\OrderTest.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowDkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T03:40:55.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CreateDishService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\CreateDishService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\DishService\\CreateDishService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Services\\DishService\\CreateDishService.cs",
-              "RelativeToolTip": "Application\\Services\\DishService\\CreateDishService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:56:55.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UpdateDishValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\UpdateDishValidator.cs",
-              "RelativeDocumentMoniker": "Application\\Validators\\DishValidator\\UpdateDishValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\UpdateDishValidator.cs",
-              "RelativeToolTip": "Application\\Validators\\DishValidator\\UpdateDishValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:56:50.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "GetDishByIdValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\GetDishByIdValidator.cs",
-              "RelativeDocumentMoniker": "Application\\Validators\\DishValidator\\GetDishByIdValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\GetDishByIdValidator.cs",
-              "RelativeToolTip": "Application\\Validators\\DishValidator\\GetDishByIdValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:56:48.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "DeleteDishValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
-              "RelativeDocumentMoniker": "Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
-              "RelativeToolTip": "Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T03:56:41.891Z",
+              "WhenOpened": "2025-09-19T01:13:05.885Z",
               "EditorCaption": ""
             }
           ]

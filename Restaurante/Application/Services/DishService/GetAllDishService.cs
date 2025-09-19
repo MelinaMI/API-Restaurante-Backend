@@ -3,7 +3,9 @@ using Application.Interfaces.IDish;
 using Application.Models.Response;
 using Application.Validators;
 using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
+using static Application.Validators.Exceptions;
 
 namespace Application.Services.DishService
 {
@@ -13,48 +15,60 @@ namespace Application.Services.DishService
         private readonly IDishMapper _dishMapper;
         private readonly IGetAllDishValidation _dishValidator;
 
-        public GetAllDishService(IDishQuery dishQuery, IGetDishByIdValidation dishValidator, IDishMapper dishMapper,IGetAllDishValidation getAllDishValidation)
+        public GetAllDishService(IDishQuery dishQuery, IDishMapper dishMapper,IGetAllDishValidation getAllDishValidation)
         {
             _dishQuery = dishQuery;
             _dishMapper = dishMapper;
             _dishValidator = getAllDishValidation;
         }
         // Valida los parámetros de entrada
-        public async Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, OrderPrice? sortByPrice, bool onlyActive)
+        public async Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, string? sortByPrice, bool onlyActive)
         {
-            // Validación de parámetros
-            var dishes = await _dishQuery.GetAllAsync();
+            // Parsear sortByPrice
+            OrderPrice? orderPrice = null;
+            if (!string.IsNullOrWhiteSpace(sortByPrice))
+            {
+                if (!System.Enum.TryParse<OrderPrice>(sortByPrice, ignoreCase: true, out var parsed))
+                    throw new BadRequestException("Orden de precio inválido");
+
+                orderPrice = parsed;
+            }
+
+            await _dishValidator.ValidateAllAsync(name, category, orderPrice);
+
+            var query = _dishQuery.GetAll();
 
             //Filtro por nombre
             if (!string.IsNullOrWhiteSpace(name))
             {
-                var normalized = name.Trim().Normalize().ToLowerInvariant();
-                dishes = dishes.Where(d => !string.IsNullOrWhiteSpace(d.Name) && d.Name.Normalize().ToLowerInvariant().Contains(normalized)).ToList();
+                var normalized = name.Trim().ToLowerInvariant();
+                query = query.Where(d => d.Name != null && d.Name.ToLower().Contains(normalized));
             }
 
             // Filtro por categoría
             if (category.HasValue)
-                dishes = dishes.Where(d => d.Category == category.Value).ToList();
+                query = query.Where(d => d.Category == category.Value);
 
             // Filtro por estado activo
             if (onlyActive)
-                dishes = dishes.Where(d => d.Available).ToList();
+                query = query.Where(d => d.Available);
 
-            _dishValidator.ValidateAllAsync(name, category, sortByPrice);
-
-            if (sortByPrice.HasValue)
+            // Si tiene valor válido, aplicamos el orden
+            if (orderPrice.HasValue)
             {
-                dishes = sortByPrice.Value switch
+                query = orderPrice.Value switch
                 {
-                    OrderPrice.asc => dishes.OrderBy(d => d.Price).ToList(),
-                    OrderPrice.desc => dishes.OrderByDescending(d => d.Price).ToList(),
-                    _ => dishes
+                    OrderPrice.asc => query.OrderBy(d => d.Price),
+                    OrderPrice.desc => query.OrderByDescending(d => d.Price),
+                    _ => query
                 };
             }
+
+            var dishes = await query.ToListAsync(); // Ejecuta el SQL
             return dishes.Select(dish => _dishMapper.ToDishResponse(dish)).ToList();
         }
 
-        // Valida los resultados filtrados
+        /*// Valida los resultados filtrados
         public void ValidateResults(IReadOnlyList<Dish> dishes, string? name, int? category)
         {
             if (!dishes.Any())
@@ -70,7 +84,7 @@ namespace Application.Services.DishService
 
                 throw new Exceptions.NotFoundException("No se encontraron platos con los filtros aplicados");
             }
-        }
+        }*/
 
     }
 }
