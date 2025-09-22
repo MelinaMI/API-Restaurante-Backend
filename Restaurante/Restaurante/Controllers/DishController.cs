@@ -1,8 +1,8 @@
-﻿using Application.Enum;
-using Application.Interfaces.IDish;
+﻿using Application.Interfaces.IDish;
 using Application.Models.Request;
 using Application.Models.Response;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using static Application.Validators.Exceptions;
 
 namespace Restaurant.Controllers
@@ -13,28 +13,17 @@ namespace Restaurant.Controllers
     {
         private readonly ICreateService _createService;
         private readonly IUpdateService _updateService;
-        private readonly ICreateValidation _createValidator;
-        private readonly IUpdateValidation _updateValidator;
         private readonly IGetAllDishService _getAllService;
-        private readonly IGetAllDishValidation _getAllValidator;
         private readonly IGetDishByIdService _getDishByIdService;
-        private readonly IGetDishByIdValidation _getDishByIdValidator;
         private readonly IDeleteDish _deleteDishService;
-        //private readonly 
-
-        public DishController(ICreateService createService, IUpdateService updateService, ICreateValidation createValidator, IUpdateValidation updateValidator, IGetAllDishService getAllService, IGetAllDishValidation getAllValidator, IGetDishByIdService getDishByIdService, IGetDishByIdValidation getDishByIdValidator, IDeleteDish deleteDish)
+        public DishController(ICreateService createService, IUpdateService updateService, IGetAllDishService getAllService, IGetDishByIdService getDishByIdService, IDeleteDish deleteDish)
         {
             _createService = createService;
             _updateService = updateService;
-            _createValidator = createValidator;
-            _updateValidator = updateValidator;
             _getAllService = getAllService;
-            _getAllValidator = getAllValidator;
             _getDishByIdService = getDishByIdService;
-            _getDishByIdValidator = getDishByIdValidator;
             _deleteDishService = deleteDish;
         }
-       
         //Create
         [HttpPost]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status201Created)]
@@ -61,11 +50,9 @@ namespace Restaurant.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
             }
         }
-
         //Update
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(IEnumerable<DishResponse>), StatusCodes.Status200OK)]
@@ -93,8 +80,7 @@ namespace Restaurant.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
             }
         }
         // Buscar platos con filtros 
@@ -116,6 +102,10 @@ namespace Restaurant.Controllers
             catch (NotFoundException ex)
             {
                 return NotFound(new ApiError { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
             }
         }
         // Buscar plato por Id
@@ -166,8 +156,7 @@ namespace Restaurant.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError,
-                    new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
             }
         }
     }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Restaurante.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class DeliveryTypeController : ControllerBase
     {
@@ -13,7 +13,6 @@ namespace Restaurante.Controllers
         {
             _deliveryTypeQuery = deliveryTypeQuery;
         }
-        // GET: api/deliverytype
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<Domain.Entities.DeliveryType>>> GetAllDeliveryTypes()
         {

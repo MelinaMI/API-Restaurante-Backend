@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Restaurante.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class StatusController : ControllerBase
     {
@@ -13,7 +13,7 @@ namespace Restaurante.Controllers
         {
             _statusQuery = statusQuery;
         }
-        // GET: api/status
+
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<Domain.Entities.Status>>> GetAllStatuses()
         {

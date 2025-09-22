@@ -5,7 +5,6 @@ using Application.Interfaces.IOrder;
 using Application.Interfaces.IOrderItem;
 using Application.Interfaces.IStatus;
 using Application.Mapper;
-using Application.Models.Response;
 using Application.Services.CategoryService;
 using Application.Services.DeliveryTypeService;
 using Application.Services.DishService;
@@ -19,17 +18,14 @@ using Infrastructure.Command;
 using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 //CUSTOM
 //Inyección de dependencias
@@ -50,11 +46,8 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
 // Inyeccion de servicios
-
 //DISH
-
 builder.Services.AddScoped<ICreateValidation, CreateDishValidator>();
 builder.Services.AddScoped<IUpdateValidation, UpdateDishValidator>();
 builder.Services.AddScoped<IGetAllDishValidation, GetAllDishValidator>();
@@ -70,7 +63,6 @@ builder.Services.AddScoped<IDishQuery, DishQuery>();
 builder.Services.AddScoped<IDishMapper, DishMapper>();
 //EXCEPTIONS
 builder.Services.AddScoped<Exceptions>();
-
 //CATEGORY
 builder.Services.AddScoped<ICategoryQuery, CategoryQuery>();
 builder.Services.AddScoped<IGetAllCategories, GetAllCategoriesService>();
@@ -86,7 +78,7 @@ builder.Services.AddScoped<ICreateOrderValidation, CreateOrderValidator>();
 builder.Services.AddScoped<IOrderCommand, OrderCommand>();
 builder.Services.AddScoped<IOrderQuery, OrderQuery>();
 builder.Services.AddScoped<IGetOrderById, GetOrderByIdService>();
-//builder.Services.AddScoped<IGetOrderByIdValidation, GetOrderByIdValidator>();
+builder.Services.AddScoped<IGetOrderByIdValidation, GetOrderByIdValidator>();
 builder.Services.AddScoped<IGetAllOrders, GetAllOrdersService>();
 builder.Services.AddScoped<IOrderMapper, OrderMapper>();
 builder.Services.AddScoped<IGetAllOrdersValidation, GetAllOrdersValidator>();
@@ -94,11 +86,11 @@ builder.Services.AddScoped<IGetAllOrdersValidation, GetAllOrdersValidator>();
 //builder.Services.AddScoped<IUpdateOrderStatusValidation, UpdateOrderStatusValidator>();
 builder.Services.AddScoped<IUpdateOrderService, UpdateOrderService>();
 builder.Services.AddScoped<IUpdateOrderValidation, UpdateOrderValidator>();
-
 //ORDERITEM
 builder.Services.AddScoped<IOrderItemCommand, OrderItemCommand>();
 builder.Services.AddScoped<IOrderItemQuery, OrderItemQuery>();
 builder.Services.AddScoped<ICreateOrderItem, CreateOrderItemService>();
+
 
 //builder.Services.AddScoped<IOrderMapper, OrderMapper>();
 //builder.Services.AddScoped<IOrderItemMapper, OrderItemMapper>();
@@ -110,9 +102,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c=>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Restaurante v1");
+    });
 }
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

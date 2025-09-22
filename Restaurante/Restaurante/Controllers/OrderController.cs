@@ -1,9 +1,6 @@
 ﻿using Application.Interfaces.IOrder;
 using Application.Models.Request;
 using Application.Models.Response;
-using Application.Services.OrderService;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using static Application.Validators.Exceptions;
 
@@ -15,15 +12,15 @@ namespace Restaurante.Controllers
     {
         private readonly ICreateOrderService _createOrderService;
         private readonly IGetAllOrders _getAllOrdersService;
-        private readonly IUpdateOrderService _updateOrderService;
         private readonly IGetOrderById _getOrderByIdService;
+        private readonly IUpdateOrderService _updateOrderService;
 
         public OrderController(ICreateOrderService createOrderService, IGetAllOrders getAllOrdersService, IUpdateOrderService updateOrderService, IGetOrderById getOrderByIdService)
         {
             _createOrderService = createOrderService;
             _getAllOrdersService = getAllOrdersService;
-            _updateOrderService = updateOrderService;
             _getOrderByIdService = getOrderByIdService;
+            _updateOrderService = updateOrderService;
         }
 
         [HttpPost]
@@ -40,7 +37,12 @@ namespace Restaurante.Controllers
             {
                 return BadRequest(new ApiError { Message = ex.Message });
             }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
+            }
         }
+
         [HttpGet]
         [ProducesResponseType(typeof(IReadOnlyList<OrderDetailsResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
@@ -57,10 +59,10 @@ namespace Restaurante.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Error interno al obtener las órdenes.", detail = ex.Message });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
             }
         }
-      
+        
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(OrderDetailsResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(object), StatusCodes.Status404NotFound)]
@@ -69,32 +71,26 @@ namespace Restaurante.Controllers
             try
             {
                 var order = await _getOrderByIdService.GetOrderByIdAsync(id);
-                if (order == null)
-                {
-                    return NotFound(new { message = "Orden no encontrada." });
-                }
                 return Ok(order);
-            }
-            catch (BadRequestException ex)
+            }    
+            catch (NotFoundException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return NotFound(new { message = ex.Message });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Error interno al obtener la orden.", detail = ex.Message });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
             }
         }
 
-      
-
-        /*[HttpPut]
+        [HttpPut]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateOrder([FromBody] long id, [FromBody] OrderUpdateRequest request)
+        public async Task<IActionResult> UpdateOrder([FromQuery] long id, [FromBody] OrderUpdateRequest request)
         {
             try
             {
-                var updatedOrder = await _updateOrderService.UpdateOrder(id, request);
+                var updatedOrder = await _updateOrderService.UpdateOrderAsync(id, request);
                 return Ok(updatedOrder);
             }
             catch (NotFoundException ex)
@@ -105,7 +101,11 @@ namespace Restaurante.Controllers
             {
                 return BadRequest(new ApiError { Message = ex.Message });
             }
-        }*/
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
+            }
 
+        }
     }
 }

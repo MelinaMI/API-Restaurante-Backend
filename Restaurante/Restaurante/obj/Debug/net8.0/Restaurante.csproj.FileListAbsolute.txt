@@ -187,6 +187,8 @@ C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bi
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\System.Web.Http.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Microsoft.Build.Locator.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
@@ -227,6 +229,7 @@ C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bi
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\Swashbuckle.Core.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\bin\Debug\net8.0\System.Composition.AttributedModel.dll

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Restaurante.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
@@ -14,7 +14,6 @@ namespace Restaurante.Controllers
         {
             _categoryQuery = categoryQuery;
         }
-        // GET: api/category
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<Category>>> GetAllCategories()
         {
