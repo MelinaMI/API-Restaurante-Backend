@@ -313,7 +313,7 @@
         "StatusCode": 201
       },
       {
-        "Type": "System.Object",
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -358,7 +358,7 @@
         "StatusCode": 200
       },
       {
-        "Type": "System.Object",
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -398,7 +398,7 @@
         "StatusCode": 200
       },
       {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -433,7 +433,61 @@
         "StatusCode": 200
       },
       {
-        "Type": "System.Object",
+        "Type": "Application.Models.Response.ApiError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ]
+  },
+  {
+    "ContainingType": "Restaurante.Controllers.OrderController",
+    "Method": "UpdateOrderItemStatus",
+    "RelativePath": "api/v1/Order/{orderId}/item/{itemId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "itemId",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Application.Models.Request.OrderItemUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Application.Models.Response.ApiError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Application.Models.Response.ApiError",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Application.Models.Response.ApiError",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -5,14 +5,15 @@ using Application.Interfaces.IOrder;
 using Application.Interfaces.IOrderItem;
 using Application.Interfaces.IStatus;
 using Application.Mapper;
-using Application.Services.CategoryService;
-using Application.Services.DeliveryTypeService;
-using Application.Services.DishService;
-using Application.Services.OrderItemService;
-using Application.Services.OrderService;
-using Application.Services.StatusService;
+using Application.Models.Services.CategoryService;
+using Application.Models.Services.DeliveryTypeService;
+using Application.Models.Services.DishService;
+using Application.Models.Services.OrderItemService;
+using Application.Models.Services.OrderService;
+using Application.Models.Services.StatusService;
 using Application.Validators;
 using Application.Validators.DishValidator;
+using Application.Validators.OrderItemValidator;
 using Application.Validators.OrderValidator;
 using Infrastructure.Command;
 using Infrastructure.Commands;
@@ -77,19 +78,21 @@ builder.Services.AddScoped<ICreateOrderService, CreateOrderService>();
 builder.Services.AddScoped<ICreateOrderValidation, CreateOrderValidator>();
 builder.Services.AddScoped<IOrderCommand, OrderCommand>();
 builder.Services.AddScoped<IOrderQuery, OrderQuery>();
-builder.Services.AddScoped<IGetOrderById, GetOrderByIdService>();
+builder.Services.AddScoped<IGetOrderByIdService, GetOrderByIdService>();
 builder.Services.AddScoped<IGetOrderByIdValidation, GetOrderByIdValidator>();
-builder.Services.AddScoped<IGetAllOrders, GetAllOrdersService>();
+builder.Services.AddScoped<IGetAllOrdersService, GetAllOrdersService>();
 builder.Services.AddScoped<IOrderMapper, OrderMapper>();
 builder.Services.AddScoped<IGetAllOrdersValidation, GetAllOrdersValidator>();
-//builder.Services.AddScoped<IUpdateOrderStatus, UpdateOrderStatusService>();
-//builder.Services.AddScoped<IUpdateOrderStatusValidation, UpdateOrderStatusValidator>();
+builder.Services.AddScoped<IUpdateOrderStatusService, UpdateOrderStatusService>();
 builder.Services.AddScoped<IUpdateOrderService, UpdateOrderService>();
 builder.Services.AddScoped<IUpdateOrderValidation, UpdateOrderValidator>();
 //ORDERITEM
 builder.Services.AddScoped<IOrderItemCommand, OrderItemCommand>();
 builder.Services.AddScoped<IOrderItemQuery, OrderItemQuery>();
-builder.Services.AddScoped<ICreateOrderItem, CreateOrderItemService>();
+builder.Services.AddScoped<ICreateOrderItemService, CreateOrderItemService>();
+builder.Services.AddScoped<IUpdateOrderItemStatusService, UpdateOrderItemStatusService>();
+builder.Services.AddScoped<IUpdateOrderItemStatusValidation, UpdateOrderItemStatusValidator>();
+
 
 
 //builder.Services.AddScoped<IOrderMapper, OrderMapper>();

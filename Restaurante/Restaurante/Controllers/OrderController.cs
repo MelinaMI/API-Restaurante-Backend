@@ -1,6 +1,8 @@
 ﻿using Application.Interfaces.IOrder;
+using Application.Interfaces.IOrderItem;
 using Application.Models.Request;
 using Application.Models.Response;
+using Application.Models.Services.OrderItemService;
 using Microsoft.AspNetCore.Mvc;
 using static Application.Validators.Exceptions;
 
@@ -11,21 +13,23 @@ namespace Restaurante.Controllers
     public class OrderController : ControllerBase
     {
         private readonly ICreateOrderService _createOrderService;
-        private readonly IGetAllOrders _getAllOrdersService;
-        private readonly IGetOrderById _getOrderByIdService;
+        private readonly IGetAllOrdersService _getAllOrdersService;
+        private readonly IGetOrderByIdService _getOrderByIdService;
         private readonly IUpdateOrderService _updateOrderService;
+        private readonly IUpdateOrderItemStatusService _updateOrderItemStatus;
 
-        public OrderController(ICreateOrderService createOrderService, IGetAllOrders getAllOrdersService, IUpdateOrderService updateOrderService, IGetOrderById getOrderByIdService)
+        public OrderController(ICreateOrderService createOrderService, IGetAllOrdersService getAllOrdersService, IUpdateOrderService updateOrderService, IGetOrderByIdService getOrderByIdService, IUpdateOrderItemStatusService updateOrderItemStatus)
         {
             _createOrderService = createOrderService;
             _getAllOrdersService = getAllOrdersService;
             _getOrderByIdService = getOrderByIdService;
             _updateOrderService = updateOrderService;
+            _updateOrderItemStatus = updateOrderItemStatus;
         }
 
         [HttpPost]
         [ProducesResponseType(typeof(OrderCreateResponse), StatusCodes.Status201Created)]
-        [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<OrderCreateResponse>> CreateOrder([FromBody] OrderRequest request)
         {
             try
@@ -45,7 +49,7 @@ namespace Restaurante.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(IReadOnlyList<OrderDetailsResponse>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IReadOnlyList<OrderDetailsResponse>>> GetAllOrders([FromQuery] DateTime? from, [FromQuery] DateTime? to, [FromQuery] int? status)
         {
             try
@@ -65,7 +69,7 @@ namespace Restaurante.Controllers
         
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(OrderDetailsResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(object), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<OrderDetailsResponse>> GetOrderById([FromRoute] long id)
         {
             try
@@ -85,7 +89,7 @@ namespace Restaurante.Controllers
 
         [HttpPut]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateOrder([FromQuery] long id, [FromBody] OrderUpdateRequest request)
         {
             try
@@ -105,7 +109,31 @@ namespace Restaurante.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
             }
+        }
+        [HttpPut("{orderId}/item/{itemId}")]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
 
+        public async Task<IActionResult> UpdateOrderItemStatus([FromRoute] long orderId, [FromRoute] long itemId, [FromBody] OrderItemUpdateRequest request)
+        {
+            try
+            {
+                var response = await _updateOrderItemStatus.UpdateOrderItemStatusAsync(orderId, itemId, request.Status);
+                return Ok(response);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new ApiError { Message = ex.Message });
+            }
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new ApiError { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
+            }
         }
     }
 }
