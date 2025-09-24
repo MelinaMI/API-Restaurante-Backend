@@ -1,11 +1,4 @@
-﻿using Application.Models.Request;
-using Application.Models.Response;
-using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
 
 namespace Application.Interfaces.IOrder
 {
@@ -13,7 +6,6 @@ namespace Application.Interfaces.IOrder
     {
         Task<Order?> GetOrderByIdAsync(long orderId);
         IQueryable<Order> GetAllOrders();
-        Task<IReadOnlyList<Order>> GetOrdersByStatusAsync(int statusId);
         Task <Order> OrderUpdateAsync(Order order);
     }
 }

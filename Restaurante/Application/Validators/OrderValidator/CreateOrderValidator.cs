@@ -3,13 +3,11 @@ using Application.Interfaces.IOrder;
 using Application.Models.Request;
 using static Application.Validators.Exceptions;
 
-
 namespace Application.Validators.OrderValidator
 {
     public class CreateOrderValidator : ICreateOrderValidation
     {
         private readonly IDishQuery _dishQuery;
-
         public CreateOrderValidator(IDishQuery dishQuery)
         {
             _dishQuery = dishQuery;

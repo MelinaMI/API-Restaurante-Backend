@@ -11,5 +11,7 @@ namespace Application.Interfaces.IOrder
     public interface IOrderMapper
     {
         OrderDetailsResponse ToDetailsResponse(Order order);
+        OrderCreateResponse ToOrderCreateResponse(Order order);
+        OrderUpdateResponse ToOrderUpdateResponse(Order order);
     }
 }

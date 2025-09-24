@@ -1,9 +1,4 @@
 ﻿using Application.Interfaces.IOrder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Application.Validators.Exceptions;
 
 namespace Application.Validators.OrderValidator
@@ -14,16 +9,16 @@ namespace Application.Validators.OrderValidator
         public Task ValidateGetAllOrder(DateTime? from, DateTime? to, int? status)
         {
             if (from.HasValue && to.HasValue && from > to)
-                throw new BadRequestException("La fecha de inicio no puede ser posterior a la fecha de fin.");
+                throw new BadRequestException("La fecha de inicio no puede ser posterior a la fecha de fin");
 
             if (from.HasValue && from.Value > DateTime.UtcNow)
-                throw new BadRequestException("La fecha de inicio no puede estar en el futuro.");
+                throw new BadRequestException("La fecha de inicio no puede estar en el futuro");
 
             if (to.HasValue && to.Value > DateTime.UtcNow)
-                throw new BadRequestException("La fecha de fin no puede estar en el futuro.");
+                throw new BadRequestException("La fecha de fin no puede estar en el futuro");
 
             if (status.HasValue && !_validStatuses.Contains(status.Value))
-                throw new BadRequestException($"El estado '{status.Value}' no es válido.");
+                throw new BadRequestException($"El estado '{status.Value}' no es válido");
 
             return Task.CompletedTask;
         }

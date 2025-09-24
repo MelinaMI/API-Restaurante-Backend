@@ -306,6 +306,8 @@ C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\FluentAssertions.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\System.Web.Http.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Testing.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Microsoft.AspNetCore.TestHost.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -361,6 +363,7 @@ C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\Swashbuckle.Core.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\System.ClientModel.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Test\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

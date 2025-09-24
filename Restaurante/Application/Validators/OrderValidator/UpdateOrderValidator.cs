@@ -14,27 +14,34 @@ namespace Application.Validators.OrderValidator
             _orderQuery = orderQuery;
             _dishQuery = dishQuery;
         }
-
         public async Task UpdateOrderValidation(long id, List<Items> items)
         {
-            // Validar existencia de la orden
             var order = await _orderQuery.GetOrderByIdAsync(id);
+
             if (order == null)
                 throw new NotFoundException("La orden no existe");
-            // Validar que no esté cerrada
+
             if (order.OverallStatus == 5)
                 throw new BadRequestException("No se puede modificar una orden cerrada");
-            // Validar items
+
+            if (order.OverallStatus == 2)
+                throw new BadRequestException("No se puede modificar una orden que ya está en preparación");
+
             foreach (var item in items)
             {
+                if (item.Quantity <= 0)
+                    throw new BadRequestException("La cantidad debe ser mayor a cero");
+                if (item.Quantity > 50)
+                    throw new BadRequestException($"La cantidad no puede superar los 50 por ítem");
+
                 var dish = await _dishQuery.GetDishByIdAsync(item.Id);
+
                 if (dish == null)
-                    throw new NotFoundException($"El plato con id {item.Id} no existe");
+                    throw new NotFoundException("El plato especificado no existe");
 
                 if (!dish.Available)
-                    throw new BadRequestException($"El plato {dish.Name} está inactivo y no se puede agregar");
+                    throw new BadRequestException("El plato especificado no está disponible");
             }
-        
         }
     }
 }

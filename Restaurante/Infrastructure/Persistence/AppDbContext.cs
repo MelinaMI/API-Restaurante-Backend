@@ -98,8 +98,8 @@ namespace Infrastructure.Persistence
 
                 // FK hacia Order
                 entity.HasOne(oi => oi.OrderNavigation)
-                .WithMany(s => s.OrderItems) //apunta a la coleccion de OrderItems en Order
-                .HasForeignKey(o => o.Order).OnDelete(DeleteBehavior.Cascade); //si borro una orden, se borran sus items
+                .WithMany(o => o.OrderItems) //apunta a la coleccion de OrderItems en Order
+                .HasForeignKey(oi => oi.Order).OnDelete(DeleteBehavior.Cascade); //si borro una orden, se borran sus items
 
 
                 // FK hacia Dish

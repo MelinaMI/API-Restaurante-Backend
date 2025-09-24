@@ -1,12 +1,6 @@
 ﻿using Application.Interfaces.IOrderItem;
 using Domain.Entities;
 using Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Infrastructure.Command
 {
     public class OrderItemCommand : IOrderItemCommand
@@ -21,6 +15,11 @@ namespace Infrastructure.Command
             _context.Set<OrderItem>().Add(item);
             await _context.SaveChangesAsync();
             return item.OrderItemId;
+        }
+        public async Task UpdateOrderItemAsync(OrderItem item)
+        {
+            _context.Set<OrderItem>().Update(item);
+            await _context.SaveChangesAsync();
         }
     }
 }

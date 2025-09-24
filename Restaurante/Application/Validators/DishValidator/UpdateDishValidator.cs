@@ -1,7 +1,6 @@
 ﻿using Application.Interfaces.ICategory;
 using Application.Interfaces.IDish;
 using Application.Models.Request;
-using System.Text;
 using static Application.Validators.Exceptions;
 
 namespace Application.Validators.DishValidator
@@ -18,6 +17,10 @@ namespace Application.Validators.DishValidator
         public async Task ValidateUpdateAsync(Guid id, DishUpdateRequest request)
         {
             var nameNormalized = request.Name?.Trim().ToLowerInvariant();
+            // Validar existencia del plato
+            var dish = await _dishQuery.GetDishByIdAsync(id);
+            if (dish == null)
+                throw new NotFoundException("El plato no existe");
 
             if (string.IsNullOrWhiteSpace(nameNormalized))
                 throw new BadRequestException("El nombre del plato es obligatorio");
@@ -35,7 +38,6 @@ namespace Application.Validators.DishValidator
             var category = await _categoryQuery.GetByCategoryIdAsync(request.Category);
             if (category == null)
                 throw new NotFoundException("La categoría no existe");
-
         }
     }
 }

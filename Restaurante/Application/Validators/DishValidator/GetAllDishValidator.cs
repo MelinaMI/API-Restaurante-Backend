@@ -13,7 +13,6 @@ namespace Application.Validators.DishValidator
         {
             _categoryQuery = categoryQuery;
         }
-
         public async Task ValidateAllAsync(string? name, int? category, OrderPrice? sortByPrice)
         {
             // Validación de nombre
@@ -24,7 +23,6 @@ namespace Application.Validators.DishValidator
                 if (normalized.Length > 100)
                     throw new BadRequestException("El nombre no puede superar los 100 caracteres");
             }
-
             // Validación de categoría
             if (category.HasValue)
             {

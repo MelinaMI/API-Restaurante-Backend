@@ -6,6 +6,6 @@ namespace Application.Interfaces.IDish
 {
     public interface IGetAllDishService
     {
-        Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, string? sortByPrice, bool onlyActive);
+        Task<IReadOnlyList<DishResponse>> GetAllDishesAsync(string? name, int? category, OrderPrice? sortByPrice, bool onlyActive);
     }
 }

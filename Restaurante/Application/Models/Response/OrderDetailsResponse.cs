@@ -7,7 +7,7 @@
         public string? DeliverTo { get; set; }
         public string? Notes { get; set; }
         public GenericResponse Status { get; set; }
-        public List<OrderItemResponse>? Items { get; set; } // Lista de items incluidos en la orden
+        public List<OrderItemResponse> Items { get; set; } // Lista de items incluidos en la orden
         public GenericResponse DeliveryType { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

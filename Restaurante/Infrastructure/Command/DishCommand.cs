@@ -12,7 +12,6 @@ namespace Infrastructure.Commands
         {
             _context = context;
         }
-
         public async Task DeleteDishAsync(Dish dish)
         {
             dish.Available = false; // Soft delete

@@ -4,7 +4,6 @@ namespace Application.Models.Request
 {
     public class OrderItemUpdateRequest
     {
-        [Required]
-        public int Status { get; set; }
+        public required int Status { get; set; }
     }
 }

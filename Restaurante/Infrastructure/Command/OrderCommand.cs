@@ -1,12 +1,6 @@
 ﻿using Application.Interfaces.IOrder;
 using Domain.Entities;
 using Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Command
 {
@@ -22,14 +16,7 @@ namespace Infrastructure.Command
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
             return order.OrderId;
-        }
-        public async Task<long> InsertOrderWithItemsAsync(Order order)
-        {
-            await _context.Orders.AddAsync(order);
-            await _context.SaveChangesAsync();
-            return order.OrderId; // EF ya generó todos los OrderItemId automáticamente
-        }
-
+        } 
         public Task<long> UpdateOrderAsync(Order order)
         {
             throw new NotImplementedException();

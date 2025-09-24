@@ -1,16 +1,34 @@
 ﻿using Application.Interfaces.IOrder;
 using Application.Models.Response;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Application.Mapper
 {
     public class OrderMapper : IOrderMapper
     {
+        // Crear orden
+        public OrderCreateResponse ToOrderCreateResponse(Order order)
+        {
+            return new OrderCreateResponse
+            {
+                OrderNumber = order.OrderId,
+                TotalAmount = (double)order.Price,
+                CreatedAt = order.CreateDate
+            };
+        }
+        // Actualizar orden
+        public OrderUpdateResponse ToOrderUpdateResponse(Order order)
+        {
+            return new OrderUpdateResponse
+            {
+                OrderNumber = order.OrderId,
+                TotalAmount = (double)order.Price,
+                UpdateAt = order.UpdateDate
+            };
+        }
+        // Detalles de la orden
         public OrderDetailsResponse ToDetailsResponse(Order order)
         {
             return new OrderDetailsResponse
@@ -55,3 +73,4 @@ namespace Application.Mapper
         }
     }
 }
+

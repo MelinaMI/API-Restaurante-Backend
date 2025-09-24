@@ -41,13 +41,13 @@ namespace Application.Mapper
                     Id = dish.CategoryNavigation.Id,
                     Name = dish.CategoryNavigation.Name,
                 },
+                Image = dish.ImageUrl,
                 IsActive = dish.Available,
                 CreateAt = dish.CreateDate,
                 UpdateAt = dish.UpdateDate,
 
             };
         }
-
         public Dish ToDishUpdate(Dish dish, DishUpdateRequest request)
         {
             dish.Name = request.Name;
