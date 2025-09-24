@@ -5,12 +5,13 @@ using Application.Interfaces.IOrder;
 using Application.Interfaces.IOrderItem;
 using Application.Interfaces.IStatus;
 using Application.Mapper;
-using Application.Models.Services.CategoryService;
-using Application.Models.Services.DeliveryTypeService;
-using Application.Models.Services.DishService;
-using Application.Models.Services.OrderItemService;
-using Application.Models.Services.OrderService;
-using Application.Models.Services.StatusService;
+using Application.Models.Response;
+using Application.UseCase.CategoryService;
+using Application.UseCase.DeliveryTypeService;
+using Application.UseCase.OrderItemService;
+using Application.UseCase.OrderService;
+using Application.UseCase.Services.DishService;
+using Application.UseCase.StatusService;
 using Application.Validators;
 using Application.Validators.DishValidator;
 using Application.Validators.OrderItemValidator;
@@ -19,13 +20,12 @@ using Infrastructure.Command;
 using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
 //CUSTOM
@@ -35,6 +35,8 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionSt
 
 builder.Services.AddSwaggerGen(c =>
 {
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Restaurante API", Version = "v1" });
+   
     // Mapea el enum OrderPrice como string con valores restringidos
     c.MapType<Application.Enum.OrderPrice>(() => new Microsoft.OpenApi.Models.OpenApiSchema
     {
@@ -92,23 +94,15 @@ builder.Services.AddScoped<IOrderItemQuery, OrderItemQuery>();
 builder.Services.AddScoped<ICreateOrderItemService, CreateOrderItemService>();
 builder.Services.AddScoped<IUpdateOrderItemStatusService, UpdateOrderItemStatusService>();
 builder.Services.AddScoped<IUpdateOrderItemStatusValidation, UpdateOrderItemStatusValidator>();
-
-
-
-//builder.Services.AddScoped<IOrderMapper, OrderMapper>();
-//builder.Services.AddScoped<IOrderItemMapper, OrderItemMapper>();
-
 //END CUSTOM 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c=>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Restaurante v1");
-    });
+    app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
 

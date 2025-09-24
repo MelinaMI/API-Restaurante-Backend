@@ -1,8 +1,8 @@
-﻿using Application.Interfaces.IDish;
+﻿using Application.Enum;
+using Application.Interfaces.IDish;
 using Application.Models.Request;
 using Application.Models.Response;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
 using static Application.Validators.Exceptions;
 
 namespace Restaurant.Controllers
@@ -88,7 +88,7 @@ namespace Restaurant.Controllers
         [ProducesResponseType(typeof(IEnumerable<DishResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
 
-        public async Task<ActionResult<DishResponse>> GetAllAsync([FromQuery] string? name, [FromQuery] int? category, [FromQuery] string? sortByPrice, [FromQuery] bool onlyActive = true)
+        public async Task<ActionResult<DishResponse>> GetAllAsync([FromQuery] string? name, [FromQuery] int? category, [FromQuery] OrderPrice? sortByPrice, [FromQuery] bool onlyActive = true)
         {
             try
             {
@@ -128,31 +128,30 @@ namespace Restaurant.Controllers
             {
                 return NotFound(new ApiError { Message = ex.Message });
             }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
+            }
         }
         // Delete (soft delete)
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(object), StatusCodes.Status404NotFound)]
-        [ProducesResponseType(typeof(object), StatusCodes.Status409Conflict)]
-        [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
         public async Task<IActionResult> DeleteDish(Guid id)
         {
             try
             {
                 await _deleteDishService.DeleteDishAsync(id);
-                return Ok(new { message = "Plato eliminado correctamente (soft delete)." });
+                return Ok();
             }
             catch (NotFoundException ex)
             {
-                return NotFound(new { message = ex.Message });
+                return NotFound(new ApiError { Message = ex.Message });
             }
             catch (ConflictException ex)
             {
-                return Conflict(new { message = ex.Message });
-            }
-            catch (BadRequestException ex)
-            {
-                return BadRequest(new { message = ex.Message });
+                return Conflict(new ApiError { Message = ex.Message });
             }
             catch (Exception ex)
             {

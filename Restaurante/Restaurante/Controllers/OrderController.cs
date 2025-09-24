@@ -2,7 +2,6 @@
 using Application.Interfaces.IOrderItem;
 using Application.Models.Request;
 using Application.Models.Response;
-using Application.Models.Services.OrderItemService;
 using Microsoft.AspNetCore.Mvc;
 using static Application.Validators.Exceptions;
 
@@ -39,7 +38,7 @@ namespace Restaurante.Controllers
             }
             catch (BadRequestException ex)
             {
-                return BadRequest(new ApiError { Message = ex.Message });
+                return BadRequest(new ApiError { Message = ex.Message }); 
             }
             catch (Exception ex)
             {
@@ -59,7 +58,7 @@ namespace Restaurante.Controllers
             }
             catch (BadRequestException ex)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new ApiError { Message = ex.Message });
             }
             catch (Exception ex)
             {
@@ -76,10 +75,10 @@ namespace Restaurante.Controllers
             {
                 var order = await _getOrderByIdService.GetOrderByIdAsync(id);
                 return Ok(order);
-            }    
+            }     
             catch (NotFoundException ex)
             {
-                return NotFound(new { message = ex.Message });
+                return NotFound(new ApiError { Message = ex.Message });
             }
             catch (Exception ex)
             {
@@ -87,10 +86,10 @@ namespace Restaurante.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> UpdateOrder([FromQuery] long id, [FromBody] OrderUpdateRequest request)
+        public async Task<IActionResult> UpdateOrder(long id, [FromBody] OrderUpdateRequest request)
         {
             try
             {
