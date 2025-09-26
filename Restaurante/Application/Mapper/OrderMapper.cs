@@ -1,8 +1,6 @@
 ﻿using Application.Interfaces.IOrder;
 using Application.Models.Response;
 using Domain.Entities;
-using System.Security.Cryptography.X509Certificates;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Application.Mapper
 {

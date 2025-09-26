@@ -133,17 +133,17 @@ namespace Restaurant.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
             }
         }
-        // Delete (soft delete)
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status409Conflict)]
-        public async Task<IActionResult> DeleteDish(Guid id)
+
+        public async Task<ActionResult<DishResponse>> DeleteDish([FromRoute] Guid id)
         {
             try
             {
-                await _deleteDishService.DeleteDishAsync(id);
-                return Ok();
+                var deletedDish = await _deleteDishService.DeleteDishAsync(id);
+                return Ok(deletedDish);
             }
             catch (NotFoundException ex)
             {
@@ -155,7 +155,7 @@ namespace Restaurant.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Error interno del servidor: {ex.Message}" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
             }
         }
     }

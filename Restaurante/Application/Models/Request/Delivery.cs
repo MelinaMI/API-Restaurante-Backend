@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Application.Models.Response
+namespace Application.Models.Request
 {
     public class Delivery
     {

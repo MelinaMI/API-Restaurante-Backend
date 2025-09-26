@@ -24,15 +24,10 @@ namespace Application.UseCase.OrderService
             }
             else
             {
-                // Contar cuántos items hay por cada estado
-                newStatus = activeItems
-                    .GroupBy(i => i.Status)
-                    .OrderByDescending(g => g.Count())  // mayor cantidad → mayoría
-                    .ThenByDescending(g => g.Key)       // desempate por estado más avanzado
-                    .First()
-                    .Key;
+                newStatus = activeItems.Min(i => i.Status); // Tomar el menor estado entre los ítems activos
             }
-            order.OverallStatus = newStatus; //Actualizo
+
+            order.OverallStatus = newStatus;
             await _orderQuery.OrderUpdateAsync(order);
         }
     }

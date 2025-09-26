@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.IStatus;
+using Application.Models.Response;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,16 +10,20 @@ namespace Restaurante.Controllers
     public class StatusController : ControllerBase
     {
         private readonly IStatusQuery _statusQuery;
-        public StatusController(IStatusQuery statusQuery)
+        private readonly IStatusMapper _mapper;
+        public StatusController(IStatusQuery statusQuery, IStatusMapper mapper)
         {
             _statusQuery = statusQuery;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Domain.Entities.Status>>> GetAllStatuses()
+        [ProducesResponseType(typeof(IReadOnlyList<GenericResponse>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IReadOnlyList<GenericResponse>>> GetAllDeliveryTypes()
         {
-            var statuses = await _statusQuery.GetAllStatusesAsync();
-            return Ok(statuses);
+            var status = await _statusQuery.GetAllStatusesAsync();
+            var response = status.Select(_mapper.ToGenericResponse).ToList();
+            return Ok(response);
         }
     }
 }

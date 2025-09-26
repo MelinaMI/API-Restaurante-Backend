@@ -24,8 +24,8 @@ namespace Application.Validators.OrderValidator
             if (order.OverallStatus == 5)
                 throw new BadRequestException("No se puede modificar una orden cerrada");
 
-            if (order.OverallStatus == 2)
-                throw new BadRequestException("No se puede modificar una orden que ya está en preparación");
+            /*if (order.OverallStatus == 2)
+                throw new BadRequestException("No se puede modificar una orden que ya está en preparación");*/
 
             foreach (var item in items)
             {

@@ -2,7 +2,6 @@
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System.Text;
 
 namespace Infrastructure.Queries
 {

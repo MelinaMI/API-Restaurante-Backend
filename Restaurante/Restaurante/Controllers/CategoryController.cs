@@ -1,6 +1,6 @@
 ﻿using Application.Interfaces.ICategory;
+using Application.Models.Response;
 using Domain.Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Restaurante.Controllers
@@ -15,10 +15,22 @@ namespace Restaurante.Controllers
             _categoryQuery = categoryQuery;
         }
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Category>>> GetAllCategories()
+        [ProducesResponseType(typeof(IReadOnlyList<CategoryResponse>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IReadOnlyList<CategoryResponse>>> GetAllCategories()
         {
             var categories = await _categoryQuery.GetAllCategoriesAsync();
-            return Ok(categories);
+
+            var response = categories
+                .Select(c => new CategoryResponse
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Description = c.Description,
+                    Order = c.Order
+                })
+                .ToList();
+
+            return Ok(response);
         }
     }
 }

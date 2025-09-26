@@ -4,6 +4,6 @@ namespace Application.Interfaces.IDish
 {
     public interface IDeleteDishValidation
     {
-        Task DeleteDishValidationAsync(Dish dish);
+        Task DeleteDishValidation(Guid dishId);
     }
 }

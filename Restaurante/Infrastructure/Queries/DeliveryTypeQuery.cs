@@ -4,6 +4,7 @@ using Application.Validators;
 using Domain.Entities;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using static Application.Validators.Exceptions;
 
 namespace Infrastructure.Queries
 {
@@ -26,15 +27,10 @@ namespace Infrastructure.Queries
                     .FirstOrDefaultAsync(dt => dt.Id == DeliveryId);
 
                 if (deliveryType == null)
-                    throw new Exceptions.BadRequestException($"Tipo de entrega no encontrado: {DeliveryId}");
+                    throw new BadRequestException($"Tipo de entrega no encontrado: {DeliveryId}");
 
                 return deliveryType;
             }
-        }
-
-        public Task<DeliveryType> GetDeliveryTypeByNameAsync(string name)
-        {
-            throw new NotImplementedException();
         }
     }
 }

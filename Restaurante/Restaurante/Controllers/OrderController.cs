@@ -110,7 +110,7 @@ namespace Restaurante.Controllers
             }
         }
         [HttpPut("{orderId}/item/{itemId}")]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
 

@@ -6,6 +6,5 @@ namespace Application.Interfaces.IDeliveryType
     {
         Task<DeliveryType> GetDeliveryTypeByIdAsync(int DeliveryId);
         Task<IReadOnlyList<DeliveryType>> GetAllDeliveryTypesAsync();
-        Task<DeliveryType> GetDeliveryTypeByNameAsync(string name);
     }
 }

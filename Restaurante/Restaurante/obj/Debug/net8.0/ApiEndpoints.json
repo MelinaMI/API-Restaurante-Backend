@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Domain.Entities.Category, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Application.Models.Response.CategoryResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,7 +29,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Domain.Entities.DeliveryType, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Application.Models.Response.GenericResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -251,8 +251,12 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "Application.Models.Response.DishResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       },
       {
@@ -456,7 +460,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Application.Models.Response.ApiError",
+        "Type": "Application.Models.Response.OrderUpdateResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -486,7 +490,7 @@
   },
   {
     "ContainingType": "Restaurante.Controllers.StatusController",
-    "Method": "GetAllStatuses",
+    "Method": "GetAllDeliveryTypes",
     "RelativePath": "api/v1/Status",
     "HttpMethod": "GET",
     "IsController": true,
@@ -494,7 +498,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Domain.Entities.Status, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IReadOnlyList\u00601[[Application.Models.Response.GenericResponse, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

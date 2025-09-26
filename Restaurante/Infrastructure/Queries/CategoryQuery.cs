@@ -17,12 +17,10 @@ namespace Infrastructure.Queries
         {
             return await _context.Categories.AsNoTracking().ToListAsync();
         }
-
         public async Task<Category> GetByCategoryIdAsync(int categoryId)
         {
             return await _context.Categories.FirstOrDefaultAsync(c => c.Id == categoryId);
         }
-
         public Task<Category> GetCategoryByNameAsync(string name)
         {
             throw new NotImplementedException();

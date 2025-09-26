@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces.IDeliveryType;
+using Application.Models.Response;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,15 +10,19 @@ namespace Restaurante.Controllers
     public class DeliveryTypeController : ControllerBase
     {
         private readonly IDeliveryTypeQuery _deliveryTypeQuery;
-        public DeliveryTypeController(IDeliveryTypeQuery deliveryTypeQuery)
+        private readonly IDeliveryTypeMapper _mapper;
+        public DeliveryTypeController(IDeliveryTypeQuery deliveryTypeQuery, IDeliveryTypeMapper mapper)
         {
             _deliveryTypeQuery = deliveryTypeQuery;
+            _mapper = mapper;
         }
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Domain.Entities.DeliveryType>>> GetAllDeliveryTypes()
+        [ProducesResponseType(typeof(IReadOnlyList<GenericResponse>), StatusCodes.Status200OK)]
+        public async Task<ActionResult<IReadOnlyList<GenericResponse>>> GetAllDeliveryTypes()
         {
             var deliveryTypes = await _deliveryTypeQuery.GetAllDeliveryTypesAsync();
-            return Ok(deliveryTypes);
+            var response = deliveryTypes.Select(_mapper.ToGenericResponse).ToList();
+            return Ok(response);
         }
     }
 }

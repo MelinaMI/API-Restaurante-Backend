@@ -1,5 +1,4 @@
-﻿using Application.Models.Response;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Application.Models.Request
 {

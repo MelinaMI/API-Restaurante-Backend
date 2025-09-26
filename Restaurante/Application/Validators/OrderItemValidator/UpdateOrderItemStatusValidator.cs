@@ -7,11 +7,11 @@ namespace Application.Validators.OrderItemValidator
     {
         private static readonly Dictionary<int, List<int>> ValidTransitions = new()
         {
-            { 1, new List<int> { 2,5 } }, // Pendiente -> En preparación
-            { 2, new List<int> { 3,5 } }, // En preparación -> Listo
-            { 3, new List<int> { 4,5 } }, // Listo -> Entregado
-            { 4, new List<int>() },       // Entregado -> ninguno
-            { 5, new List<int>() }       // Cancelada -> ninguno
+            { 1, new List<int> {2,5} }, // Pendiente -> En preparación
+            { 2, new List<int> {3,5} }, // En preparación -> Listo
+            { 3, new List<int> {4,5} } , // Listo -> Entregado
+            { 4, new List<int>{5} },       // Entregado -> ninguno
+            { 5, new List<int>() }       // Cancelada / Cerrada -> ninguno
         };
 
         private static readonly Dictionary<int, string> StatusNames = new()

@@ -5,7 +5,6 @@ using Application.Interfaces.IOrder;
 using Application.Interfaces.IOrderItem;
 using Application.Interfaces.IStatus;
 using Application.Mapper;
-using Application.Models.Response;
 using Application.UseCase.CategoryService;
 using Application.UseCase.DeliveryTypeService;
 using Application.UseCase.OrderItemService;
@@ -20,7 +19,6 @@ using Infrastructure.Command;
 using Infrastructure.Commands;
 using Infrastructure.Persistence;
 using Infrastructure.Queries;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -72,9 +70,11 @@ builder.Services.AddScoped<IGetAllCategories, GetAllCategoriesService>();
 //DELIVERYTYPE
 builder.Services.AddScoped<IDeliveryTypeQuery, DeliveryTypeQuery>();
 builder.Services.AddScoped<IGetAllDeliveryTypes, GetAllDeliveryTypesService>();
+builder.Services.AddScoped<IDeliveryTypeMapper, DeliveryTyperMapper>();
 //STATUS
 builder.Services.AddScoped<IStatusQuery, StatusQuery>();
 builder.Services.AddScoped<IGetAllStatuses, GetAllStatusesService>();
+builder.Services.AddScoped<IStatusMapper, StatusMapper>();
 //ORDER
 builder.Services.AddScoped<ICreateOrderService, CreateOrderService>();
 builder.Services.AddScoped<ICreateOrderValidation, CreateOrderValidator>();
@@ -94,7 +94,7 @@ builder.Services.AddScoped<IOrderItemQuery, OrderItemQuery>();
 builder.Services.AddScoped<ICreateOrderItemService, CreateOrderItemService>();
 builder.Services.AddScoped<IUpdateOrderItemStatusService, UpdateOrderItemStatusService>();
 builder.Services.AddScoped<IUpdateOrderItemStatusValidation, UpdateOrderItemStatusValidator>();
-//END CUSTOM 
+//END CUSTOM
 
 var app = builder.Build();
 
@@ -105,10 +105,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
 public partial class Program { }
