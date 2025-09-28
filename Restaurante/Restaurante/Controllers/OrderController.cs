@@ -3,7 +3,6 @@ using Application.Interfaces.IOrderItem;
 using Application.Models.Request;
 using Application.Models.Response;
 using Microsoft.AspNetCore.Mvc;
-using static Application.Validators.Exceptions;
 
 namespace Restaurante.Controllers
 {
@@ -28,111 +27,41 @@ namespace Restaurante.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(OrderCreateResponse), StatusCodes.Status201Created)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<OrderCreateResponse>> CreateOrder([FromBody] OrderRequest request)
         {
-            try
-            {
-                var response = await _createOrderService.CreateOrderAsync(request);
-                return StatusCode(StatusCodes.Status201Created, response);
-            }
-            catch (BadRequestException ex)
-            {
-                return BadRequest(new ApiError { Message = ex.Message }); 
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
-            }
+            var response = await _createOrderService.CreateOrderAsync(request);
+            return StatusCode(StatusCodes.Status201Created, response);
         }
 
         [HttpGet]
         [ProducesResponseType(typeof(IReadOnlyList<OrderDetailsResponse>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IReadOnlyList<OrderDetailsResponse>>> GetAllOrders([FromQuery] DateTime? from, [FromQuery] DateTime? to, [FromQuery] int? status)
         {
-            try
-            {
-                var orders = await _getAllOrdersService.GetAllOrdersAsync(from, to, status);
-                return Ok(orders);
-            }
-            catch (BadRequestException ex)
-            {
-                return BadRequest(new ApiError { Message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
-            }
+            var orders = await _getAllOrdersService.GetAllOrdersAsync(from, to, status);
+            return Ok(orders);
         }
         
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(OrderDetailsResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<OrderDetailsResponse>> GetOrderById([FromRoute] long id)
         {
-            try
-            {
-                var order = await _getOrderByIdService.GetOrderByIdAsync(id);
-                return Ok(order);
-            }     
-            catch (NotFoundException ex)
-            {
-                return NotFound(new ApiError { Message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
-            }
+            var order = await _getOrderByIdService.GetOrderByIdAsync(id);
+            return Ok(order);
         }
 
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> UpdateOrder(long id, [FromBody] OrderUpdateRequest request)
         {
-            try
-            {
-                var updatedOrder = await _updateOrderService.UpdateOrderAsync(id, request);
-                return Ok(updatedOrder);
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(new ApiError { Message = ex.Message });
-            }
-            catch (BadRequestException ex)
-            {
-                return BadRequest(new ApiError { Message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
-            }
+            var updatedOrder = await _updateOrderService.UpdateOrderAsync(id, request);
+            return Ok(updatedOrder);
         }
         [HttpPut("{orderId}/item/{itemId}")]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ApiError), StatusCodes.Status404NotFound)]
-
         public async Task<IActionResult> UpdateOrderItemStatus([FromRoute] long orderId, [FromRoute] long itemId, [FromBody] OrderItemUpdateRequest request)
         {
-            try
-            {
-                var response = await _updateOrderItemStatus.UpdateOrderItemStatusAsync(orderId, itemId, request.Status);
-                return Ok(response);
-            }
-            catch (NotFoundException ex)
-            {
-                return NotFound(new ApiError { Message = ex.Message });
-            }
-            catch (BadRequestException ex)
-            {
-                return BadRequest(new ApiError { Message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new ApiError { Message = $"Ocurrió un error inesperado: {ex.Message}" });
-            }
+            var response = await _updateOrderItemStatus.UpdateOrderItemStatusAsync(orderId, itemId, request.Status);
+            return Ok(response);
         }
     }
 }

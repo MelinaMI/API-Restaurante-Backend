@@ -62,24 +62,6 @@
           "text/json"
         ],
         "StatusCode": 201
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 409
       }
     ]
   },
@@ -121,15 +103,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
       }
     ]
   },
@@ -161,33 +134,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 409
       }
     ]
   },
@@ -214,24 +160,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
       }
     ]
   },
@@ -258,24 +186,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 409
       }
     ]
   },
@@ -302,15 +212,6 @@
           "text/json"
         ],
         "StatusCode": 201
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
       }
     ]
   },
@@ -347,15 +248,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
       }
     ]
   },
@@ -382,15 +274,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
       }
     ]
   },
@@ -422,15 +305,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
       }
     ]
   },
@@ -467,24 +341,6 @@
           "text/json"
         ],
         "StatusCode": 200
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Application.Models.Response.ApiError",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
       }
     ]
   },

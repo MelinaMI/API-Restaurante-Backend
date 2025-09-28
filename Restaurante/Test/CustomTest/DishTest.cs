@@ -2,7 +2,7 @@ using Application.Models.Request;
 using Application.Models.Response;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
+using Restaurante.Models;
 using System.Net;
 using System.Net.Http.Json;
 

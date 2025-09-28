@@ -21,6 +21,7 @@ using Infrastructure.Persistence;
 using Infrastructure.Queries;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Restaurante.ExceptionMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -97,6 +98,8 @@ builder.Services.AddScoped<IUpdateOrderItemStatusValidation, UpdateOrderItemStat
 //END CUSTOM
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

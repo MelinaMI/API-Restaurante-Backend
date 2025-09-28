@@ -1,5 +1,7 @@
 ﻿using Application.Models.Request;
 using Application.Models.Response;
+using Restaurante.Models;
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net;
 using System.Net.Http.Json;
@@ -13,343 +15,527 @@ namespace Test.CustomTest
         {
             _client = factory.CreateClient();
         }
-        [Fact(DisplayName = "POST-1: 201 | Creación exitosa de una orden válida")]
-        public async Task CreateOrder_ShouldReturn201AndValidResponse()
+        //CREATE DISH PARA TESTS
+        private async Task<DishResponse> CreateTestDish(string name = "Item Test Order", decimal price = 1000m, int category = 1)
         {
-            var dishRequest = new DishRequest
+            var dish = new DishRequest
             {
-                Name = "Plato de prueba",
-                Description = "Descripción de prueba",
-                Price = 500m,
-                Category = 1,
-                Image = "https://restaurant.com/images/test-dish.jpg"
+                Name = name + Guid.NewGuid(), // evitar duplicados
+                Description = "Plato de prueba para Order tests",
+                Price = price,
+                Category = category,
+                Image = "https://restaurant.com/images/test.jpg"
             };
 
-            var dishResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
-            var createdDish = await dishResponse.Content.ReadFromJsonAsync<DishResponse>();
-            var orderRequest = new OrderRequest
+            var response = await _client.PostAsJsonAsync("/api/v1/Dish", dish);
+            response.EnsureSuccessStatusCode();
+
+            return (await response.Content.ReadFromJsonAsync<DishResponse>())!;
+        }
+        //CREATE ORDER CON UN DISH NUEVO
+        private async Task<(long orderNumber, long itemId, decimal totalAmount)> CreateOrderWithDish(string dishName, int quantity = 1)
+        {
+            var dish = await CreateTestDish(dishName, 1000m, 6); // categoría 6: pizzas
+
+            var orderReq = new OrderRequest
+            {
+                Items = new List<Items> { new Items { Id = dish.Id, Quantity = quantity, Notes = "PATCH item" } },
+                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Notes = "Orden para PATCH test"
+            };
+
+            var postOrder = await _client.PostAsJsonAsync("/api/v1/Order", orderReq);
+            postOrder.EnsureSuccessStatusCode();
+            var createdOrder = await postOrder.Content.ReadFromJsonAsync<OrderCreateResponse>();
+
+            var getOrder = await _client.GetAsync($"/api/v1/Order/{createdOrder!.OrderNumber}");
+            getOrder.EnsureSuccessStatusCode();
+            var order = await getOrder.Content.ReadFromJsonAsync<OrderDetailsResponse>();
+            var itemId = order!.Items.First().Id;
+
+            return (createdOrder.OrderNumber, itemId, (decimal)order.TotalAmount);
+        }
+
+        // POST TESTS
+        [Fact(DisplayName = "POST-1: 201 | Creación exitosa de una orden")]
+        public async Task Post_Should_Return_201_When_New_Valid_Order()
+        {
+            var dish = await CreateTestDish();
+
+            var request = new OrderRequest
+            {
+                Items = new List<Items>
+                {
+                    new Items { Id = dish.Id, Quantity = 2, Notes = "Sin sal" }
+                },
+                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Notes = "Timbre: 5B"
+            };
+
+            var response = await _client.PostAsJsonAsync("/api/v1/Order", request);
+
+            response.StatusCode.Should().Be(HttpStatusCode.Created);
+
+            var created = await response.Content.ReadFromJsonAsync<OrderCreateResponse>();
+            created.Should().NotBeNull();
+            created!.OrderNumber.Should().BeGreaterThan(0);
+            created.TotalAmount.Should().BeGreaterThan(0);
+            created.CreatedAt.Should().BeAfter(DateTime.UtcNow.AddMinutes(-1));
+        }
+
+        [Fact(DisplayName = "POST-2: 400 | Orden con plato inexistente")]
+        public async Task Post_Should_Return_400_When_Dish_Does_Not_Exist()
+        {
+            // Paso 1: Crear orden con un plato inexistente (GUID aleatorio)
+            var request = new OrderRequest
             {
                 Items = new List<Items>
                 {
                     new Items
                     {
-                        Id = createdDish.Id,
-                        Quantity = 2,
-                        Notes = "Sin albahaca"
+                        Id = Guid.NewGuid(), // No existe en la base
+                        Quantity = 1,
+                        Notes = "Sin sal"
                     }
                 },
                 Delivery = new Delivery
                 {
                     Id = 1,
-                    To = "Calle falsa 123",
+                    To = "Av. Corrientes 1234"
                 },
-                Notes = "Entrega rápida"
+                Notes = "Orden con plato inválido"
             };
-
-            var orderResponse = await _client.PostAsJsonAsync("/api/v1/Order", orderRequest);
-            Assert.Equal(HttpStatusCode.Created, orderResponse.StatusCode);
-            var createdOrder = await orderResponse.Content.ReadFromJsonAsync<OrderCreateResponse>();
-            Assert.NotNull(createdOrder);
-            Assert.True(createdOrder.OrderNumber > 0);
-            Assert.True(createdOrder.TotalAmount > 0);
-            Assert.True(createdOrder.CreatedAt <= DateTime.UtcNow);
+            var response = await _client.PostAsJsonAsync("/api/v1/Order", request);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error?.Message.Should().Be("El plato especificado no existe o no está disponible.");
         }
 
-        [Fact(DisplayName = "POST-2: 400 | No se permite crear orden con plato no disponible")]
-        public async Task CreateOrder_ShouldReturn400_ForInvalidDish()
+        [Fact(DisplayName = "POST-3: 400 | Orden con cantidad inválida")]
+        public async Task Post_Should_Return_400_When_Quantity_Is_Zero()
         {
+            var dish = await CreateTestDish();
+
             var request = new OrderRequest
             {
                 Items = new List<Items>
                 {
-                    new Items { Id = Guid.NewGuid(), Quantity = 1, Notes = "Plato inválido" } // ID inválido
+                    new Items { Id = dish.Id, Quantity = 0, Notes = "Cantidad inválida" }
                 },
-                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Plato no disponible"
-            };
-            var response = await _client.PostAsJsonAsync("/api/v1/Order", request);
-            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
-            var error = await response.Content.ReadFromJsonAsync<ApiError>();
-            Assert.Equal("El plato especificado no existe o no está disponible.", error.Message);
-        }
-
-        [Fact(DisplayName = "POST-3: 400 | No se permite crear orden sin ítems")]
-        public async Task CreateOrder_WithoutItems_ShouldReturn400()
-        {
-            var request = new OrderRequest
-            {
-                Items = new List<Items>(), // vacío
-                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Sin ítems"
+                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Notes = "Orden con cantidad cero"
             };
 
             var response = await _client.PostAsJsonAsync("/api/v1/Order", request);
-            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 
             var error = await response.Content.ReadFromJsonAsync<ApiError>();
-            Assert.Equal("La orden debe contener al menos un ítem.", error.Message);
+            error?.Message.Should().Be("La cantidad debe ser mayor que 0.");
         }
-        [Fact(DisplayName = "POST-4: 400 | No se permite ítem con cantidad igual a 0")]
-        public async Task CreateOrder_ItemWithZeroQuantity_ShouldReturn400()
+
+        [Fact(DisplayName = "POST-4: 400 | Orden con entrega inválida")]
+        public async Task Post_Should_Return_400_When_Missing_Delivery()
         {
+            var dish = await CreateTestDish();
+
             var request = new OrderRequest
             {
                 Items = new List<Items>
                 {
-                    new Items { Id = Guid.NewGuid(), Quantity = 0, Notes = "Cantidad cero" } // Cantidad inválida
+                    new Items { Id = dish.Id, Quantity = 1, Notes = "Item Test" }
                 },
-                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Ítem con cantidad cero"
+                Delivery = new Delivery
+                {
+                    Id = 0, // inválido
+                    To = "string"
+                },
+                Notes = "Orden con entrega inválida"
             };
+
             var response = await _client.PostAsJsonAsync("/api/v1/Order", request);
-            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+
             var error = await response.Content.ReadFromJsonAsync<ApiError>();
-            Assert.Equal("La cantidad debe ser mayor que 0.", error.Message);
+            error?.Message.Should().Be("Debe especificar un tipo de entrega válido.");
         }
-        [Fact(DisplayName = "POST-8: 400 | No se permite crear orden sin dirección de entrega")]
-        public async Task CreateOrder_WithoutDeliveryAddress_ShouldReturn400()
+
+        [Fact(DisplayName = "POST-5: 400 | Orden con ID de ítem inválido")]
+        public async Task Post_Should_Return_400_When_Item_Id_Is_Invalid_Guid()
         {
+            var payload = new
+            {
+                items = new[]
+                {
+                 new { Id = Guid.NewGuid(), quantity = 1, notes = "ID inválido" }
+                },
+                delivery = new { id = 1, to = "Av. Corrientes 1234" },
+                notes = "Orden con ID incorrecto"
+            };
+
+            var response = await _client.PostAsJsonAsync("/api/v1/Order", payload);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error?.Message.Should().Be("El plato especificado no existe o no está disponible.");
+        }
+
+        [Fact(DisplayName = "POST-6: 400 | Orden sin ítems")]
+        public async Task Post_Should_Return_400_When_Items_Are_Empty()
+        {
+            var payload = new
+            {
+                items = Array.Empty<object>(),
+                delivery = new { id = 1, to = "Av. Corrientes 1234" }
+            };
+
+            var response = await _client.PostAsJsonAsync("/api/v1/Order", payload);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("Debe ingresarse un parámetro válido.");
+        }
+        [Fact(DisplayName = "POST-7: 400 | Orden con ítems nulos")]
+        public async Task Post_Should_Return_400_When_Items_Are_Null()
+        {
+            var payload = new
+            {
+                items = (object?)null,
+                delivery = new { id = 1, to = "Av. Corrientes 1234" }
+            };
+
+            var response = await _client.PostAsJsonAsync("/api/v1/Order", payload);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("Debe ingresarse un parámetro válido.");
+        }
+
+        //GET TESTS
+        [Fact(DisplayName = "GET-1: 200 | Recupera lista de órdenes existentes")]
+        public async Task Get_Should_Return_200_With_List_Of_Orders()
+        {
+            var dish = await CreateTestDish();
+
+            // Crear una orden de prueba
             var request = new OrderRequest
             {
                 Items = new List<Items>
                 {
-                    new Items { Id = Guid.NewGuid(), Quantity = 1, Notes = "Ítem válido" }
+                    new Items { Id = dish.Id, Quantity = 1, Notes = "Test Item" }
                 },
-                Delivery = new Delivery { Id = 1, To = "" }, // Dirección vacía
-                Notes = "Sin dirección de entrega"
+                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Notes = "Orden para GET ALL"
             };
-            var response = await _client.PostAsJsonAsync("/api/v1/Order", request);
-            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
-            var error = await response.Content.ReadFromJsonAsync<ApiError>();
-            Assert.Equal("Debe especificarse la dirección de entrega.", error.Message);
-        }
 
-        [Fact(DisplayName = "GET-1: Traer todas las ordenes")]
-        public async Task GetAllOrders_ShouldReturn200AndValidResponse()
-        {
-            // Act: enviar la solicitud GET
+            var postResponse = await _client.PostAsJsonAsync("/api/v1/Order", request);
+            var postBody = await postResponse.Content.ReadAsStringAsync();
+            postResponse.StatusCode.Should().Be(HttpStatusCode.Created, $"POST devolvió: {postBody}");
+
+            // Ejecutar GET ALL
             var response = await _client.GetAsync("/api/v1/Order");
-            // Assert: verificar respuesta exitosa
-            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            var body = await response.Content.ReadAsStringAsync();
+            response.StatusCode.Should().Be(HttpStatusCode.OK, $"GET ALL devolvió: {body}");
+
             var orders = await response.Content.ReadFromJsonAsync<List<OrderDetailsResponse>>();
-            Assert.NotNull(orders);
-            Assert.True(orders.Count >= 0); // Puede haber 0 o más órdenes
+            orders.Should().NotBeNull("La respuesta debe contener una lista de órdenes");
+            orders!.Should().NotBeEmpty("Debe existir al menos una orden registrada");
+
+            var orden = orders.FirstOrDefault(o => o.Notes == "Orden para GET ALL");
+            orden.Should().NotBeNull("La orden creada debe estar presente en el listado");
+
         }
-        [Fact(DisplayName = "GET-2: 200 | Listar órdenes por fecha y estado")]
-        public async Task GetOrders_ByDateAndStatus_ShouldReturnFilteredResults()
+
+        [Fact(DisplayName = "GET-2: 200 | Filtra órdenes por estado (status=1)")]
+        public async Task Get_Should_Return_200_When_Filtering_By_Status()
         {
-            // Paso 1: Crear plato válido
-            var dishRequest = new DishRequest
-            {
-                Name = Guid.NewGuid().ToString(), // nombre único
-                Description = "Plato para test de filtrado",
-                Price = 500m,
-                Category = 1,
-                Image = "https://restaurant.com/images/test.jpg"
-            };
+            // Arrange: Crear plato y orden con estado 1 (Pendiente)
+            var dish = await CreateTestDish();
 
-            var dishResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
-            var createdDish = await dishResponse.Content.ReadFromJsonAsync<DishResponse>();
-            Assert.Equal(HttpStatusCode.Created, dishResponse.StatusCode);
-
-            // Paso 2: Crear orden válida
-            var orderRequest = new OrderRequest
+            var request = new OrderRequest
             {
                 Items = new List<Items>
                 {
-                    new Items
-                    {
-                        Id = createdDish.Id,
-                        Quantity = 2,
-                        Notes = "Sin albahaca"
-                    }
+                    new Items { Id = dish.Id, Quantity = 1 }
                 },
-                Delivery = new Delivery
-                {
-                    Id = 1,
-                    To = "Calle falsa 123"
-                },
-                Notes = "Entrega rápida"
+                Delivery = new Delivery { Id = 1, To = "Filtro de estado" },
+                Notes = "Orden filtrada por estado"
             };
 
-            var orderResponse = await _client.PostAsJsonAsync("/api/v1/Order", orderRequest);
-            var createdOrder = await orderResponse.Content.ReadFromJsonAsync<OrderCreateResponse>();
-            Assert.Equal(HttpStatusCode.Created, orderResponse.StatusCode);
+            var postResponse = await _client.PostAsJsonAsync("/api/v1/Order", request);
+            postResponse.StatusCode.Should().Be(HttpStatusCode.Created);
 
-            // Paso 3: Filtrar por fecha y estado
-            var fecha = createdOrder.CreatedAt.ToString("yyyy-MM-dd");
-            var estado = 1; // Pending
+            // Act: Ejecutar GET con filtro de estado y rango de fechas
+            var from = DateTime.UtcNow.AddMinutes(-5).ToString("yyyy-MM-ddTHH:mm:ss");
+            var to = DateTime.UtcNow.AddMinutes(5).ToString("yyyy-MM-ddTHH:mm:ss");
+            var response = await _client.GetAsync($"/api/v1/Order?status=1&from={from}&to={to}");
 
-            var filterResponse = await _client.GetAsync($"/api/v1/Order?date={fecha}&status={estado}");
-            Assert.Equal(HttpStatusCode.OK, filterResponse.StatusCode);
+            // Assert: Validar respuesta y contenido
+            response.StatusCode.Should().Be(HttpStatusCode.OK, "El filtro por estado debe devolver 200 OK");
 
-            var orders = await filterResponse.Content.ReadFromJsonAsync<List<OrderDetailsResponse>>();
-            Assert.NotEmpty(orders);
-
-            // Paso 4: Validar que la orden creada esté en el resultado
-            var ordenFiltrada = orders.FirstOrDefault(o => o.OrderNumber == createdOrder.OrderNumber);
-            Assert.NotNull(ordenFiltrada);
-            Assert.Equal(fecha, ordenFiltrada.CreatedAt.ToString("yyyy-MM-dd"));
-            Assert.Equal(estado, ordenFiltrada.Status.Id);
+            var orders = await response.Content.ReadFromJsonAsync<List<OrderDetailsResponse>>();
+            orders.Should().NotBeNull("La respuesta debe contener una lista de órdenes");
+            orders!.Should().NotBeEmpty("Debe haber al menos una orden con estado 1");
+            orders.All(o => o.Status.Id == 1).Should().BeTrue("Todas las órdenes deben tener estado 1 (Pendiente)");
         }
-        [Fact(DisplayName = "PUT-1: 200 | Actualizar estado de ítem")]
-        public async Task UpdateOrderItemStatus_ShouldReturn200()
+        [Fact(DisplayName = "GET-3: 400 | Rango de fechas inválido (from > to)")]
+        public async Task Get_Should_Return_400_When_DateRange_Is_Invalid()
         {
-            // Paso 1: Crear plato
-            var dishRequest = new DishRequest
-            {
-                Name = Guid.NewGuid().ToString(),
-                Description = "Plato para actualizar estado",
-                Price = 500m,
-                Category = 1,
-                Image = "https://restaurant.com/images/test.jpg"
-            };
-            var dishResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
-            Assert.Equal(HttpStatusCode.Created, dishResponse.StatusCode);
-            var dish = await dishResponse.Content.ReadFromJsonAsync<DishResponse>();
-            Assert.NotNull(dish);
+            var from = DateTime.UtcNow;
+            var to = DateTime.UtcNow.AddDays(-1); // Fecha final anterior a la inicial
 
-            // Paso 2: Crear orden con ese plato
-            var orderRequest = new OrderRequest
-            {
-                Items = new List<Items>
-                {
-                    new Items { Id = dish.Id, Quantity = 1, Notes = "Sin sal" }
-                },
-                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Actualizar estado"
-            };
-            var orderResponse = await _client.PostAsJsonAsync("/api/v1/Order", orderRequest);
-            Assert.Equal(HttpStatusCode.Created, orderResponse.StatusCode);
-            var createdOrder = await orderResponse.Content.ReadFromJsonAsync<OrderCreateResponse>();
-            Assert.NotNull(createdOrder);
+            var response = await _client.GetAsync($"/api/v1/Order?from={from:o}&to={to:o}");
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 
-            // Paso 3: Obtener detalles de la orden (usar OrderNumber o la propiedad que tu API expone)
-            var detailsResponse = await _client.GetAsync($"/api/v1/Order/{createdOrder.OrderNumber}");
-            Assert.Equal(HttpStatusCode.OK, detailsResponse.StatusCode);
-            var details = await detailsResponse.Content.ReadFromJsonAsync<OrderDetailsResponse>();
-            Assert.NotNull(details);
-            Assert.NotNull(details.Items);
-            Assert.NotEmpty(details.Items);
-
-            var itemId = details.Items.First().Id;
-            var orderId = details.OrderNumber; // o createdOrder.OrderNumber — mantén consistencia con tu DTO
-
-            // Paso 4: Actualizar estado del ítem -> USAR LA RUTA CORRECTA
-            var updateRequest = new OrderItemUpdateRequest { Status = 2 }; // 2 = "En preparación", por ej.
-            var putResponse = await _client.PutAsJsonAsync($"/api/v1/Order/{orderId}/item/{itemId}", updateRequest);
-
-            Assert.Equal(HttpStatusCode.OK, putResponse.StatusCode);
-
-            var updatedItem = await putResponse.Content.ReadFromJsonAsync<OrderItemResponse>();
-            Assert.NotNull(updatedItem);
-            Assert.Equal(itemId, updatedItem.Id);
-            Assert.NotNull(updatedItem.Status);
-            Assert.Equal(2, updatedItem.Status.Id);
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("La fecha de inicio no puede ser posterior a la fecha de fin");
         }
 
-        [Fact(DisplayName = "PUT-2: 200 | Agregar plato a orden existente")]
-        public async Task AddDishToExistingOrder_ShouldReturn200()
+        [Fact(DisplayName = "GET-4: 200 | Orden existente por ID")]
+        public async Task GetById_Should_Return_200_When_Order_Exists()
         {
-            // Plato base
-            var dish1Request = new DishRequest
-            {
-                Name = Guid.NewGuid().ToString(),
-                Description = "Plato base",
-                Price = 500m,
-                Category = 1,
-                Image = "https://restaurant.com/images/base.jpg"
-            };
-            var dish1Response = await _client.PostAsJsonAsync("/api/v1/Dish", dish1Request);
-            var dish1 = await dish1Response.Content.ReadFromJsonAsync<DishResponse>();
+            var dish = await CreateTestDish();
 
-            // Plato adicional
-            var dish2Request = new DishRequest
+            var request = new OrderRequest
             {
-                Name = Guid.NewGuid().ToString(),
-                Description = "Plato adicional",
-                Price = 600m,
-                Category = 1,
-                Image = "https://restaurant.com/images/add.jpg"
+                Items = new List<Items> { new Items { Id = dish.Id, Quantity = 2, Notes = "Test Item" } },
+                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Notes = "Orden para GET BY ID"
             };
-            var dish2Response = await _client.PostAsJsonAsync("/api/v1/Dish", dish2Request);
-            var dish2 = await dish2Response.Content.ReadFromJsonAsync<DishResponse>();
 
-            // Crear orden con plato base
-            var orderRequest = new OrderRequest
-            {
-                Items = new List<Items> { new Items { Id = dish1.Id, Quantity = 1 } },
-                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Agregar plato"
-            };
-            var orderResponse = await _client.PostAsJsonAsync("/api/v1/Order", orderRequest);
-            var createdOrder = await orderResponse.Content.ReadFromJsonAsync<OrderCreateResponse>();
+            var postResponse = await _client.PostAsJsonAsync("/api/v1/Order", request);
+            var created = await postResponse.Content.ReadFromJsonAsync<OrderCreateResponse>();
 
-            // Agregar plato adicional
-            var updateRequest = new OrderUpdateRequest
-            {
-                Items = new List<Items> { new Items { Id = dish2.Id, Quantity = 1, Notes = "Sin sal" } }
-            };
-            var updateResponse = await _client.PutAsJsonAsync($"/api/v1/Order/{createdOrder.OrderNumber}/AddDish", updateRequest);
-            Assert.Equal(HttpStatusCode.OK, updateResponse.StatusCode);
+            var response = await _client.GetAsync($"/api/v1/Order/{created!.OrderNumber}");
+            var order = await response.Content.ReadFromJsonAsync<OrderDetailsResponse>();
 
-            var updatedOrder = await updateResponse.Content.ReadFromJsonAsync<OrderDetailsResponse>();
-            Assert.Contains(updatedOrder.Items, i => i.Dish.Id == dish2.Id);
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            order!.OrderNumber.Should().Be(created.OrderNumber);
+            order.TotalAmount.Should().Be(created.TotalAmount);
+            order.Items.Should().HaveCount(1);
         }
-        [Fact(DisplayName = "DELETE-1: 200 | Eliminar plato sin orden asociada")]
-        public async Task DeleteDish_WithoutOrder_ShouldReturn200()
-        {
-            var dishRequest = new DishRequest
-            {
-                Name = Guid.NewGuid().ToString(),
-                Description = "Plato sin orden",
-                Price = 500m,
-                Category = 1,
-                Image = "https://restaurant.com/images/delete.jpg"
-            };
-            var dishResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
-            var dish = await dishResponse.Content.ReadFromJsonAsync<DishResponse>();
 
-            var deleteResponse = await _client.DeleteAsync($"/api/v1/Dish/{dish.Id}");
-            Assert.Equal(HttpStatusCode.OK, deleteResponse.StatusCode);
+        [Fact(DisplayName = "GET-5: 404 | Orden inexistente por ID")]
+        public async Task GetById_Should_Return_404_When_Order_Not_Exists()
+        {
+            var response = await _client.GetAsync("/api/v1/Order/999999");
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("Orden no encontrada.");
         }
-        [Fact(DisplayName = "DELETE-2: 400 | No se permite eliminar plato con orden asociada")]
-        public async Task DeleteDish_WithActiveOrder_ShouldReturn400()
+
+        [Fact(DisplayName = "GET-6: 200 | Filtra órdenes solo por estado")]
+        public async Task Get_Should_Return_200_When_Filtering_Only_By_Status()
         {
-            // Paso 1: Crear plato
-            var dishRequest = new DishRequest
+            var dish = await CreateTestDish();
+
+            var request = new OrderRequest
             {
-                Name = Guid.NewGuid().ToString(), // nombre único
-                Description = "Plato vinculado",
-                Price = 500m,
-                Category = 1,
-                Image = "https://restaurant.com/images/linked.jpg"
+                Items = new List<Items> { new Items { Id = dish.Id, Quantity = 1 } },
+                Delivery = new Delivery { Id = 1, To = "Only status test" }
             };
 
-            var dishResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
-            Assert.Equal(HttpStatusCode.Created, dishResponse.StatusCode);
-            var dish = await dishResponse.Content.ReadFromJsonAsync<DishResponse>();
+            await _client.PostAsJsonAsync("/api/v1/Order", request);
 
-            // Paso 2: Crear orden que incluya ese plato
-            var orderRequest = new OrderRequest
-            {
-                Items = new List<Items>
-                {
-                    new Items { Id = dish.Id, Quantity = 1, Notes = "Sin sal" }
-                },
-                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Plato vinculado"
-            };
+            var response = await _client.GetAsync("/api/v1/Order?status=1");
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
 
-            var orderResponse = await _client.PostAsJsonAsync("/api/v1/Order", orderRequest);
-            Assert.Equal(HttpStatusCode.Created, orderResponse.StatusCode);
+            var orders = await response.Content.ReadFromJsonAsync<List<OrderDetailsResponse>>();
+            orders.Should().NotBeNull();
+            orders!.All(o => o.Status.Id == 1).Should().BeTrue();
+        }
+        [Fact(DisplayName = "GET-7: 404 | ID no numérico en GET BY ID")]
+        public async Task GetById_Should_Return_404_When_Id_Is_Not_Number()
+        {
+            var response = await _client.GetAsync("/api/v1/Order/abc");
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+        }
 
-            // Paso 3: Intentar eliminar el plato
-            var deleteResponse = await _client.DeleteAsync($"/api/v1/Dish/{dish.Id}");
-            Assert.Equal(HttpStatusCode.BadRequest, deleteResponse.StatusCode);
 
-            var error = await deleteResponse.Content.ReadFromJsonAsync<ApiError>();
-            Assert.Equal("No se puede eliminar el plato porque está en órdenes activas", error.Message);
+        // PATCH TESTS
+        [Fact(DisplayName = "PATCH-1: 200 | Actualiza estado de ítem")]
+        public async Task Patch_Should_Return_200_When_Update_Item_Status()
+        {
+            var (orderNumber, itemId, total) = await CreateOrderWithDish("plato patch1");
+
+            var patchResponse = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 2 } // En preparación
+            );
+
+            patchResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+
+            var updated = await patchResponse.Content.ReadFromJsonAsync<OrderUpdateResponse>();
+            updated!.OrderNumber.Should().Be(orderNumber);
+            updated.TotalAmount.Should().Be((double)total);
+        }
+        [Fact(DisplayName = "PATCH-2: 400 | Estado nulo")]
+        public async Task Patch_Should_Return_400_When_Status_Is_Null()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-null");
+
+            var response = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = (int?)null }
+            );
+
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("Nuevo estado no puede ser nulo");
+        }
+        [Fact(DisplayName = "PATCH-3: 400 | Estado no reconocido")]
+        public async Task Patch_Should_Return_400_When_Status_Is_Not_Valid()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-invalid");
+
+            var response = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 999 }
+            );
+
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("El estado especificado no es válido");
+        }
+
+        [Fact(DisplayName = "PATCH-4: 400 | Transición inválida de estado")]
+        public async Task Patch_Should_Return_400_When_Transition_Is_Not_Allowed()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-transition");
+
+            var response = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 4 } // Pendiente → Entregado (no permitido)
+            );
+
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("No se puede cambiar de 'Pendiente' a 'Entregado'");
+        }
+        [Fact(DisplayName = "PATCH-5: 404 | Ítem inexistente en la orden")]
+        public async Task Patch_Should_Return_404_When_Item_Not_Found()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("plato patch4");
+
+            var fakeItemId = itemId + 9999; // aseguramos que no exista
+
+            var response = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{fakeItemId}",
+                new { status = 2 }
+            );
+
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("Item no encontrado en la orden");
+        }
+
+
+
+        // CAMBIO DE ESTADOS TEST
+        [Fact(DisplayName = "PATCH-6: 200 | En preparación → Listo")]
+        public async Task Patch_Should_Return_200_When_Preparation_To_Ready()
+        {
+            var (orderNumber, itemId, total) = await CreateOrderWithDish("patch-prep-ready");
+
+            // 1) Pendiente → En preparación
+            await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 2 }
+            );
+
+            // 2) En preparación → Listo
+            var patchResponse = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 3 }
+            );
+
+            patchResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            var updated = await patchResponse.Content.ReadFromJsonAsync<OrderUpdateResponse>();
+            updated!.OrderNumber.Should().Be(orderNumber);
+            updated.TotalAmount.Should().Be((double)total);
+        }
+        [Fact(DisplayName = "PATCH-7: 200 | En preparación → Cancelada")]
+        public async Task Patch_Should_Return_200_When_Preparation_To_Cancelled()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-prep-cancel");
+
+            // Pendiente → En preparación
+            await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 2 }
+            );
+
+            // En preparación → Cancelada
+            var patchResponse = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 5 }
+            );
+
+            patchResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            var updated = await patchResponse.Content.ReadFromJsonAsync<OrderUpdateResponse>();
+            updated!.OrderNumber.Should().Be(orderNumber);
+        }
+        [Fact(DisplayName = "PATCH-8: 200 | Listo → Cancelada")]
+        public async Task Patch_Should_Return_200_When_Ready_To_Cancelled()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-ready-cancel");
+
+            // Pendiente → En preparación → Listo
+            await _client.PatchAsJsonAsync($"/api/v1/Order/{orderNumber}/item/{itemId}", new { status = 2 });
+            await _client.PatchAsJsonAsync($"/api/v1/Order/{orderNumber}/item/{itemId}", new { status = 3 });
+
+            // Listo → Cancelada
+            var patchResponse = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 5 }
+            );
+
+            patchResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            var updated = await patchResponse.Content.ReadFromJsonAsync<OrderUpdateResponse>();
+            updated!.OrderNumber.Should().Be(orderNumber);
+        }
+        [Fact(DisplayName = "PATCH-9: 200 | Entregado → Cancelada")]
+        public async Task Patch_Should_Return_200_When_Delivered_To_Cancelled()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-delivered-cancel");
+
+            // Pendiente → En preparación → Listo → Entregado
+            await _client.PatchAsJsonAsync($"/api/v1/Order/{orderNumber}/item/{itemId}", new { status = 2 });
+            await _client.PatchAsJsonAsync($"/api/v1/Order/{orderNumber}/item/{itemId}", new { status = 3 });
+            await _client.PatchAsJsonAsync($"/api/v1/Order/{orderNumber}/item/{itemId}", new { status = 4 });
+
+            // Entregado → Cancelada
+            var patchResponse = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 5 }
+            );
+
+            patchResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+            var updated = await patchResponse.Content.ReadFromJsonAsync<OrderUpdateResponse>();
+            updated!.OrderNumber.Should().Be(orderNumber);
+        }
+        [Fact(DisplayName = "PATCH-10: 400 | Cancelada → Pendiente (inválido)")]
+        public async Task Patch_Should_Return_400_When_Cancelled_To_Pending()
+        {
+            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-cancel-pending");
+
+            // Cancelar directamente
+            await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 5 }
+            );
+
+            // Intentar reabrir
+            var patchResponse = await _client.PatchAsJsonAsync(
+                $"/api/v1/Order/{orderNumber}/item/{itemId}",
+                new { status = 1 }
+            );
+
+            patchResponse.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            var error = await patchResponse.Content.ReadFromJsonAsync<ApiError>();
+            error!.Message.Should().Be("No se puede cambiar de 'Cancelada' a 'Pendiente'");
         }
     }
 }
+
