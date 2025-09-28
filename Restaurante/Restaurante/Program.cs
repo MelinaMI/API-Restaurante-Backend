@@ -95,6 +95,7 @@ builder.Services.AddScoped<IOrderItemQuery, OrderItemQuery>();
 builder.Services.AddScoped<ICreateOrderItemService, CreateOrderItemService>();
 builder.Services.AddScoped<IUpdateOrderItemStatusService, UpdateOrderItemStatusService>();
 builder.Services.AddScoped<IUpdateOrderItemStatusValidation, UpdateOrderItemStatusValidator>();
+
 //END CUSTOM
 
 var app = builder.Build();

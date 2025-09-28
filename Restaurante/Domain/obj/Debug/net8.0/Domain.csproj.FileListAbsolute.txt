@@ -22,3 +22,15 @@ C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Domain\obj\Deb
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Domain\obj\Debug\net8.0\ref\Domain.dll

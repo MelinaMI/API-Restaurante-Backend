@@ -31,23 +31,15 @@ namespace Restaurante.ExceptionMiddleware
         {
             HttpStatusCode status;
             string message = ex.Message;
+            if (ex is BadRequestException)
+                status = HttpStatusCode.BadRequest;
+            else if (ex is NotFoundException)
+                status = HttpStatusCode.NotFound;
+            else if (ex is ConflictException)
+                status = HttpStatusCode.Conflict;
+            else
+                status = HttpStatusCode.InternalServerError;
 
-            switch (ex)
-            {
-                case BadRequestException:
-                    status = HttpStatusCode.BadRequest;
-                    break;
-                case NotFoundException:
-                    status = HttpStatusCode.NotFound;
-                    break;
-                case ConflictException:
-                    status = HttpStatusCode.Conflict;
-                    break;
-                default:
-                    status = HttpStatusCode.InternalServerError;
-                    message = "Ha ocurrido un error inesperado. Intente nuevamente más tarde.";
-                    break;
-            }
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)status;
 

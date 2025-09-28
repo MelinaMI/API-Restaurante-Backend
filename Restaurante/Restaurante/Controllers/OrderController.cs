@@ -56,7 +56,7 @@ namespace Restaurante.Controllers
             var updatedOrder = await _updateOrderService.UpdateOrderAsync(id, request);
             return Ok(updatedOrder);
         }
-        [HttpPut("{orderId}/item/{itemId}")]
+        [HttpPatch("{orderId}/item/{itemId}")]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
         public async Task<IActionResult> UpdateOrderItemStatus([FromRoute] long orderId, [FromRoute] long itemId, [FromBody] OrderItemUpdateRequest request)
         {

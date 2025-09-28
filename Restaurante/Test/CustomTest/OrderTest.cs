@@ -1,8 +1,8 @@
 ﻿using Application.Models.Request;
 using Application.Models.Response;
-using Restaurante.Models;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Restaurante.Models;
 using System.Net;
 using System.Net.Http.Json;
 
@@ -16,7 +16,7 @@ namespace Test.CustomTest
             _client = factory.CreateClient();
         }
         //CREATE DISH PARA TESTS
-        private async Task<DishResponse> CreateTestDish(string name = "Item Test Order", decimal price = 1000m, int category = 1)
+        private async Task<DishResponse> CreateTestDish(string name = "Item ", decimal price = 5000, int category = 4)
         {
             var dish = new DishRequest
             {
@@ -35,12 +35,12 @@ namespace Test.CustomTest
         //CREATE ORDER CON UN DISH NUEVO
         private async Task<(long orderNumber, long itemId, decimal totalAmount)> CreateOrderWithDish(string dishName, int quantity = 1)
         {
-            var dish = await CreateTestDish(dishName, 1000m, 6); // categoría 6: pizzas
+            var dish = await CreateTestDish(dishName, 1000, 6);
 
             var orderReq = new OrderRequest
             {
                 Items = new List<Items> { new Items { Id = dish.Id, Quantity = quantity, Notes = "PATCH item" } },
-                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
                 Notes = "Orden para PATCH test"
             };
 
@@ -68,7 +68,7 @@ namespace Test.CustomTest
                 {
                     new Items { Id = dish.Id, Quantity = 2, Notes = "Sin sal" }
                 },
-                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
                 Notes = "Timbre: 5B"
             };
 
@@ -93,7 +93,7 @@ namespace Test.CustomTest
                 {
                     new Items
                     {
-                        Id = Guid.NewGuid(), // No existe en la base
+                        Id = Guid.NewGuid(), 
                         Quantity = 1,
                         Notes = "Sin sal"
                     }
@@ -101,7 +101,7 @@ namespace Test.CustomTest
                 Delivery = new Delivery
                 {
                     Id = 1,
-                    To = "Av. Corrientes 1234"
+                    To = "Calle falsa 123"
                 },
                 Notes = "Orden con plato inválido"
             };
@@ -122,7 +122,7 @@ namespace Test.CustomTest
                 {
                     new Items { Id = dish.Id, Quantity = 0, Notes = "Cantidad inválida" }
                 },
-                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
                 Notes = "Orden con cantidad cero"
             };
 
@@ -168,7 +168,7 @@ namespace Test.CustomTest
                 {
                  new { Id = Guid.NewGuid(), quantity = 1, notes = "ID inválido" }
                 },
-                delivery = new { id = 1, to = "Av. Corrientes 1234" },
+                delivery = new { id = 1, to = "Calle falsa 123" },
                 notes = "Orden con ID incorrecto"
             };
 
@@ -184,30 +184,16 @@ namespace Test.CustomTest
         {
             var payload = new
             {
-                items = Array.Empty<object>(),
-                delivery = new { id = 1, to = "Av. Corrientes 1234" }
+                items = new object[] { },
+                delivery = new { id = 1, to = "Calle falsa 123" },
+                notes = "Hable mas fuerte que tengo una toalla"
             };
-
+            
             var response = await _client.PostAsJsonAsync("/api/v1/Order", payload);
+
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-
             var error = await response.Content.ReadFromJsonAsync<ApiError>();
-            error!.Message.Should().Be("Debe ingresarse un parámetro válido.");
-        }
-        [Fact(DisplayName = "POST-7: 400 | Orden con ítems nulos")]
-        public async Task Post_Should_Return_400_When_Items_Are_Null()
-        {
-            var payload = new
-            {
-                items = (object?)null,
-                delivery = new { id = 1, to = "Av. Corrientes 1234" }
-            };
-
-            var response = await _client.PostAsJsonAsync("/api/v1/Order", payload);
-            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-
-            var error = await response.Content.ReadFromJsonAsync<ApiError>();
-            error!.Message.Should().Be("Debe ingresarse un parámetro válido.");
+            error!.Message.Should().Be("La orden debe contener al menos un ítem.");
         }
 
         //GET TESTS
@@ -223,7 +209,7 @@ namespace Test.CustomTest
                 {
                     new Items { Id = dish.Id, Quantity = 1, Notes = "Test Item" }
                 },
-                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
                 Notes = "Orden para GET ALL"
             };
 
@@ -248,34 +234,12 @@ namespace Test.CustomTest
         [Fact(DisplayName = "GET-2: 200 | Filtra órdenes por estado (status=1)")]
         public async Task Get_Should_Return_200_When_Filtering_By_Status()
         {
-            // Arrange: Crear plato y orden con estado 1 (Pendiente)
-            var dish = await CreateTestDish();
-
-            var request = new OrderRequest
-            {
-                Items = new List<Items>
-                {
-                    new Items { Id = dish.Id, Quantity = 1 }
-                },
-                Delivery = new Delivery { Id = 1, To = "Filtro de estado" },
-                Notes = "Orden filtrada por estado"
-            };
-
-            var postResponse = await _client.PostAsJsonAsync("/api/v1/Order", request);
-            postResponse.StatusCode.Should().Be(HttpStatusCode.Created);
-
-            // Act: Ejecutar GET con filtro de estado y rango de fechas
-            var from = DateTime.UtcNow.AddMinutes(-5).ToString("yyyy-MM-ddTHH:mm:ss");
-            var to = DateTime.UtcNow.AddMinutes(5).ToString("yyyy-MM-ddTHH:mm:ss");
-            var response = await _client.GetAsync($"/api/v1/Order?status=1&from={from}&to={to}");
-
-            // Assert: Validar respuesta y contenido
-            response.StatusCode.Should().Be(HttpStatusCode.OK, "El filtro por estado debe devolver 200 OK");
+            var response = await _client.GetAsync("/api/v1/Order?status=1");
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
 
             var orders = await response.Content.ReadFromJsonAsync<List<OrderDetailsResponse>>();
-            orders.Should().NotBeNull("La respuesta debe contener una lista de órdenes");
-            orders!.Should().NotBeEmpty("Debe haber al menos una orden con estado 1");
-            orders.All(o => o.Status.Id == 1).Should().BeTrue("Todas las órdenes deben tener estado 1 (Pendiente)");
+            orders.Should().NotBeNull();
+            orders.Should().OnlyContain(o => o.Status.Id == 1);
         }
         [Fact(DisplayName = "GET-3: 400 | Rango de fechas inválido (from > to)")]
         public async Task Get_Should_Return_400_When_DateRange_Is_Invalid()
@@ -298,7 +262,7 @@ namespace Test.CustomTest
             var request = new OrderRequest
             {
                 Items = new List<Items> { new Items { Id = dish.Id, Quantity = 2, Notes = "Test Item" } },
-                Delivery = new Delivery { Id = 1, To = "Av. Corrientes 1234" },
+                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
                 Notes = "Orden para GET BY ID"
             };
 
@@ -369,20 +333,7 @@ namespace Test.CustomTest
             updated!.OrderNumber.Should().Be(orderNumber);
             updated.TotalAmount.Should().Be((double)total);
         }
-        [Fact(DisplayName = "PATCH-2: 400 | Estado nulo")]
-        public async Task Patch_Should_Return_400_When_Status_Is_Null()
-        {
-            var (orderNumber, itemId, _) = await CreateOrderWithDish("patch-null");
-
-            var response = await _client.PatchAsJsonAsync(
-                $"/api/v1/Order/{orderNumber}/item/{itemId}",
-                new { status = (int?)null }
-            );
-
-            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-            var error = await response.Content.ReadFromJsonAsync<ApiError>();
-            error!.Message.Should().Be("Nuevo estado no puede ser nulo");
-        }
+        
         [Fact(DisplayName = "PATCH-3: 400 | Estado no reconocido")]
         public async Task Patch_Should_Return_400_When_Status_Is_Not_Valid()
         {

@@ -19,8 +19,19 @@ namespace Application.UseCase.OrderService
         public async Task<IReadOnlyList<OrderDetailsResponse>> GetAllOrdersAsync(DateTime? from, DateTime? to, int? status)
         {
             await _orderValidator.ValidateGetAllOrder(from, to, status);
+
             var query = _orderQuery.GetAllOrders();
-            var orders = await query.ToListAsync(); // acá ejecuta el SQL
+
+            if (status.HasValue)
+                query = query.Where(o => o.OverallStatusNavigation.Id == status.Value);
+
+            if (from.HasValue)
+                query = query.Where(o => o.CreateDate >= from.Value);
+
+            if (to.HasValue)
+                query = query.Where(o => o.CreateDate <= to.Value);
+
+            var orders = await query.ToListAsync();
             return orders.Select(_orderMapper.ToDetailsResponse).ToList();
         }
     }
