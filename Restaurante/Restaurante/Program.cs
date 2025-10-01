@@ -97,9 +97,17 @@ builder.Services.AddScoped<IUpdateOrderItemStatusService, UpdateOrderItemStatusS
 builder.Services.AddScoped<IUpdateOrderItemStatusValidation, UpdateOrderItemStatusValidator>();
 
 //END CUSTOM
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    
+        
+});
 var app = builder.Build();
 
+
+app.UseCors("AllowAll");
 app.UseMiddleware<ExceptionMiddleware>();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,479 @@
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    background-color: #F8F7F6;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* para que quede por encima del contenido */
+}
+
+/* Logo */
+.logo { 
+    width: 110px;
+    height: 80%;
+    object-fit: cover;
+}
+
+/*-- NAVBAR --*/
+.container-fluid
+{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+/* Navbar links */
+.navbar-nav .nav-link {
+    margin-left: 20px;
+    display: flex;        
+    align-items: center;    
+    gap: 15px;              
+    font-weight: 500;
+    line-height: 0.2; 
+}
+.nav-link.active {
+    color: #f39c12; /* amarillo para el menú activo */
+    font-weight: 700;
+    border-bottom: 2px solid #f39c12;
+}
+
+.nav-link.inactive {
+    color: #6c757d; /* gris para los demás */
+    font-weight: 500;
+    border-bottom: none;
+}
+/* -- FIN NAVBAR -- */
+
+/* --PLATOS --*/
+.platos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.plato-card {
+    background: #fff;
+    padding: 15px;
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plato-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.plato-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.plato-card h4 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.plato-card p {
+    font-size: 0.95rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+.plato-card strong {
+    font-size: 1rem;
+    color: #000;
+    margin-top: 10px;
+}
+
+.plato-card button {
+    margin-top: 10px;
+    padding: 8px;
+    cursor: pointer;
+    background: #940719;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.plato-card button:hover {
+    background: #ff4b4b;
+}
+
+
+
+
+/* -- SIDEBAR CARRITO -- */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 1050;
+    overflow-y: auto;
+}
+.cart-sidebar.open {
+    right: 0;
+}
+.close-cart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Título principal con ícono */
+.cart-sidebar h2 {
+    font-size: 1.5rem;       
+    font-weight: 700;         
+    color: #333;             
+    display: flex;
+    align-items: center;     
+    gap: 0.5rem;             
+    margin-top: 0;           
+}
+
+/* Icono dentro del h2 */
+.cart-sidebar h2 i {
+    font-size: 1.3rem;       
+    color: #f39c12;           
+}
+
+/* Subtítulo debajo del título */
+.cart-sidebar .subtitle {
+    font-size: 0.85rem;      
+    color: #666;             
+    margin: 0.3rem 0 1rem 0; 
+    line-height: 1.3;        
+}
+
+/* Título de la sección de platos */
+.cart-sidebar h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #444;             
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+/* Contenedor del bloque vacío centrado */
+.cart-sidebar .empty-block {
+    display: flex;
+    flex-direction: column;      /* Apila icono y textos */
+    align-items: center;         /* Centra horizontalmente */
+    justify-content: center;     /* Centra verticalmente */
+    height: calc(50% - 120px);  /* Altura restante del sidebar después de títulos */
+    text-align: center;
+}
+
+/* Icono grande */
+.cart-sidebar .empty-icon {
+    font-size: 4rem;        /* Tamaño grande */
+    color: #ccc;            /* Gris clarito */
+    margin-bottom: 1rem;
+}
+
+/* Mensajes centrados */
+.cart-sidebar .empty-cart,
+.cart-sidebar .add-more {
+    font-size: 0.9rem;      /* Más pequeño */
+    color: #8d8d8d;            /* Gris claro */
+    margin: 0.2rem 0;
+}
+/* Item dentro del carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.cart-item-price {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.2rem 0;
+}
+
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.cart-item-qty button {
+    border: none;
+    background: #c7c4c4;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 3px 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.cart-item-qty button:hover {
+    background: #a9a7a7;
+}
+
+.cart-item-qty span {
+    min-width: 25px; /* asegura que el número no se vea apretado */
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.cart-item-remove {
+    background: transparent;
+    border: none;
+    color: #424141;
+    font-size: 1rem;
+    cursor: pointer;
+}
+/*-- FIN SIDEBAR CARRITO --*/
+
+
+/* -- MODAL LOGIN -- */
+
+.custom-modal {
+    position: relative;
+    width: 350px;
+    height: 320px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+}
+/* Título */
+.modal-title {
+    margin-top:10px;
+    margin-bottom: 0px; 
+    font-weight: 700;
+    color: #333;
+}
+/* Subtítulo */
+.login-subtitle {
+    font-size: 0.95rem;
+    color: #666;   
+    margin-bottom: 1rem;
+}
+
+/* Inputs con íconos */
+.input-group .form-control {
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+/* Botón mostaza */
+.btn-warning {
+    color: #fff;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: #e08e0b;
+    border-color: #e08e0b;
+}
+/* -- FIN MODAL LOGIN -- */
+
+/* -- SECCIÓN ORDEN -- */
+.order-section {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cart-item-title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.order-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.order-submit-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #f39c12;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.order-submit-btn:hover {
+  background: #e08e0b;
+}
+#cart-btn {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  display: inline-block;
+  background-color: #940719;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 50%;
+}
+.order-section {
+  display: none; /* Oculta la sección inicialmente */
+}
+#address-group {
+  display: none; /* oculto por defecto */
+}
+
+/*FILTROS*/
+
+/* Contenedor de filtros */
+.filtros-container {
+    margin-top: 80px;
+    margin-left: 89px;
+    margin-right: 89px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+/* Inputs y selects */
+.filtros-container input,
+.filtros-container select {
+    flex: 1 1 200px; /* ancho flexible, mínimo 200px */
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+/* Focus para input y select */
+.filtros-container input:focus,
+.filtros-container select:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 6px rgba(243,156,18,0.4);
+}
+
+/* Botón de limpiar filtros */
+#reset-filters {
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+#reset-filters:hover {
+    background-color: #d48806;
+    transform: translateY(-2px);
+}
+
+/* Icono dentro del botón */
+#reset-filters i {
+    font-size: 1rem;
+    margin-bottom: -4px; /* ajusta fino */
+}
+
+/* Para que sea responsivo en móviles */
+@media (max-width: 768px) {
+    .filtros-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

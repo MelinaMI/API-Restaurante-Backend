@@ -28,7 +28,7 @@ namespace Test.CustomTest
                 Description = "Pizza con salsa de tomate, mozzarella, albahaca fresca y aceite de oliva",
                 Price = 1000m,
                 Category = 6,
-                Image = "https://restaurant.com/images/pizza-napolitana.jpg"
+                Image = "https://solorecetas.com/wp-content/uploads/2017/05/pizza-napolitana-2.jpg"
             };
 
             // Act: enviar la solicitud POST
@@ -57,7 +57,7 @@ namespace Test.CustomTest
                 Description = "Ravioles caseros rellenos de ricota y nuez con salsa de tomate",
                 Price = 1000m,
                 Category = 3,
-                Image = "https://restaurant.com/images/ravioles.jpg"
+                Image = "https://cdn2.cocinadelirante.com/1020x600/filters:format(webp):quality(75)/sites/default/files/images/2022/03/dia-de-los-ravioles-1.jpg"
             };
 
             // Act 1: crear el plato por primera vez
@@ -162,7 +162,7 @@ namespace Test.CustomTest
                     Description = "Ñoquis caseros con mezcla de salsa blanca y tomate",
                     Price = 1100m,
                     Category = 3,
-                    Image = "https://restaurant.com/images/noquis.jpg"
+                    Image = "https://img.freepik.com/foto-gratis/noquis-salsa-rosa_163431-42.jpg?size=626&ext=jpgg"
                 },
                 new DishRequest
                 {
@@ -170,7 +170,7 @@ namespace Test.CustomTest
                     Description = "Lechuga, pollo grillado, croutons y aderezo César",
                     Price = 950m,
                     Category = 2,
-                    Image = "https://restaurant.com/images/cesar.jpg"
+                    Image = "https://tse2.mm.bing.net/th/id/OIP.X3yPzovImtJ8pbcrD6e57gEyDM?rs=1&pid=ImgDetMain&o=7&rm=3"
                 },
                 new DishRequest
                 {
@@ -178,7 +178,7 @@ namespace Test.CustomTest
                     Description = "Hamburguesa de lentejas con vegetales grillados",
                     Price = 1200m,
                     Category = 4,
-                    Image = "https://restaurant.com/images/vegana.jpg"
+                    Image = "https://th.bing.com/th/id/R.f1503bcd01728f6753b9f248c976b498?rik=McGsV%2fHuW9E%2bMA&pid=ImgRaw&r=0"
                 }
             };
 
@@ -214,7 +214,7 @@ namespace Test.CustomTest
                 Description = "Tarta casera con calabaza horneada y queso gratinado",
                 Price = 1150m,
                 Category = 2,
-                Image = "https://restaurant.com/images/tarta-calabaza.jpg"
+                Image = "https://static.wixstatic.com/media/c4453b_f544f31a8b8e483bbda4abc1a509441d~mv2.jpg/v1/fit/w_2500,h_1330,al_c/c4453b_f544f31a8b8e483bbda4abc1a509441d~mv2.jpg"
             };
 
             var postResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dish);
@@ -244,7 +244,7 @@ namespace Test.CustomTest
                     Description = "Polenta cremosa con salsa de carne cocida lentamente con vino tinto",
                     Price = 11000m,
                     Category = 3,
-                    Image = "https://restaurant.com/images/polenta-ragu.jpg"
+                    Image = "https://spagora.com.br/wp-content/uploads/2024/12/polenta-cremosa-com-ragu-de-carne-sabor-irresistivel-em-uma-receita-rapida-e-sem-complicacoes.jpg"
                 },
                 new DishRequest
                 {
@@ -252,7 +252,7 @@ namespace Test.CustomTest
                     Description = "Sopa exótica con leche de coco, curry rojo, pollo y cilantro fresco",
                     Price = 9500m,
                     Category = 5,
-                    Image = "https://restaurant.com/images/sopa-thai.jpg"
+                    Image = "https://www.melonsinjamon.com/wp-content/uploads/2020/07/sopa-thai-coco-curry-vegana.jpg"
                 },
                 new DishRequest
                 {
@@ -260,7 +260,7 @@ namespace Test.CustomTest
                     Description = "Tomates cherry, aceitunas negras, queso feta, pepino y aceite de oliva",
                     Price = 15000m,
                     Category = 2,
-                    Image = "https://restaurant.com/images/ensalada-mediterranea.jpg"
+                    Image = "https://www.gastrolabweb.com/u/fotografias/m/2021/5/18/f800x450-13354_64800_5942.jpg"
                 }
             };
 
@@ -343,7 +343,7 @@ namespace Test.CustomTest
                 Description = "Fideos caseros con salsa de albahaca, ajo y nueces",
                 Price = 1000m,
                 Category = 3,
-                Image = "https://restaurant.com/images/fideos-pesto.jpg"
+                Image = "https://tse3.mm.bing.net/th/id/OIP.l6Ji0GVz-tCVmb1jPkEIcAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3"
             };
 
             var createResponse = await _client.PostAsJsonAsync("/api/v1/Dish", originalDish);
@@ -359,7 +359,7 @@ namespace Test.CustomTest
                 Description = "Risotto cremoso con hongos portobello, parmesano y aceite de trufa",
                 Price = 1400m,
                 Category = 3,
-                Image = "https://restaurant.com/images/risotto-trufa.jpg",
+                Image = "https://byotoya.com/wp-content/uploads/2020/05/cba6178b-6e09-42ad-9a64-8c3247874ae9-2.jpg",
                 IsActive = false
             };
 
@@ -387,7 +387,7 @@ namespace Test.CustomTest
                 Description = "La favorita de Garfield: capas infinitas de pasta, salsa bolognesa casera, bechamel cremosa y mucho, pero mucho queso gratinado.",
                 Price = 1600m,
                 Category = 4,
-                Image = "https://restaurant.com/images/lasagna-bolognesa-garfield.jpg"
+                Image = "https://www.gourmet.cl/wp-content/uploads/2016/09/iStock-505754880-1.jpg"
             };
 
             var postResponse = await _client.PostAsJsonAsync("/api/v1/Dish", originalDish);
@@ -455,7 +455,7 @@ namespace Test.CustomTest
                 Description = "Flan casero acompañado con dulce de leche",
                 Price = 5000m,
                 Category = 10,
-                Image = "https://restaurant.com/images/flan-casero.jpg"
+                Image = "https://tse1.mm.bing.net/th/id/OIP.mouC6Anzrihj38e8HaoAqgHaDt?rs=1&pid=ImgDetMain&o=7&rm=3"
             };
 
             var responseA = await _client.PostAsJsonAsync("/api/v1/Dish", dishA);
@@ -471,7 +471,7 @@ namespace Test.CustomTest
                 Description = "Botella de agua sin gas 500ml",
                 Price = 1200m,
                 Category = 8,
-                Image = "https://restaurant.com/images/plato-b.jpg"
+                Image = "https://hiperlibertad.vteximg.com.br/arquivos/ids/162797-1000-1000/Agua-mineral-sin-gas-Villavicencio-500-cc-2-5960.jpg?v=637287221936070000"
             };
 
             var responseB = await _client.PostAsJsonAsync("/api/v1/Dish", dishB);
