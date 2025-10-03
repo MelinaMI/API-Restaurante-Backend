@@ -12,11 +12,14 @@ namespace Infrastructure.Commands
         {
             _context = context;
         }
-        public async Task DeleteDishAsync(Dish dish)
+        public async Task DeleteDishAsync(Guid id)
         {
-            dish.Available = false; // Soft delete
-            dish.UpdateDate = DateTime.UtcNow;
-            await _context.SaveChangesAsync();
+            var dish = await _context.Dishes.FindAsync(id);
+            if (dish != null) 
+            {
+                _context.Dishes.Remove(dish);
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task InsertDishAsync(Dish dish)

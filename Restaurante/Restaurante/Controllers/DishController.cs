@@ -55,6 +55,7 @@ namespace Restaurant.Controllers
             var result = await _getDishByIdService.GetDishByIdAsync(id);
             return Ok(result);
         }
+
         [HttpDelete("{id}")]
         [ProducesResponseType(typeof(DishResponse), StatusCodes.Status200OK)]
         public async Task<ActionResult<DishResponse>> DeleteDish([FromRoute] Guid id)

@@ -15,9 +15,7 @@ namespace Application.Validators.DishValidator
             var dish = await _dishQuery.GetDishByIdAsync(id);
             if (dish == null) throw new NotFoundException("Plato no encontrado");
 
-            if (!dish.Available)
-                throw new ConflictException("El plato ya está marcado como no disponible");
-
+            
             bool tieneOrdenesActivas = dish.OrderItems.Any(oi =>
                 oi.OrderNavigation != null &&
                 (oi.OrderNavigation.OverallStatus == 1 || oi.OrderNavigation.OverallStatus == 2) // 1: Pending, 2: In progress

@@ -28,11 +28,8 @@ namespace Application.UseCase.Services.DishService
             var dish = await _dishQuery.GetDishByIdAsync(id);
             if (dish == null)
                 throw new NotFoundException("Plato no encontrado");
-
-            var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category);
-            
-            await _dishCommand.DeleteDishAsync(dish);
-
+            await _dishCommand.DeleteDishAsync(id);
+            var category = await _categoryQuery.GetByCategoryIdAsync(dish.Category); 
             return _dishMapper.ToDishResponseList(dish, category);
         }
     }

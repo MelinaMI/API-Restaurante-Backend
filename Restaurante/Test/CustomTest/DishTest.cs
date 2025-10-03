@@ -529,45 +529,8 @@ namespace Test.CustomTest
             deleteResponse.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
-        [Fact(DisplayName = "DELETE-2: 409 | Plato no disponible")]
-        public async Task DeleteDish_Should_Return_409_When_NotAvailable()
-        {
-            // Crear plato marcado como no disponible
-            var dishRequest = new DishRequest
-            {
-                Name = "Sopa de verduras",
-                Description = "Sopa deliciosa",
-                Price = 1200m,
-                Category = 1,
-                Image = "https://cocina.guru/wp-content/uploads/2022/01/sopa-de-verduras.jpg",
-            };
 
-
-            var createResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
-            createResponse.StatusCode.Should().Be(HttpStatusCode.Created);
-
-            var createdDish = await createResponse.Content.ReadFromJsonAsync<DishResponse>();
-            createdDish.Should().NotBeNull();
-            // 2. Actualizar plato para marcarlo como no disponible
-            var updateRequest = new DishUpdateRequest
-            {
-                Name = createdDish.Name,
-                Description = createdDish.Description,
-                Price = createdDish.Price,
-                Category = createdDish.Category.Id,
-                Image = createdDish.Image,
-                IsActive = false // <-- aquí cambiamos su disponibilidad
-            };
-            await _client.PutAsJsonAsync($"/api/v1/Dish/{createdDish.Id}", updateRequest);
-            // 3. Intentar eliminar el plato (debería devolver 409 Conflict)
-            var deleteResponse = await _client.DeleteAsync($"/api/v1/Dish/{createdDish.Id}");
-            deleteResponse.StatusCode.Should().Be(HttpStatusCode.Conflict);
-
-            var json = await deleteResponse.Content.ReadFromJsonAsync<ApiError>();
-            json!.Message.Should().Be("El plato ya está marcado como no disponible");
-        }
-
-        [Fact(DisplayName = "DELETE-3: 409 | Plato con órdenes activas")]
+        [Fact(DisplayName = "DELETE-2: 409 | Plato con órdenes activas")]
         public async Task DeleteDish_Should_Return_409_When_HasActiveOrders()
         {
             // ----------------------------
@@ -598,7 +561,7 @@ namespace Test.CustomTest
                     new Items { Id = createdDish.Id, Quantity = 1, Notes = "Test Item" } // <-- usar el Id retornado por el API
                 },
                 Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Orden para GET ALL"
+                Notes = "Plato para probar test"
             };
 
             var postResponse = await _client.PostAsJsonAsync("/api/v1/Order", request);
@@ -619,7 +582,7 @@ namespace Test.CustomTest
             error!.Message.Should().Be("No se puede eliminar el plato porque está en órdenes activas");
         }
 
-        [Fact(DisplayName = "DELETE-4: 404 | Plato inexistente")]
+        [Fact(DisplayName = "DELETE-3: 404 | Plato inexistente")]
         public async Task DeleteDish_Should_Return_404_When_NotFound()
         {
             // Arrange: preparar un ID aleatorio que no corresponde a ningún plato
