@@ -552,14 +552,14 @@
         }
       }
     },
-    "/api/v1/Order/{orderId}/item/{itemId}": {
+    "/api/v1/Order/{id}/item/{itemId}": {
       "patch": {
         "tags": [
           "Order"
         ],
         "parameters": [
           {
-            "name": "orderId",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {

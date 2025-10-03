@@ -12,12 +12,12 @@ namespace Application.Validators.OrderValidator
         }   
         public async Task ValidateOrderById(long orderId)
         {
+            if (orderId <= 0)
+                throw new BadRequestException("El ID de la orden debe ser un número positivo.");
+
             var order = await _orderQuery.GetOrderByIdAsync(orderId);
             if (order == null)
                 throw new NotFoundException("Orden no encontrada.");
-
-            if (orderId <= 0)
-                throw new BadRequestException("El ID de la orden debe ser un número positivo.");
         }
     }
 }

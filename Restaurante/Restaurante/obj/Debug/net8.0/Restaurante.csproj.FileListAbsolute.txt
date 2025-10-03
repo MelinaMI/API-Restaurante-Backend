@@ -536,3 +536,4 @@ C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Restaurante\o
 C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\Restaurante.pdb
 C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\Restaurante.genruntimeconfig.cache
 C:\Users\Noxie\Desktop\Nueva carpeta\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\ref\Restaurante.dll
+C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Restaurante\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

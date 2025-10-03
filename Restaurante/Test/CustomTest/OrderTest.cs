@@ -39,9 +39,9 @@ namespace Test.CustomTest
 
             var orderReq = new OrderRequest
             {
-                Items = new List<Items> { new Items { Id = dish.Id, Quantity = quantity, Notes = "PATCH item" } },
+                Items = new List<Items> { new Items { Id = dish.Id, Quantity = quantity, Notes = "item" } },
                 Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
-                Notes = "Orden para PATCH test"
+                Notes = "Orden para test"
             };
 
             var postOrder = await _client.PostAsJsonAsync("/api/v1/Order", orderReq);
@@ -309,10 +309,10 @@ namespace Test.CustomTest
             orders!.All(o => o.Status.Id == 1).Should().BeTrue();
         }
         [Fact(DisplayName = "GET-7: 404 | ID no numérico en GET BY ID")]
-        public async Task GetById_Should_Return_404_When_Id_Is_Not_Number()
+        public async Task GetById_Should_Return_400_When_Id_Is_Not_Number()
         {
             var response = await _client.GetAsync("/api/v1/Order/abc");
-            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
 
 

@@ -56,11 +56,11 @@ namespace Restaurante.Controllers
             var updatedOrder = await _updateOrderService.UpdateOrderAsync(id, request);
             return Ok(updatedOrder);
         }
-        [HttpPatch("{orderId}/item/{itemId}")]
+        [HttpPatch("{id}/item/{itemId}")]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
-        public async Task<IActionResult> UpdateOrderItemStatus([FromRoute] long orderId, [FromRoute] long itemId, [FromBody] OrderItemUpdateRequest request)
+        public async Task<IActionResult> UpdateOrderItemStatus([FromRoute] long id, [FromRoute] long itemId, [FromBody] OrderItemUpdateRequest request)
         {
-            var response = await _updateOrderItemStatus.UpdateOrderItemStatusAsync(orderId, itemId, request.Status);
+            var response = await _updateOrderItemStatus.UpdateOrderItemStatusAsync(id, itemId, request.Status);
             return Ok(response);
         }
     }

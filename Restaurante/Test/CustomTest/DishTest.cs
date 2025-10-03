@@ -500,6 +500,139 @@ namespace Test.CustomTest
             error.Should().NotBeNull();
             error!.Message.Should().Be("Ya existe otro plato con ese nombre");
         }
+
+        // ---------- 13-116) DELETE TESTS ----------
+
+        [Fact(DisplayName = "DELETE-1: 200 | Eliminar plato exitosamente")]
+        public async Task DeleteDish_Should_Return_200_When_Valid()
+        {
+            // Arrange: crear un plato disponible y sin órdenes activas
+            var dishRequest = new DishRequest
+            {
+                Name = "Guiso de arroz",
+                Description = "Guiso de arroz con pollo, papas en cubos y batata",
+                Price = 2500m,
+                Category = 3,
+                Image = "https://media.a24.com/p/762fc8fc8c536c7a77b60ecfcb3f70c8/adjuntos/296/imagenes/009/144/0009144586/1200x675/smart/receta-guiso-arroz-pollo-la-mejor-opcion-un-cena-casera.png"
+            };
+
+            var createResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
+            createResponse.StatusCode.Should().Be(HttpStatusCode.Created);
+
+            var createdDish = await createResponse.Content.ReadFromJsonAsync<DishResponse>();
+            createdDish.Should().NotBeNull();
+
+            // Act: eliminar el plato
+            var deleteResponse = await _client.DeleteAsync($"/api/v1/Dish/{createdDish.Id}");
+
+            // Assert
+            deleteResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+        [Fact(DisplayName = "DELETE-2: 409 | Plato no disponible")]
+        public async Task DeleteDish_Should_Return_409_When_NotAvailable()
+        {
+            // Crear plato marcado como no disponible
+            var dishRequest = new DishRequest
+            {
+                Name = "Sopa de verduras",
+                Description = "Sopa deliciosa",
+                Price = 1200m,
+                Category = 1,
+                Image = "https://cocina.guru/wp-content/uploads/2022/01/sopa-de-verduras.jpg",
+            };
+
+
+            var createResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
+            createResponse.StatusCode.Should().Be(HttpStatusCode.Created);
+
+            var createdDish = await createResponse.Content.ReadFromJsonAsync<DishResponse>();
+            createdDish.Should().NotBeNull();
+            // 2. Actualizar plato para marcarlo como no disponible
+            var updateRequest = new DishUpdateRequest
+            {
+                Name = createdDish.Name,
+                Description = createdDish.Description,
+                Price = createdDish.Price,
+                Category = createdDish.Category.Id,
+                Image = createdDish.Image,
+                IsActive = false // <-- aquí cambiamos su disponibilidad
+            };
+            await _client.PutAsJsonAsync($"/api/v1/Dish/{createdDish.Id}", updateRequest);
+            // 3. Intentar eliminar el plato (debería devolver 409 Conflict)
+            var deleteResponse = await _client.DeleteAsync($"/api/v1/Dish/{createdDish.Id}");
+            deleteResponse.StatusCode.Should().Be(HttpStatusCode.Conflict);
+
+            var json = await deleteResponse.Content.ReadFromJsonAsync<ApiError>();
+            json!.Message.Should().Be("El plato ya está marcado como no disponible");
+        }
+
+        [Fact(DisplayName = "DELETE-3: 409 | Plato con órdenes activas")]
+        public async Task DeleteDish_Should_Return_409_When_HasActiveOrders()
+        {
+            // ----------------------------
+            // Arrange: crear un plato disponible
+            // ----------------------------
+            var dishRequest = new DishRequest
+            {
+                Name = "Tarta de Frutilla",
+                Description = "Base de masa dulce con crema y frutillas frescas",
+                Price = 1200m,
+                Category = 10,
+                Image = "https://kobietamag.pl/wp-content/uploads/2016/04/tarta-z-truskawkami-i-bita-smietana-ozdobiona-liscmi-miety.jpg"
+            };
+
+            var createResponse = await _client.PostAsJsonAsync("/api/v1/Dish", dishRequest);
+            createResponse.StatusCode.Should().Be(HttpStatusCode.Created);
+
+            var createdDish = await createResponse.Content.ReadFromJsonAsync<DishResponse>();
+            createdDish.Should().NotBeNull();
+
+            // ----------------------------
+            // Arrange: crear una orden que incluya este plato (simulando una orden activa)
+            // ----------------------------
+            var request = new OrderRequest
+            {
+                Items = new List<Items>
+                {
+                    new Items { Id = createdDish.Id, Quantity = 1, Notes = "Test Item" } // <-- usar el Id retornado por el API
+                },
+                Delivery = new Delivery { Id = 1, To = "Calle falsa 123" },
+                Notes = "Orden para GET ALL"
+            };
+
+            var postResponse = await _client.PostAsJsonAsync("/api/v1/Order", request);
+            postResponse.StatusCode.Should().Be(HttpStatusCode.Created);
+
+            // ----------------------------
+            // Act: intentar eliminar el plato que está en una orden activa
+            // ----------------------------
+            var deleteResponse = await _client.DeleteAsync($"/api/v1/Dish/{createdDish.Id}");
+
+            // ----------------------------
+            // Assert: verificar que se devuelve 409 Conflict y el mensaje de error esperado
+            // ----------------------------
+            deleteResponse.StatusCode.Should().Be(HttpStatusCode.Conflict);
+
+            var error = await deleteResponse.Content.ReadFromJsonAsync<ApiError>();
+            error.Should().NotBeNull();
+            error!.Message.Should().Be("No se puede eliminar el plato porque está en órdenes activas");
+        }
+
+        [Fact(DisplayName = "DELETE-4: 404 | Plato inexistente")]
+        public async Task DeleteDish_Should_Return_404_When_NotFound()
+        {
+            // Arrange: preparar un ID aleatorio que no corresponde a ningún plato
+            var nonExistentId = Guid.NewGuid();
+            // Act: intentar eliminar el plato con el ID inexistente
+            var response = await _client.DeleteAsync($"/api/v1/Dish/{nonExistentId}");
+            // Assert: verificar que se devuelve 404 y el mensaje de error esperado
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+            var error = await response.Content.ReadFromJsonAsync<ApiError>();
+            error.Should().NotBeNull();
+            error!.Message.Should().Be("Plato no encontrado");
+        }
     }
 }
+
 

@@ -311,13 +311,13 @@
   {
     "ContainingType": "Restaurante.Controllers.OrderController",
     "Method": "UpdateOrderItemStatus",
-    "RelativePath": "api/v1/Order/{orderId}/item/{itemId}",
+    "RelativePath": "api/v1/Order/{id}/item/{itemId}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "orderId",
+        "Name": "id",
         "Type": "System.Int64",
         "IsRequired": true
       },
