@@ -312,7 +312,7 @@
     "ContainingType": "Restaurante.Controllers.OrderController",
     "Method": "UpdateOrderItemStatus",
     "RelativePath": "api/v1/Order/{id}/item/{itemId}",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
