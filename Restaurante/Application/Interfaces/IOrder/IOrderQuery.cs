@@ -6,6 +6,5 @@ namespace Application.Interfaces.IOrder
     {
         Task<Order?> GetOrderByIdAsync(long orderId);
         IQueryable<Order> GetAllOrders();
-        Task <Order> OrderUpdateAsync(Order order);
     }
 }

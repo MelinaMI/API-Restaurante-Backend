@@ -12,7 +12,6 @@ namespace Application.Interfaces.IOrderItem
         Task<OrderItem?> GetOrderItemByIdAsync(long itemId);
         Task<IReadOnlyList<OrderItem>> GetItemsByOrderIdAsync(long orderId);
         Task<IReadOnlyList<OrderItem>> GetItemsByStatusAsync(int statusId);
-        Task UpdateOrderItemAsync(OrderItem item);
     }
 
 }

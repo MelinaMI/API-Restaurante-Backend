@@ -11,8 +11,7 @@ namespace Application.Validators.OrderValidator
             if (from.HasValue && to.HasValue && from > to)
                 throw new BadRequestException("La fecha de inicio no puede ser posterior a la fecha de fin");
 
-            if (from.HasValue && from.Value > DateTime.UtcNow)
-                throw new BadRequestException("La fecha de inicio no puede estar en el futuro");
+            
 
             if (to.HasValue && to.Value > DateTime.UtcNow)
                 throw new BadRequestException("La fecha de fin no puede estar en el futuro");

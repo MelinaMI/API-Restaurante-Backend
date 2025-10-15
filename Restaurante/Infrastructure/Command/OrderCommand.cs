@@ -16,10 +16,12 @@ namespace Infrastructure.Command
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();
             return order.OrderId;
-        } 
-        public Task<long> UpdateOrderAsync(Order order)
+        }
+        public async Task<Order> OrderUpdateAsync(Order order)
         {
-            throw new NotImplementedException();
+            _context.Orders.Update(order);
+            await _context.SaveChangesAsync();
+            return order;
         }
     }
 }

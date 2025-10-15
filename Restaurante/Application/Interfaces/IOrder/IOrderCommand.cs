@@ -10,6 +10,6 @@ namespace Application.Interfaces.IOrder
     public interface IOrderCommand
     {
         Task<long> InsertOrderAsync(Order order);
-        Task<long> UpdateOrderAsync(Order order);
+        Task<Order> OrderUpdateAsync(Order order);
     }
 }

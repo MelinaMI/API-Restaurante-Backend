@@ -494,7 +494,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "tags": [
           "Order"
         ],
@@ -553,7 +553,7 @@
       }
     },
     "/api/v1/Order/{id}/item/{itemId}": {
-      "put": {
+      "patch": {
         "tags": [
           "Order"
         ],

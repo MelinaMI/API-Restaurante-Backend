@@ -33,15 +33,5 @@ namespace Infrastructure.Queries
             .Include(o => o.DeliveryTypeNavigation)
             .Include(o => o.OverallStatusNavigation);
         }
-        public Task<IReadOnlyList<Order>> GetOrdersByStatusAsync(int statusId)
-        {
-            throw new NotImplementedException();
-        }
-        public async Task<Order> OrderUpdateAsync(Order order)
-        {
-            _context.Orders.Update(order);
-            await _context.SaveChangesAsync();
-            return order;
-        }
     }
 }

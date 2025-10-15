@@ -13,7 +13,8 @@ namespace Application.UseCase.OrderItemService
         private readonly IUpdateOrderItemStatusValidation _statusValidator;
         private readonly IUpdateOrderStatusService _updateOrderStatusService;
         private readonly IOrderMapper _orderMapper;
-        public UpdateOrderItemStatusService(IOrderQuery orderQuery, IOrderItemCommand orderItemCommand, IGetOrderByIdValidation getOrderByIdValidation, IUpdateOrderItemStatusValidation statusValidator, IUpdateOrderStatusService updateOrderStatusService, IOrderMapper orderMapper)
+        private readonly IOrderCommand _orderCommand;
+        public UpdateOrderItemStatusService(IOrderQuery orderQuery, IOrderItemCommand orderItemCommand, IGetOrderByIdValidation getOrderByIdValidation, IUpdateOrderItemStatusValidation statusValidator, IUpdateOrderStatusService updateOrderStatusService, IOrderMapper orderMapper, IOrderCommand orderCommand)
         {
             _orderQuery = orderQuery;
             _orderItemCommand = orderItemCommand;
@@ -21,6 +22,7 @@ namespace Application.UseCase.OrderItemService
             _statusValidator = statusValidator;
             _updateOrderStatusService = updateOrderStatusService;
             _orderMapper = orderMapper;
+            _orderCommand = orderCommand;
         }
         public async Task<OrderUpdateResponse> UpdateOrderItemStatusAsync(long orderId, long itemId, int newStatusId)
         {
@@ -40,7 +42,7 @@ namespace Application.UseCase.OrderItemService
             await _updateOrderStatusService.UpdateOrderStatusBasedOnItemsAsync(order);
 
             item.CreateDate = DateTime.UtcNow;
-            await _orderQuery.OrderUpdateAsync(order);
+            await _orderCommand.OrderUpdateAsync(order);
 
            return _orderMapper.ToOrderUpdateResponse(order);
         }

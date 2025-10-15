@@ -49,7 +49,7 @@ namespace Restaurante.Controllers
             return Ok(order);
         }
 
-        [HttpPut("{id}")]
+        [HttpPatch("{id}")]
         [ProducesResponseType(typeof(OrderUpdateResponse), StatusCodes.Status200OK)]
         public async Task<IActionResult> UpdateOrder(long id, [FromBody] OrderUpdateRequest request)
         {

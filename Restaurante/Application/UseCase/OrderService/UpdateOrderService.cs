@@ -13,13 +13,15 @@ namespace Application.UseCase.OrderService
         private readonly IDishQuery _dishQuery;
         private readonly ICreateOrderItemService _createOrderItemService;
         private readonly IOrderMapper _orderMapper;
-        public UpdateOrderService(IUpdateOrderValidation updateOrderValidation, IOrderQuery orderQuery, IDishQuery dishQuery,ICreateOrderItemService createOrderItemService, IOrderMapper orderMapper)
+        private readonly IOrderCommand _orderCommand;
+        public UpdateOrderService(IUpdateOrderValidation updateOrderValidation, IOrderQuery orderQuery, IDishQuery dishQuery,ICreateOrderItemService createOrderItemService, IOrderMapper orderMapper, IOrderCommand orderCommand)
         {
             _updateOrderValidation = updateOrderValidation;
             _orderQuery = orderQuery;
             _dishQuery = dishQuery;
             _createOrderItemService = createOrderItemService;
             _orderMapper = orderMapper;
+            _orderCommand = orderCommand;
         }
         public async Task<OrderUpdateResponse> UpdateOrderAsync(long id, OrderUpdateRequest request)
         {
@@ -33,7 +35,7 @@ namespace Application.UseCase.OrderService
                 var existingItem = order.OrderItems.FirstOrDefault(oi => oi.Dish == item.Id);
 
                 if (existingItem != null)
-                {
+                {   
                     existingItem.Quantity = item.Quantity;
                     existingItem.Notes = item.Notes;
                 }
@@ -50,7 +52,7 @@ namespace Application.UseCase.OrderService
 
             order.Price = updatedTotal;
             order.UpdateDate = DateTime.UtcNow; 
-            await _orderQuery.OrderUpdateAsync(order);
+            await _orderCommand.OrderUpdateAsync(order);
             return  _orderMapper.ToOrderUpdateResponse(order); 
            
         }

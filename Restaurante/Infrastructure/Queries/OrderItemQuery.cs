@@ -16,11 +16,6 @@ namespace Infrastructure.Queries
         {
             return await _context.OrderItems.Include(oi => oi.StatusNavigation).Include(oi => oi.DishNavigation).FirstOrDefaultAsync(oi => oi.OrderItemId == itemId);
         }
-        public async Task UpdateOrderItemAsync(OrderItem item)
-        {
-            _context.OrderItems.Update(item);
-            await _context.SaveChangesAsync();
-        }
         public async Task<IReadOnlyList<OrderItem>> GetItemsByOrderIdAsync(long orderId)
         {
             return await _context.OrderItems

@@ -57,11 +57,11 @@ namespace Restaurant.Controllers
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(DishResponse), StatusCodes.Status204NoContent)]
         public async Task<ActionResult<DishResponse>> DeleteDish([FromRoute] Guid id)
         {
             var deletedDish = await _deleteDishService.DeleteDishAsync(id);
-            return Ok(deletedDish);
+            return NoContent();
         }
     }
 }

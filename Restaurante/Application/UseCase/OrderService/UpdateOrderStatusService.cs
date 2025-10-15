@@ -5,10 +5,10 @@ namespace Application.UseCase.OrderService
 {
     public class UpdateOrderStatusService : IUpdateOrderStatusService
     {
-        private readonly IOrderQuery _orderQuery;
-        public UpdateOrderStatusService(IOrderQuery orderQuery)
+        private readonly IOrderCommand _orderCommand;
+        public UpdateOrderStatusService(IOrderCommand orderCommand)
         {
-            _orderQuery = orderQuery;
+            _orderCommand = orderCommand;
         }
         public async Task UpdateOrderStatusBasedOnItemsAsync(Order order)
         {
@@ -28,7 +28,7 @@ namespace Application.UseCase.OrderService
             }
 
             order.OverallStatus = newStatus;
-            await _orderQuery.OrderUpdateAsync(order);
+            await _orderCommand.OrderUpdateAsync(order);
         }
     }
 }
