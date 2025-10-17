@@ -23,8 +23,8 @@ let ordersData = [];
 const nextStatus = {
     "Pending": "In progress",
     "In progress": "Ready",
-    "Ready": "Delivered",
-    "Delivered": "Closed",
+    "Ready": "Delivery",
+    "Delivery": "Closed",
     "Closed": null,
     "Cancelled": null
 };
@@ -33,7 +33,7 @@ const badgeColors = {
     "Pending": "pending",
     "In progress": "progress",
     "Ready": "ready",
-    "Delivered": "delivered",
+    "Delivery": "delivered",
     "Closed": "closed",
     "Cancelled": "cancel"
 };
@@ -42,7 +42,7 @@ let stats = {
     "Pending": 0,
     "In progress": 0,
     "Ready": 0,
-    "Delivered": 0,
+    "Delivery": 0,
     "Closed": 0,
     "Cancelled": 0,
     "TotalToday": 0
@@ -52,7 +52,7 @@ const prioridadEstado = {
     "Pending": 1,
     "In progress": 2,
     "Ready": 3,
-    "Delivered": 4,
+    "Delivery": 4,
     "Closed": 5,
     "Cancelled": 5
 };
@@ -63,7 +63,7 @@ function traducirEstado(estado) {
         case "Pending": return "Pendiente";
         case "In progress": return "En preparación";
         case "Ready": return "Lista";
-        case "Delivered": return "Entregada";
+        case "Delivery": return "Entregada";
         case "Closed": return "Cerrada";
         case "Cancelled": return "Cancelada";
         default: return estado;
@@ -90,13 +90,13 @@ function getNextButtonText(status) {
         case "Pending": return "Preparar";
         case "In progress": return "Listo";
         case "Ready": return "Entregar";
-        case "Delivered": return "Cerrar";
+        case "Delivery": return "Cerrar";
         default: return "";
     }
 }
 // ------------------- Stats -------------------
 function computeStats(orders) {
-    stats = { "Pending": 0, "In progress": 0, "Ready": 0, "Delivered": 0, "Closed": 0, "TotalToday": 0 };
+    stats = { "Pending": 0, "In progress": 0, "Ready": 0, "Delivery": 0, "Closed": 0, "TotalToday": 0 };
     const today = new Date().toISOString().split("T")[0];
 
     orders.forEach(o => {
@@ -112,7 +112,7 @@ function updateStatsUI() {
     statActive.textContent = stats["Pending"] || 0;
     statPrep.textContent = stats["In progress"] || 0;
     statReady.textContent = stats["Ready"] || 0;
-    statDelivered.textContent = stats["Delivered"] || 0;
+    statDelivered.textContent = stats["Delivery"] || 0;
     statClosed.textContent = stats["Closed"] || 0;
     statToday.textContent = stats.TotalToday || 0;
 }
@@ -123,7 +123,7 @@ function mapStatusToId(statusName) {
         case "Pending": return 1;
         case "In progress": return 2;
         case "Ready": return 3;
-        case "Delivered": return 4;
+        case "Delivery": return 4;
         case "Closed": return 5;
         case "Cancelled": return 5;
         default: return 0;

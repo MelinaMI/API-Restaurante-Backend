@@ -8,7 +8,7 @@
   --color-pending:  #f7b731;
   --color-in-progress: #e67e22;
   --color-ready: #2ecc71;
-  --color-delivered: #3498db;
+  --color-delivery: #3498db;
   --color-closed:#95a5a6;
   --color-cancelled: #e74c3c;
 }
@@ -124,7 +124,7 @@
 .badge.pending { background: #fff2cc; color: #7a5f00; }
 .badge.progress { background: #fde8a6; color: #8a6900; }
 .badge.ready { background: #e3f8d2; color: #256d1b; }
-.badge.delivered { background: #c9eaff; color:var(--color-delivered); }
+.badge.delivery { background: #c9eaff; color:var(--color-delivery); }
 .badge.closed { background: #e4e4e4; color: #444; }
 .badge.cancel { background: #ffe1e1; color: #a11a1a; }
 

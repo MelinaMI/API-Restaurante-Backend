@@ -23,6 +23,24 @@ document.addEventListener("DOMContentLoaded", () => {
             link.classList.add("inactive");
         }
     });
+    // ================== VALIDACIÓN CAMPOS SEGÚN MODO DE ENTREGA ==================
+    document.addEventListener("DOMContentLoaded", () => {
+    const mesaField = document.getElementById("mesa");
+    const addressField = document.getElementById("address");
+    const deliveryRadios = document.querySelectorAll('input[name="delivery"]');
+
+    deliveryRadios.forEach(radio => {
+        radio.addEventListener("change", () => {
+        if (radio.value === "en_mesa" && radio.checked) {
+            mesaField.required = true;
+            addressField.required = false;
+        } else if (radio.value === "para_llevar" && radio.checked) {
+            mesaField.required = false;
+            addressField.required = true;
+        }
+        });
+    });
+    });
 
     // Filtros
     const searchName = document.getElementById("search-name");
@@ -91,12 +109,16 @@ function fetchPlatos() {
 // ================== RENDER PLATOS ==================
 function renderPlatos(lista) {
     const container = document.getElementById("dishes");
+    const emptyState = document.querySelector(".empty-state");
+
     container.innerHTML = '';
 
     if (!lista.length) {
-        container.innerHTML = "<p>No hay platos disponibles.</p>";
+        if (emptyState) emptyState.style.display = "flex"; // mostrar mensaje
         return;
     }
+
+    if (emptyState) emptyState.style.display = "none"; // ocultar mensaje si hay platos
 
     lista.forEach(plato => {
         const card = document.createElement("div");
@@ -297,7 +319,6 @@ function initOrderForm() {
     // Cambios dinámicos según tipo de pedido
     deliveryRadios.forEach(radio => {
         radio.addEventListener("change", () => {
-            // ... (Tu lógica de visibilidad y limpieza se mantiene igual) ...
             tableGroup.style.display = radio.value === "dinein" ? "block" : "none";
             takeawayGroup.style.display = radio.value === "takeaway" ? "block" : "none";
             addressGroup.style.display = radio.value === "delivery" ? "block" : "none";
@@ -314,7 +335,6 @@ function initOrderForm() {
 
         const finalTotal = calculateTotal(); 
         
-        // ... (Tu lógica de preparación de `pedido` se mantiene igual) ...
         const orderType = document.querySelector('input[name="deliveryType"]:checked').value;
 
         const deliveryId = orderType === "dinein" ? 1
@@ -407,3 +427,50 @@ function showSuccessModal(orderData, finalTotal) {
         modal.classList.remove('show');
     };
 }
+
+// ================== CONTROL DE CAMPOS SEGÚN TIPO DE PEDIDO ==================
+document.addEventListener("DOMContentLoaded", () => {
+  const dineInRadio = document.querySelector('input[value="dinein"]');
+  const takeawayRadio = document.querySelector('input[value="takeaway"]');
+  const deliveryRadio = document.querySelector('input[value="delivery"]');
+
+  const tableGroup = document.getElementById("table-group");
+  const takeawayGroup = document.getElementById("takeaway-group");
+  const addressGroup = document.getElementById("address-group");
+
+  const tableInput = document.getElementById("table");
+  const takeawayInput = document.getElementById("takeaway");
+  const addressInput = document.getElementById("address");
+
+  function updateFields() {
+    // Ocultar todos
+    tableGroup.style.display = "none";
+    takeawayGroup.style.display = "none";
+    addressGroup.style.display = "none";
+
+    // Desactivar required de todos
+    tableInput.required = false;
+    takeawayInput.required = false;
+    addressInput.required = false;
+
+    // Mostrar y activar según el tipo seleccionado
+    if (dineInRadio.checked) {
+      tableGroup.style.display = "block";
+      tableInput.required = true;
+    } else if (takeawayRadio.checked) {
+      takeawayGroup.style.display = "block";
+      takeawayInput.required = true;
+    } else if (deliveryRadio.checked) {
+      addressGroup.style.display = "block";
+      addressInput.required = true;
+    }
+  }
+
+  // Inicializar al cargar
+  updateFields();
+
+  // Escuchar cambios
+  [dineInRadio, takeawayRadio, deliveryRadio].forEach(r =>
+    r.addEventListener("change", updateFields)
+  );
+});

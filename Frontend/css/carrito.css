@@ -56,7 +56,7 @@
     font-weight: 600;
     color: #444;             
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 /* Contenedor del bloque vacío centrado */
 .cart-sidebar .empty-block {
@@ -111,7 +111,7 @@
 .cart-item-qty {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.8rem; 
 }
 
 .cart-item-qty button {
