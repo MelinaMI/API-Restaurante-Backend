@@ -1,4 +1,4 @@
-# 🍽️ API - Restayrante
+# 🍽️ API - Restaurante
 
 API RESTful desarrollada con ASP.NET Core, utilizando Entity Framework Core para persistencia, y estructurada en tres capas según principios de Clean Arquitecture.
 
