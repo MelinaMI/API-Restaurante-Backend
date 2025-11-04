@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj": {}
+    "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj": {
+    "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Noxie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Application\\obj\\",
+        "outputPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj"
+              "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj": {
+    "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Noxie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -148,14 +148,14 @@
         }
       }
     },
-    "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Noxie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -176,8 +176,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj"
+              "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj"
               }
             }
           }
@@ -233,14 +233,14 @@
         }
       }
     },
-    "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj": {
+    "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj",
+        "projectUniqueName": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj",
         "projectName": "Restaurante",
-        "projectPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj",
+        "projectPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Restaurante.csproj",
         "packagesPath": "C:\\Users\\Noxie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Restaurante\\obj\\",
+        "outputPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -261,8 +261,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }

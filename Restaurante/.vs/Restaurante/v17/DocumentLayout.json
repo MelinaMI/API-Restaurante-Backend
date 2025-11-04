@@ -1,121 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\",
+  "WorkspaceRootPath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\mapper\\ordermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\restaurante\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\mapper\\ordermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\mapper\\ordermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\enum\\orderprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\enum\\orderprice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\dishvalidator\\getalldishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\dishvalidator\\getalldishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\usecase\\dishservice\\createdishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\usecase\\dishservice\\createdishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\restaurante\\controllers\\statuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\restaurante\\controllers\\statuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\controllers\\statuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\queries\\statusquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\infrastructure\\queries\\statusquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\queries\\statusquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\restaurante\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\controllers\\dishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\restaurante\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\restaurante\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\restaurante\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\usecase\\orderservice\\updateorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\usecase\\orderservice\\updateorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\usecase\\orderservice\\updateorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\usecase\\orderservice\\updateorderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\usecase\\orderservice\\updateorderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\usecase\\orderservice\\updateorderstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\usecase\\orderitemservice\\updateorderitemstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\usecase\\orderitemservice\\updateorderitemstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\usecase\\orderitemservice\\updateorderitemstatusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\queries\\orderitemquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\infrastructure\\queries\\orderitemquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\queries\\orderitemquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\command\\orderitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\infrastructure\\command\\orderitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\command\\orderitemcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorderitem\\iorderitemquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\interfaces\\iorderitem\\iorderitemquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorderitem\\iorderitemquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\iordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\interfaces\\iorder\\iordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\iordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\command\\ordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\infrastructure\\command\\ordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\command\\ordercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\interfaces\\iorder\\iorderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\interfaces\\iorder\\iorderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iorder\\iorderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\queries\\orderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\infrastructure\\queries\\orderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\queries\\orderquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\ordervalidator\\getallordersvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\validators\\ordervalidator\\getallordersvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\ordervalidator\\getallordersvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\usecase\\orderservice\\createorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\usecase\\orderservice\\createorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\usecase\\orderservice\\createorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\ordervalidator\\createordervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\validators\\ordervalidator\\createordervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\ordervalidator\\createordervalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\usecase\\orderservice\\getallordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\usecase\\orderservice\\getallordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\usecase\\orderservice\\getallordersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\test\\customtest\\dishtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\test\\customtest\\dishtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|solutionrelative:test\\customtest\\dishtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\infrastructure\\command\\dishcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\infrastructure\\command\\dishcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3097B3E0-B9E0-46D1-B215-1A007EC8DB26}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\command\\dishcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\usecase\\dishservice\\deletedishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\usecase\\dishservice\\deletedishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\usecase\\dishservice\\deletedishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\application\\validators\\dishvalidator\\deletedishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\application\\validators\\dishvalidator\\deletedishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D067CF3-4C5A-4A8B-9016-5B9F33A5E300}|Application\\Application.csproj|solutionrelative:application\\validators\\dishvalidator\\deletedishvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\test\\customtest\\ordertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\test\\customtest\\ordertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85BFA13B-2531-4B32-B08F-227D577A51DE}|Test\\Test.csproj|solutionrelative:test\\customtest\\ordertest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\repositorios\\proyecto-software\\restaurante\\restaurante\\models\\apierror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|c:\\users\\noxie\\desktop\\tp3 - miranda ibarra melina\\tp3 - miranda ibarra melina\\api-restaurante-backend\\restaurante\\restaurante\\models\\apierror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4443A5AE-4628-4CC1-98CA-D44E464AD164}|Restaurante\\Restaurante.csproj|solutionrelative:restaurante\\models\\apierror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -161,244 +145,179 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrderMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Mapper\\OrderMapper.cs",
-              "RelativeDocumentMoniker": "Application\\Mapper\\OrderMapper.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Mapper\\OrderMapper.cs",
-              "RelativeToolTip": "Application\\Mapper\\OrderMapper.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAACsAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T18:00:39.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetAllDishValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
-              "RelativeDocumentMoniker": "Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
-              "RelativeToolTip": "Application\\Validators\\DishValidator\\GetAllDishValidator.cs",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\appsettings.json",
+              "RelativeDocumentMoniker": "Restaurante\\appsettings.json",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\appsettings.json",
+              "RelativeToolTip": "Restaurante\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:44:54.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateDishService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\DishService\\CreateDishService.cs",
-              "RelativeDocumentMoniker": "Application\\UseCase\\DishService\\CreateDishService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\DishService\\CreateDishService.cs",
-              "RelativeToolTip": "Application\\UseCase\\DishService\\CreateDishService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:44:26.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StatusQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\StatusQuery.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Queries\\StatusQuery.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\StatusQuery.cs",
-              "RelativeToolTip": "Infrastructure\\Queries\\StatusQuery.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAUwCMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:33:59.542Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-22T18:11:06.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OrderPrice.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Enum\\OrderPrice.cs",
-              "RelativeDocumentMoniker": "Application\\Enum\\OrderPrice.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Enum\\OrderPrice.cs",
-              "RelativeToolTip": "Application\\Enum\\OrderPrice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Title": "OrderMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Mapper\\OrderMapper.cs",
+              "RelativeDocumentMoniker": "Application\\Mapper\\OrderMapper.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Mapper\\OrderMapper.cs",
+              "RelativeToolTip": "Application\\Mapper\\OrderMapper.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAACYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:31:02.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T18:00:39.069Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DishController.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\DishController.cs",
-              "RelativeDocumentMoniker": "Restaurante\\Controllers\\DishController.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\DishController.cs",
-              "RelativeToolTip": "Restaurante\\Controllers\\DishController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDwAAABVAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "StatusQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Queries\\StatusQuery.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Queries\\StatusQuery.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Queries\\StatusQuery.cs",
+              "RelativeToolTip": "Infrastructure\\Queries\\StatusQuery.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T17:09:35.312Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "OrderItemQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderItemQuery.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Queries\\OrderItemQuery.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderItemQuery.cs",
-              "RelativeToolTip": "Infrastructure\\Queries\\OrderItemQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:25:14.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IOrderCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IOrderCommand.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderCommand.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IOrderCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:23:35.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IOrderQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:23:00.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "OrderCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Command\\OrderCommand.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
-              "RelativeToolTip": "Infrastructure\\Command\\OrderCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:23:15.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "OrderQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Queries\\OrderQuery.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
-              "RelativeToolTip": "Infrastructure\\Queries\\OrderQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:21:44.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StatusController.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\StatusController.cs",
-              "RelativeDocumentMoniker": "Restaurante\\Controllers\\StatusController.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\StatusController.cs",
-              "RelativeToolTip": "Restaurante\\Controllers\\StatusController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T02:41:21.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OrderItemCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderItemCommand.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Command\\OrderItemCommand.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\OrderItemCommand.cs",
-              "RelativeToolTip": "Infrastructure\\Command\\OrderItemCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:25:31.365Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UpdateOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderService.cs",
-              "RelativeDocumentMoniker": "Application\\UseCase\\OrderService\\UpdateOrderService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderService.cs",
-              "RelativeToolTip": "Application\\UseCase\\OrderService\\UpdateOrderService.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAA1wDIAAABhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:13:59.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T17:33:59.542Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Restaurante\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Restaurante\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAUwDMAAAASAAAAAAAAAA==",
+              "Title": "OrderItemQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Queries\\OrderItemQuery.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Queries\\OrderItemQuery.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Queries\\OrderItemQuery.cs",
+              "RelativeToolTip": "Infrastructure\\Queries\\OrderItemQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T03:57:02.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Program.cs",
-              "RelativeDocumentMoniker": "Restaurante\\Program.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Program.cs",
-              "RelativeToolTip": "Restaurante\\Program.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAAAHgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-11T02:40:49.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IOrderItemQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:27:12.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UpdateOrderStatusService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
-              "RelativeDocumentMoniker": "Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
-              "RelativeToolTip": "Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T04:28:08.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-15T04:25:14.46Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "IOrderCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderCommand.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IOrderCommand.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderCommand.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IOrderCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:23:35.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IOrderQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrder\\IOrderQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:23:00.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Command\\OrderCommand.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Command\\OrderCommand.cs",
+              "RelativeToolTip": "Infrastructure\\Command\\OrderCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:23:15.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OrderQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Queries\\OrderQuery.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Queries\\OrderQuery.cs",
+              "RelativeToolTip": "Infrastructure\\Queries\\OrderQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:21:44.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StatusController.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Controllers\\StatusController.cs",
+              "RelativeDocumentMoniker": "Restaurante\\Controllers\\StatusController.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Controllers\\StatusController.cs",
+              "RelativeToolTip": "Restaurante\\Controllers\\StatusController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-11T02:41:21.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderItemCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Command\\OrderItemCommand.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Command\\OrderItemCommand.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Command\\OrderItemCommand.cs",
+              "RelativeToolTip": "Infrastructure\\Command\\OrderItemCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:25:31.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderService.cs",
+              "RelativeDocumentMoniker": "Application\\UseCase\\OrderService\\UpdateOrderService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderService.cs",
+              "RelativeToolTip": "Application\\UseCase\\OrderService\\UpdateOrderService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA1wDIAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:13:59.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Restaurante\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Restaurante\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAUwDMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T03:57:02.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IOrderItemQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IOrderItem\\IOrderItemQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:27:12.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateOrderStatusService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
+              "RelativeDocumentMoniker": "Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
+              "RelativeToolTip": "Application\\UseCase\\OrderService\\UpdateOrderStatusService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T04:28:08.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "UpdateOrderItemStatusService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderItemService\\UpdateOrderItemStatusService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderItemService\\UpdateOrderItemStatusService.cs",
               "RelativeDocumentMoniker": "Application\\UseCase\\OrderItemService\\UpdateOrderItemStatusService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderItemService\\UpdateOrderItemStatusService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderItemService\\UpdateOrderItemStatusService.cs",
               "RelativeToolTip": "Application\\UseCase\\OrderItemService\\UpdateOrderItemStatusService.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAowBAAAAAyAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -406,24 +325,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 16,
               "Title": "CreateOrderService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\CreateOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\CreateOrderService.cs",
               "RelativeDocumentMoniker": "Application\\UseCase\\OrderService\\CreateOrderService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\CreateOrderService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\CreateOrderService.cs",
               "RelativeToolTip": "Application\\UseCase\\OrderService\\CreateOrderService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T22:04:59.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-12T22:04:59.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 21,
               "Title": "DeleteDishService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\DishService\\DeleteDishService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\DishService\\DeleteDishService.cs",
               "RelativeDocumentMoniker": "Application\\UseCase\\DishService\\DeleteDishService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\DishService\\DeleteDishService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\DishService\\DeleteDishService.cs",
               "RelativeToolTip": "Application\\UseCase\\DishService\\DeleteDishService.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwBkAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -431,11 +349,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 22,
               "Title": "DeleteDishValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
               "RelativeDocumentMoniker": "Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
               "RelativeToolTip": "Application\\Validators\\DishValidator\\DeleteDishValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -443,11 +361,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 19,
               "Title": "DishTest.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\DishTest.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Test\\CustomTest\\DishTest.cs",
               "RelativeDocumentMoniker": "Test\\CustomTest\\DishTest.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\DishTest.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Test\\CustomTest\\DishTest.cs",
               "RelativeToolTip": "Test\\CustomTest\\DishTest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgCAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -455,11 +373,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 24,
               "Title": "ApiError.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Models\\ApiError.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Models\\ApiError.cs",
               "RelativeDocumentMoniker": "Restaurante\\Models\\ApiError.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Restaurante\\Models\\ApiError.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Restaurante\\Models\\ApiError.cs",
               "RelativeToolTip": "Restaurante\\Models\\ApiError.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -467,11 +385,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 17,
               "Title": "CreateOrderValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\CreateOrderValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Validators\\OrderValidator\\CreateOrderValidator.cs",
               "RelativeDocumentMoniker": "Application\\Validators\\OrderValidator\\CreateOrderValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\CreateOrderValidator.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Validators\\OrderValidator\\CreateOrderValidator.cs",
               "RelativeToolTip": "Application\\Validators\\OrderValidator\\CreateOrderValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBIAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -479,11 +397,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 15,
               "Title": "GetAllOrdersValidator.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\GetAllOrdersValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Validators\\OrderValidator\\GetAllOrdersValidator.cs",
               "RelativeDocumentMoniker": "Application\\Validators\\OrderValidator\\GetAllOrdersValidator.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Validators\\OrderValidator\\GetAllOrdersValidator.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Validators\\OrderValidator\\GetAllOrdersValidator.cs",
               "RelativeToolTip": "Application\\Validators\\OrderValidator\\GetAllOrdersValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -491,11 +409,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 23,
               "Title": "OrderTest.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
               "RelativeDocumentMoniker": "Test\\CustomTest\\OrderTest.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Test\\CustomTest\\OrderTest.cs",
               "RelativeToolTip": "Test\\CustomTest\\OrderTest.cs",
               "ViewState": "AgIAAOgAAAAAAAAAAAAjwDoBAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -503,11 +421,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 18,
               "Title": "GetAllOrdersService.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\GetAllOrdersService.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\GetAllOrdersService.cs",
               "RelativeDocumentMoniker": "Application\\UseCase\\OrderService\\GetAllOrdersService.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\UseCase\\OrderService\\GetAllOrdersService.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\UseCase\\OrderService\\GetAllOrdersService.cs",
               "RelativeToolTip": "Application\\UseCase\\OrderService\\GetAllOrdersService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -515,16 +433,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 20,
               "Title": "DishCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\DishCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Command\\DishCommand.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Command\\DishCommand.cs",
-              "ToolTip": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Infrastructure\\Command\\DishCommand.cs",
+              "ToolTip": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Infrastructure\\Command\\DishCommand.cs",
               "RelativeToolTip": "Infrastructure\\Command\\DishCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T23:21:58.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T23:21:58.788Z"
             }
           ]
         },
@@ -539,6 +456,24 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 76,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         }

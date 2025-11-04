@@ -58,3 +58,43 @@ C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Infrastructure
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 C:\Users\Noxie\Desktop\Repositorios\Proyecto-Software\Restaurante\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Application.dll
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Domain.dll
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Application.pdb
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Domain.pdb
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+C:\Users\Noxie\Desktop\Repositorios\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.deps.json
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.runtimeconfig.json
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Infrastructure.pdb
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Application.dll
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Domain.dll
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Application.pdb
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\bin\Debug\net8.0\Domain.pdb
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.dll
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+C:\Users\Noxie\Desktop\TP3 - Miranda Ibarra Melina\TP3 - Miranda Ibarra Melina\API-Restaurante-Backend\Restaurante\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll

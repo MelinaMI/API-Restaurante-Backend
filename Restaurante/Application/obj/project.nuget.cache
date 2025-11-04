@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UICLNgF2iko=",
+  "dgSpecHash": "sBaKi2McxAU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Noxie\\Desktop\\Repositorios\\Proyecto-Software\\Restaurante\\Application\\Application.csproj",
+  "projectFilePath": "C:\\Users\\Noxie\\Desktop\\TP3 - Miranda Ibarra Melina\\TP3 - Miranda Ibarra Melina\\API-Restaurante-Backend\\Restaurante\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Noxie\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.9\\microsoft.entityframeworkcore.9.0.9.nupkg.sha512",
     "C:\\Users\\Noxie\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.9\\microsoft.entityframeworkcore.abstractions.9.0.9.nupkg.sha512",

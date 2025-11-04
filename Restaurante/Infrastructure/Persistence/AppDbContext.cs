@@ -129,6 +129,7 @@ namespace Infrastructure.Persistence
             modelBuilder.ApplyConfiguration(new DeliveryTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new StatusConfiguration());
+            modelBuilder.ApplyConfiguration(new DishConfiguration());
         }
     }
 }
