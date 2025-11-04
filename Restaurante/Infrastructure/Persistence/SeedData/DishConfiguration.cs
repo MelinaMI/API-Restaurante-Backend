@@ -1,11 +1,6 @@
 ﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence.SeedData
 {
@@ -36,7 +31,7 @@ namespace Infrastructure.Persistence.SeedData
                 new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b014"), Name = "Tarta de Frutilla", Description = "Base de masa dulce con crema y frutillas frescas", Price = 1200m, Available = true, ImageUrl = "https://kobietamag.pl/wp-content/uploads/2016/04/tarta-z-truskawkami-i-bita-smietana-ozdobiona-liscmi-miety.jpg", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 10 },
                 new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b015"), Name = "Ensalada Mediterránea", Description = "Tomates cherry, aceitunas negras, queso feta, pepino y aceite de oliva", Price = 15000m, Available = true, ImageUrl = "https://www.gastrolabweb.com/u/fotografias/m/2021/5/18/f800x450-13354_64800_5942.jpg", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 2 },
                 new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b016"), Name = "Gaseosa Cola", Description = "Lata de 330ml", Price = 900m, Available = true, ImageUrl = "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3080111_f.jpg", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 8 },
-                new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b017"), Name = "Lasagna Bolognesa Garfield", Description = "Capas de pasta, salsa bolognesa, bechamel y mucho queso", Price = 1600m, Available = true, ImageUrl = "https://www.gourmet.cl/wp-content/uploads/2016/09/iStock-505754880-1.jpg", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 4 },
+                new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b017"), Name = "Lasagna Bolognesa", Description = "Capas de pasta, salsa bolognesa, bechamel y mucho queso", Price = 1600m, Available = true, ImageUrl = "https://www.hola.com/horizon/landscape/3e8b3904ac1a-adobe-lasana-t.jpg", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 4 },
                 new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b018"), Name = "Rubia artesanal", Description = "Cerveza rubia 500ml", Price = 2200m, Available = true, ImageUrl = "https://capacitacioneselmolino.com/wp-content/uploads/2020/07/rubia.png", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 9 },
                 new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b019"), Name = "Jugo de naranja", Description = "Botella 500ml, natural", Price = 1500m, Available = true, ImageUrl = "https://buenazo.cronosmedia.glr.pe/original/2022/02/07/62014ff370f93115af6521ad.jpg", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 8 },
                 new { DishId = Guid.Parse("f0e1e2ab-4c49-496a-8fd5-1ebc0c77b01a"), Name = "Provolone a la parrilla", Description = "Queso provolone gratinado con especias", Price = 1500m, Available = true, ImageUrl = "https://statics.eleconomista.com.ar/2023/11/654969aa42ec0.jpg", CreateDate = new DateTime(2025,1,1), UpdateDate = new DateTime(2025,1,1), Category = 5 },
